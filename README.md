@@ -57,30 +57,31 @@ Pour réaliser notre projet, nous allons utilier les packages suivant (avec leur
   Voici le diagramme GANNT pour notre projet:
 
 
-:::mermaid
+
+
+
+```mermaid
 gantt
     dateFormat  YYYY-MM-DD
     title       Diagramme GANTT pour Projet du groupe 
     axisFormat %d-%m
-
     section Recherche et formulation
-    Affectation des tâches            :active,    des1, 2023-09-24,2023-10-16
-    Préparation pour évaluation mi-projet               :active,  des2, 2023-10-01, 2023-10-22
-    Evaluation mi-projet: active,milestone, 2023-10-23
+      Affectation des tâches            :active,    des1, 2023-09-24,2023-10-16
+      Préparation pour évaluation mi-projet               :active,  des2, 2023-10-01, 2023-10-22
+      Evaluation mi-projet: active,milestone, 2023-10-23
     section Documentation 
-    Documentation : active, 2023-11-01, 2023-12-10    
+      Documentation : active, 2023-11-01, 2023-12-10    
     section Préparation des données
-    Choix et extraction de données :active, 2023-10-23, 2023-11-01
-    Data fetching      :active,2023-11-01  , 10d
-    Data processing    :active, 2023-11-11, 8d
-
+      Choix et extraction de données :active, 2023-10-23, 2023-11-01
+      Data fetching      :active,2023-11-01  , 10d
+      Data processing    :active, 2023-11-11, 8d
     section Developpement du site
-    Landing page :active,2023-11-14 , 9d
-    Vizualisation des données      : active, 2023-11-16,12d 
-    Carte intéractive    :active, 2023-11-18,14d
-
-    Section Présentation
-    Préparation des slides : active, 2023-11-31,2023-12-10
-    Dépot Github: active,milestone,2023-12-10   
-    Répétition pour l'orale : active,2023-12-10,5d 
-    Présentation : active, milestone,2023-12-15
+      Landing page :active,2023-11-14 , 9d
+      Vizualisation des données      : active, 2023-11-16,12d 
+      Carte intéractive    :active, 2023-11-18,14d
+    section Présentation
+      Préparation des slides : active, 2023-11-31,2023-12-10
+      Dépot Github: active,milestone,2023-12-10   
+      Répétition pour l'orale : active,2023-12-10,5d 
+      Présentation : active, milestone,2023-12-15
+```
