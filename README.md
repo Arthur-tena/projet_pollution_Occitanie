@@ -49,11 +49,14 @@ Pour réaliser notre projet, nous allons utiliser les packages suivant (avec leu
 10. **HTML et CSS __*et*__ / __*ou*__ Javascript** : Ces derniers sont indispensables pour créer un site web, HTML et CSS seront utilisés pour mettre en forme notre site, et peut-être que l'on utilisera Javascript pour avoir plus de flexibilité dans l'interactivité de notre site web.
 
 
-## 4. Photos qui résume le résultat souhaité : 
+## 5. Photos qui résume le résultat souhaité : 
+
+
+![alt tag](https://github.com/Arthur-tena/projet_pollution_Occitanie/assets/145753421/021a322b-0cbb-4ed9-a448-61a6a2862cd8)
 
 
 
-## 5. Affectation des tâches:
+## 6. Affectation des tâches:
   Voici le diagramme GANNT pour notre projet:
 
 
