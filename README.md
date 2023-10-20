@@ -37,11 +37,11 @@ projet_pollution_Occitanie/
 
 ##  4. Choix des packages pour le projet :
 Pour réaliser notre projet, nous allons utilier les packages suivant (avec leurs versions d'emploie) : 
-1. **Requests (2.31.0)** : on utilise ce package pour récupurer les donnés a partir du L'API publique du site data_atmo-occitanie.
+1. **Requests (2.31.0)** : on utilise ce package pour récupurer les données à partir du l'API publique du site data_atmo-occitanie.
 2. **Pandas (2.1.1)** : tout simplement pour faire des manipulations des données par exemple si on a des données 
 3. **Matplotlib (3.8.0)** :  pour visualiser les données et créer des graphes utiles pour décrire et expliquer notre solution pour le problème.
 4. **plotly (5.17.0)** : Aussi pour la visualisation et l'interactivité des données en temps réelles qui vient du l'API.
-5. **Quarto (0.1.0)** : prend charges et rendre le  code Python exécutable dans Markdwon, cela nous permet de créer, developper et déployer notre notre site web.
+5. **Quarto (0.1.0)** : prend en charges et rend le  code Python exécutable dans Markdwon, cela nous permet de créer, développer et déployer notre notre site web.
 6. **Sphinx (7.2.6)** : C'est une extension de reStructeredText qui est assez similaire à la format de Markdown, on l'utilisera pour créer et génerer documentation automatique des nouveaux classe qui vont être créer pour le __**data fetching**__ dans notre projet.
 7. **GeoPandas (0.14.0) __*ou*__ Mapbox GL** : pour créer la carte interactive on va choisir l'un des deux packages.
 8. **Pytest(7.3.0)** : ce package nous aidera à faire des tests dans notre code et facilite le développement et l'amélioration du notre code.
