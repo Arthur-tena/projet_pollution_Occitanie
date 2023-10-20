@@ -80,7 +80,7 @@ gantt
       Vizualisation des données      : active, 2023-11-16,12d 
       Carte intéractive    :active, 2023-11-18,14d
     section Présentation
-      Préparation des slides : active, 2023-11-31,2023-12-10
+      Préparation des slides : active, 2023-11-30,2023-12-10
       Dépot Github: active,milestone,2023-12-10   
       Répétition pour l'orale : active,2023-12-10,5d 
       Présentation : active, milestone,2023-12-15
