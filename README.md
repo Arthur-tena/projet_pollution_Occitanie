@@ -33,7 +33,13 @@ projet_pollution_Occitanie/
 ```
 
 ## 3. Choix des données: 
+Sélection des Sources de Données :
+Nous avons deux sources principales : les données de prévisions météorologiques SYNOP et les ensembles de données de pollution d'Atmo Occitanie.
+-Les données météorologiques (comme la température, la vitesse du vent, etc.).
+-Les ensembles de données de pollution d'Atmo Occitanie contiennent les types de mesures de pollution disponibles (comme les niveaux de dioxyde de soufre, de particules fines, etc.) pour plusieurs villes
 
+(Fréquence et Période de Collecte :
+La fréquence à laquelle les données sont collectées ou mises à jour. les données météorologiques SYNOP peuvent être collectées en temps réel, tandis que les données de pollution d'Atmo Occitanie peuvent être mises à jour quotidiennement ou mensuellement.)
 
 ##  4. Choix des packages pour le projet :
 Pour réaliser notre projet, nous allons utiliser les packages suivant (avec leurs versions d'emplois) : 
