@@ -1,4 +1,4 @@
-#  Projet de développemet logiciel sur la pollution en Occitanie 
+#  Projet de développement logiciel sur la pollution en Occitanie 
 
 ## 1. Formulation du problème :
 La pollution de l'air est devenue une préoccupation majeure dans notre société. Notre objectif est d'exploiter des données mises à disposition par l'API afin de fournir des informations aux utilisateurs de notre site web de manière interactive, en offrant un aperçu de la situation actuelle de la pollution en Occitanie. À l'aide notamment, d'analyse en temps réel et d'une carte interactive qui résume l'état de la pollution dans la région.
@@ -35,18 +35,18 @@ projet_pollution_Occitanie/
 ## 3. Choix des données: 
 Sélection des Sources de Données :
 Nous avons deux sources principales : les données de prévisions météorologiques SYNOP et les ensembles de données de pollution d'Atmo Occitanie.
--Les données météorologiques (comme la température, la vitesse du vent, etc.).
--Les ensembles de données de pollution d'Atmo Occitanie contiennent les types de mesures de pollution disponibles (comme les niveaux de dioxyde de soufre, de particules fines, etc.) pour plusieurs villes
+- Les données météorologiques (comme la température, la vitesse du vent, etc.).
+- Les ensembles de données de pollution d'Atmo Occitanie contiennent les types de mesures de pollution disponibles (comme les niveaux de dioxyde de soufre, de particules fines, etc.) pour plusieurs villes
 
 (Fréquence et Période de Collecte :
 La fréquence à laquelle les données sont collectées ou mises à jour. les données météorologiques SYNOP peuvent être collectées en temps réel, tandis que les données de pollution d'Atmo Occitanie peuvent être mises à jour quotidiennement ou mensuellement.)
 
 ##  4. Choix des packages pour le projet :
-Pour réaliser notre projet, nous allons utiliser les packages suivant (avec leurs versions d'emplois) : 
+Pour réaliser notre projet, nous avons tous créé un environnement de travail pour utiliser les packages suivants (avec leurs versions d'emplois) : 
 1. **Requests (2.31.0)** : On utilisera ce package pour récupérer les données à partir de l'API publique du site data_atmo-occitanie;
 2. **Pandas (2.1.1)** : Pour manipuler des données; 
 3. **Matplotlib (3.8.0)** : Pour visualiser les données et créer des graphes utiles pour décrire et expliquer la situation dans la région Occitanie;
-4. **plotly (5.17.0)** : Pour la visualisation et l'interactivité des données en temps réelles qui viennent de l'API;
+4. **plotly (5.17.0)** : Pour la visualisation et l'interactivité des données en temps réel qui viennent de l'API;
 5. **Quarto (0.1.0)** : Prends en charge et rend le  code Python exécutable dans Markdown, cela nous permettra de créer, développer et déployer notre site web;
 6. **Sphinx (7.2.6)** : C'est une extension de restructeredText qui est assez similaire au format de Markdown, on l'utilisera pour créer et générer la documentation automatique des nouvelles classes qui vont être créés pour le __**data fetching**__ de notre projet;
 7. **GeoPandas (0.14.0) __*ou*__ Mapbox GL** : Pour créer la carte interactive, on va choisir l'un des deux packages;
@@ -55,7 +55,7 @@ Pour réaliser notre projet, nous allons utiliser les packages suivant (avec leu
 10. **HTML et CSS __*et*__ / __*ou*__ Javascript** : Ces derniers sont indispensables pour créer un site web, HTML et CSS seront utilisés pour mettre en forme notre site, et peut-être que l'on utilisera Javascript pour avoir plus de flexibilité dans l'interactivité de notre site web.
 
 
-## 5. Photos qui résume le résultat souhaité : 
+## 5. Photo qui résume le résultat souhaité : 
 
 
 ![alt tag](https://github.com/Arthur-tena/projet_pollution_Occitanie/assets/145753421/021a322b-0cbb-4ed9-a448-61a6a2862cd8)
@@ -63,7 +63,7 @@ Pour réaliser notre projet, nous allons utiliser les packages suivant (avec leu
 
 
 ## 6. Affectation des tâches:
-  Voici le diagramme GANNT pour notre projet:
+  Voici le diagramme GANTT pour notre projet:
 
 
 
