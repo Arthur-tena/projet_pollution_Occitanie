@@ -1,0 +1,5 @@
+---
+title: "Visualisation"
+---
+
+Ici on aura les graphiques.
