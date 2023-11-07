@@ -18,8 +18,8 @@ website:
      text: GitHub
    left:
     - title: "Menu"
-     href: index.qmd
-     text: Home
+       href: index.qmd
+       text: Home
     - title: "Carte"
        href: Carte.qmd
     - title: "Visualisation"
