@@ -1,13 +1,18 @@
 project:
   type: website
-
+  render:
+   -index.qmd
+   -Carte/Carte.qmd
+   -Visualisation/Visualisation.qmd
 website:
-  title: "Pollution"
+  title: "Pollution en Occitanie"
+  page-navigation: True
+  site-url: https://arthur-tena.github.io/projet_pollution_occitanie/
+  repo-url: https://github.com/arthur-tena/projet_pollution_occitanie
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
 
 format:
   html:
