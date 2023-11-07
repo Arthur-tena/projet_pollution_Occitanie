@@ -17,11 +17,12 @@ website:
      href: https://github.com/arthur-tena/projet_pollution_occitanie
      text: GitHub
    left:
-    - href: index.qmd
-      text: Home
+    - title: "Menu"
+     href: index.qmd
+     text: Home
     - title: "Carte"
        href: Carte.qmd
-    -title: "Visualisation"
+    - title: "Visualisation"
        href: Visualisation.qmd
 
 format:
