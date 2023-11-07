@@ -10,14 +10,24 @@ website:
   site-url: https://arthur-tena.github.io/projet_pollution_occitanie/
   repo-url: https://github.com/arthur-tena/projet_pollution_occitanie
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
+  title: "Pollution en Occitanie"
+  background: primary
+  tools:
+   - icon: github
+        href: https://github.com/arthur-tena/projet_pollution_occitanie
+        text: GitHub
+  left:
+    - href: index.qmd
+      text: Home
+    - title: "Carte"
+       href: Carte.qmd
+    -title: "Visualisation"
+       href: Visualisation.qmd
 
 format:
   html:
     theme: cosmo
-    css: styles.css
+    css: custom.css
     toc: true
 
 
