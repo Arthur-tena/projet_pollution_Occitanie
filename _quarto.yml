@@ -14,8 +14,8 @@ website:
    background: primary
    tools:
    - icon: github
-        href: https://github.com/arthur-tena/projet_pollution_occitanie
-        text: GitHub
+     href: https://github.com/arthur-tena/projet_pollution_occitanie
+     text: GitHub
    left:
     - href: index.qmd
       text: Home
