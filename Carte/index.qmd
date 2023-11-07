@@ -1,5 +1,0 @@
----
-title: "Carte"
----
-
-Ici on aura le code pour la carte.
