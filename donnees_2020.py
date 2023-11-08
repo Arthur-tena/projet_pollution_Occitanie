@@ -1,26 +1,51 @@
-#Récupération de données 2020
-import requests
-import json 
 import pandas as pd
+import matplotlib.pyplot as plt
 
-url_2020='https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_annuelle_poll_princ/FeatureServer/0/query?where=1%3D1&outFields=nom_dept,nom_com,code_station,nom_poll,unite&outSR=4326&f=json'
+# Charger les données de pollution à partir d'un fichier CSV
+data = pd.read_csv(r'C:\Users\aicha\Downloads\indice_qualite_air_2020.csv')
 
-# Faire une requête GET pour obtenir les données JSON depuis l'URL
-response = requests.get(url_2020)
+# Afficher les premières lignes du DataFrame pour vérifier les données
+print(data.head())
 
-# Vérifier si la requête a réussi
-if response.status_code == 200:
-    # Les données sont dans le format JSON, vous pouvez les récupérer en utilisant .json()
-    data = response.json()
-    # Maintenant, vous pouvez travailler avec les données JSON
-    print(data)
-    #Création Dataframe
-    df_data=pd.DataFrame(data)
-    pd.set_option('display.max_rows',None)
+# Afficher les noms des colonnes
+column_names = data.columns
+print(column_names)
 
-else:
-    # En cas d'erreur dans la requête
-    print(f"La requête a échoué avec le code d'état : {response.status_code}")
+# Supprimer une ou plusieurs colonnes
+columns_to_drop = ['id', 'source', 'type_zone', 'valeur', 'qualif', 'lib_zone', 'couleur', 'ObjectId', 'code_zone', 'val_no2', 'val_o3', 'val_pm25']
+data = data.drop(columns=columns_to_drop)
+print(data.head())
 
-#Extraction des données
-#nom_poll=
+# Sélectionner les colonnes à utiliser pour le tracé
+data_to_plot = data[['date_ech', 'code_zone','valeur']]
+
+# Convertir la colonne "date_ech" en format de date (si ce n'est pas déjà le cas)
+data['date_ech'] = data['date_ech'].apply(pd.to_datetime)
+
+
+"""#Extraction des données
+temp = data[0]['hourly']['temperature_2m']
+windspeed = data[0]['hourly']['windspeed_10m']
+sunset = data[0]['daily']['sunset']
+rain = data[0]['hourly']['precipitation']
+sunrise = data[0]['daily']['sunrise']
+humidity = data[0]['hourly']['relativehumidity_2m']
+snow=data[0]['hourly']['snowfall']"""
+
+"""Regrouper les données par mois et calculer la moyenne
+data_grouped = data_to_plot.groupby(data_to_plot['date_ech'].dt.to_period('M')).mean()
+
+# Tracer un graphique à barres
+plt.figure(figsize=(4, 5))  # Facultatif : définir la taille du graphique
+plt.bar(data_grouped.index.strftime('%b %Y'), data_grouped['val_no2'], label='val_no2')
+plt.bar(data_grouped.index.strftime('%b %Y'), data_grouped['val_o3'], label='val_o3')
+plt.bar(data_grouped.index.strftime('%b %Y'), data_grouped['val_pm25'], label='val_pm25')
+bottom=data_grouped['val_no2'] + data_grouped['val_o3']
+plt.xlabel('Mois')
+plt.ylabel('Valeurs moyennes')
+plt.title('Qualité de l\'air en fonction du mois')
+plt.xticks(rotation=45)
+plt.legend()
+
+# Afficher le graphique
+plt.show()"""
