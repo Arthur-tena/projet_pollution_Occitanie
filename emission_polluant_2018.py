@@ -14,7 +14,7 @@ print(column_names)
 # Supprimer plusieurs colonnes
 columns_to_drop = ['ESRI_OID', 'lib_epci','version','annee_inv','SHAPE_Length','SHAPE_Area','ges_teqco2']
 data = data.drop(columns=columns_to_drop)
-print(data.head())
+print(data)
 
 """# Sélectionner les colonnes à utiliser pour le tracé
 data_to_plot = data[['date_ech', 'val_no2', 'val_o3', 'val_pm25']]
