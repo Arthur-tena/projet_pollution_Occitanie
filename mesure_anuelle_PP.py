@@ -29,3 +29,15 @@ for annee, group in df.groupby('date_debut'):
 for annee, df_annee in df_annee.items():
     print(f"\nDataFrame pour l'année {annee} :")
     print(df_annee)
+
+
+df_gard=df_departements['GARD']
+df_gard=df_gard.dropna()
+print(df_gard)
+df_gard = df_gard.groupby('nom_poll')['valeur'].sum().reset_index()
+
+name = df_gard['nom_poll']
+value=df_gard['valeur']
+plt.pie(value, labels=name, autopct='%1.1f%%', startangle=90, shadow=True)
+plt.axis('equal')
+plt.show()
