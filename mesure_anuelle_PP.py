@@ -10,13 +10,13 @@ print(df)
 
 
 # Créer un DataFrame par département
-#df_departements = {}
-#for dept, group in df.groupby('nom_dept'):
-# df_departements[dept] = group
+df_departements = {}
+for dept, group in df.groupby('nom_dept'):
+ df_departements[dept] = group
     # Imprimer les DataFrames pour chaque département
-# for dept, df_dept in df_departements.items():
-#     print(f"\nDataFrame pour le département {dept} :")
-#     print(df_dept)
+ for dept, df_dept in df_departements.items():
+     print(f"\nDataFrame pour le département {dept} :")
+     print(df_dept)
 
 # Créer un DataFrame par an
 df_annee = {}
