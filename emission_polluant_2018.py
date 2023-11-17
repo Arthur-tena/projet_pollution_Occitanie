@@ -23,7 +23,15 @@ if response.status_code == 200:
 
     #Supprimer les lignes avec des données manquantes
     df_data=df_data.dropna()
-else:
-    print("Erreur")
 
-print(df_data)
+    # Créer un DataFrame par département
+    df_departements = {}
+    for dept, group in df_data.groupby('nom_dept'):
+        df_departements[dept] = group
+    # Imprimer les DataFrames pour chaque département
+    for dept, df_dept in df_departements.items():
+        print(f"\nDataFrame pour le département {dept} :")
+        print(df_dept)
+
+
+
