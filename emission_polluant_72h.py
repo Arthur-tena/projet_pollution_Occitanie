@@ -35,8 +35,8 @@ if response.status_code == 200:
     df_data['longitude'], df_data['latitude'] = transform(in_proj, out_proj, df_data['x_l93'].values, df_data['y_l93'].values)
     
     print(df_data.tail()) 
+    #reste a voir comment on va les gérer pour les faires apparaitre sur la carte
 
-    
     # Créer un DataFrame par département
     df_departements = {}
     for dept, group in df_data.groupby('nom_dept'):
