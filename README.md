@@ -53,6 +53,7 @@ Pour réaliser notre projet, nous avons tous créé un environnement de travail 
 8. **Pytest(7.3.0)** : Ce package nous aidera à faire des tests de notre code et facilitera le développement et l'amélioration de celui-ci;
 9. **Github Actions Workflow et Github Pages** :
 10. **HTML et CSS __*et*__ / __*ou*__ Javascript** : Ces derniers sont indispensables pour créer un site web, HTML et CSS seront utilisés pour mettre en forme notre site, et peut-être que l'on utilisera Javascript pour avoir plus de flexibilité dans l'interactivité de notre site web.
+11. **Black** : We will be using black to formmat our python code and our ipynb files too.
 
 
 ## 5. Photo qui résume le résultat souhaité : 
