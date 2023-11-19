@@ -113,3 +113,4 @@ plt.xticks([i for i in range(len(grouped_df['date_debut'].unique()))], grouped_d
 # Afficher le graphique
 plt.show()
 # %%
+#crée un graphique qui montre l'évolution des polluants années après années avec des lignes 
