@@ -8,7 +8,7 @@ columns_to_drop=['code_station','typologie','influence','id_poll_ue', 'unite', '
 df=df.drop(columns=columns_to_drop)
 print(df)
 
-
+# %%
 # Créer un DataFrame par département
 df_departements = {}
 for dept, group in df.groupby('nom_dept'):
@@ -59,16 +59,57 @@ plt.show()
 #O3=Ozone est formé à partir de réaction chimiqe entre les oxyde d'azote (NOx) et les composés organiques volatile (COV) sous l'effet du soleil
 #Il s'agit d'un polluant secondaire car n'est pas émis directement dans l'air (Ecologie.gouv)
 
-# Créer un DataFrame par an
-df_annee = {}
 
-# Grouper par 'date_debut'
-for annee, group in df.groupby('date_debut'):
-    df_annee[annee] = group
+# %%
+import pandas as pd
+import matplotlib.pyplot as plt
 
-# Imprimer les DataFrames pour chaque année
-for annee, df_annee in df_annee.items():
-    print(f"\nDataFrame pour l'année {annee} :")
-    print(df_annee)
+# Charger les données
+data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+df = pd.DataFrame(data)
 
+# Supprimer les colonnes inutiles
+columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
+df = df.drop(columns=columns_to_drop)
 
+# Grouper par 'date_debut' et 'nom_poll', puis calculer la somme des valeurs
+grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
+
+# Trier le DataFrame par 'date_debut' et 'nom_poll'
+grouped_df = grouped_df.sort_values(by=['date_debut', 'nom_poll'])
+
+# Créer une figure
+plt.figure(figsize=(12, 8))
+
+# Obtenir la liste des couleurs standard de matplotlib
+colors = plt.cm.get_cmap('tab10', len(grouped_df['nom_poll'].unique()))
+
+# Espacement entre les groupes de barres
+bar_width = 0.2
+bar_spacing = 0.1
+
+# Créer un dictionnaire pour stocker les index de chaque année
+year_indexes = {year: i for i, year in enumerate(grouped_df['date_debut'].unique())}
+
+# Afficher un histogramme pour chaque année avec plusieurs barres pour les polluants
+for polluant, color in zip(grouped_df['nom_poll'].unique(), colors.colors):
+    plt.bar(
+        [year_indexes[annee] + j * (bar_width + bar_spacing) for j, annee in enumerate(grouped_df['date_debut'].unique())],
+        grouped_df[grouped_df['nom_poll'] == polluant]['valeur'],
+        width=bar_width,
+        label=polluant,
+        color=color
+    )
+
+# Ajouter des étiquettes et un titre
+plt.xlabel('Année')
+plt.ylabel('Somme des valeurs')
+plt.title('Valeurs des principaux polluants par année')
+plt.legend(title='Polluant', bbox_to_anchor=(1, 1))  # Placer la légende à l'extérieur du graphique
+
+# Ajuster l'emplacement des ticks sur l'axe des x
+plt.xticks([i for i in range(len(grouped_df['date_debut'].unique()))], grouped_df['date_debut'].unique())
+
+# Afficher le graphique
+plt.show()
+# %%
