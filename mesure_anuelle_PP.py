@@ -18,6 +18,47 @@ for dept, group in df.groupby('nom_dept'):
      print(f"\nDataFrame pour le département {dept} :")
      print(df_dept)
 
+num_cols = 4
+
+# Calculer le nombre total de sous-graphiques nécessaires
+total_subplots = len(df_departements)
+
+# Calculer le nombre de lignes nécessaire
+num_rows = (total_subplots + num_cols - 1) // num_cols
+
+# Créer une figure et des axes pour les sous-graphiques
+fig, axes = plt.subplots(nrows=num_rows, ncols=num_cols, figsize=(10, 3*num_rows))
+
+# Iterer sur les départements et créer un diagramme circulaire pour chacun
+for i, (dept, df_dept) in enumerate(df_departements.items()):
+    df_dept = df_dept.dropna()
+    
+    # Grouper par 'nom_poll' et calculer la somme des valeurs
+    df_dept = df_dept.groupby('nom_poll')['valeur'].sum().reset_index()
+
+    name = df_dept['nom_poll']
+    value = df_dept['valeur']
+
+    # Calculer les coordonnées (ligne, colonne) pour placer le diagramme circulaire
+    row = i // num_cols
+    col = i % num_cols
+
+    # Placer le diagramme circulaire sur l'axe correspondant
+    ax = axes[row, col]
+    ax.pie(value, labels=name, autopct='%1.1f%%', startangle=90, shadow=True)
+    ax.axis('equal')
+    ax.set_title(f"Répartition des polluants - {dept}")
+
+# Ajuster l'espacement entre les sous-graphiques
+plt.tight_layout()
+
+# Afficher la figure
+plt.show()
+
+
+#O3=Ozone est formé à partir de réaction chimiqe entre les oxyde d'azote (NOx) et les composés organiques volatile (COV) sous l'effet du soleil
+#Il s'agit d'un polluant secondaire car n'est pas émis directement dans l'air (Ecologie.gouv)
+
 # Créer un DataFrame par an
 df_annee = {}
 
@@ -31,13 +72,3 @@ for annee, df_annee in df_annee.items():
     print(df_annee)
 
 
-df_gard=df_departements['GARD']
-df_gard=df_gard.dropna()
-print(df_gard)
-df_gard = df_gard.groupby('nom_poll')['valeur'].sum().reset_index()
-
-name = df_gard['nom_poll']
-value=df_gard['valeur']
-plt.pie(value, labels=name, autopct='%1.1f%%', startangle=90, shadow=True)
-plt.axis('equal')
-plt.show()
