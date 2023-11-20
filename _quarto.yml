@@ -25,12 +25,10 @@ website:
   sidebar:
     - id: Carte
       title: "Carte"
-      collapse-level: 3
       contents:
         - Carte/Carte.qmd
     - id: Visualisation
       title: "Visualisation des données"
-      collapse-level: 3
       contents:
         - Visualisation/Visualisation.qmd
 
