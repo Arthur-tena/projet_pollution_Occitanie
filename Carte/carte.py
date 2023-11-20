@@ -1,8 +1,10 @@
 import pygal_maps_fr
-from pygal.style import LightColorizedStyle
-fr_chart = pygal_maps_fr.Regions()
-fr_chart.title = 'Some regions'
-fr_chart.add('Métropole', ['82', '11', '93'])
-fr_chart.add('Corse', ['94'])
-fr_chart.add('DOM COM', ['01', '02', '03', '04'])
-fr_chart.render()
+
+# Créer une carte de la France
+france_map = pygal_maps_fr.Regions()
+
+# Ajouter la région Occitanie avec une couleur spécifique
+france_map.add('Occitanie', ['mpl', 'lrr', 'lr', 'ar', 'hp', 'av', 'gm', 'ta'], colors=['#00FF00'])
+
+# Enregistrer la carte dans un fichier SVG
+france_map.render_to_file('carte_occitanie.svg')
