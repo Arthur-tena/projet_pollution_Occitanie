@@ -1,35 +1,41 @@
 project:
   type: website
   render:
-   -index.qmd
-   -Carte/Carte.qmd
-   -Visualisation/Visualisation.qmd
+    - index.qmd
+    - Carte/Carte.qmd
+    - Visualisation/Visualisation.qmd
 website:
+  back-to-top-navigation: true
+  page-navigation: true # true not working in website
   title: "Pollution en Occitanie"
-  page-navigation: True
   site-url: https://arthur-tena.github.io/projet_pollution_occitanie/
   repo-url: https://github.com/arthur-tena/projet_pollution_occitanie
+  repo-actions: [source, issue]
   navbar:
-   title: "Pollution en Occitanie"
-   background: primary
-   tools:
-   - icon: github
-     href: https://github.com/arthur-tena/projet_pollution_occitanie
-     text: GitHub
-   left:
-    - title: "Menu"
-       href: index.qmd
-       text: Home
-    - title: "Carte"
-       href: Carte.qmd
-    - title: "Visualisation"
-       href: Visualisation.qmd
+    title: "Pollution en Occitanie"
+    background: primary
+    search: true
+    tools:
+      - icon: github
+        href: https://github.com/arthur-tena/projet_pollution_occitanie
+        text: GitHub
+    left:
+      - sidebar:Carte
+      - sidebar:Visualisation
+  sidebar:
+    - id: Carte
+      title: "Carte"
+      collapse-level: 3
+      contents:
+        - Carte/Carte.qmd
+    - id: Visualisation
+      title: "Visualisation des données"
+      collapse-level: 3
+      contents:
+        - Visualisation/Visualisation.qmd
 
 format:
   html:
     theme: cosmo
-    css: custom.css
+    css: styles.css
     toc: true
-
-
-
