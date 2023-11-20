@@ -1,6 +1,5 @@
 ---
-title: "Untitled"
-format: html
+title: "Carte"
 ---
 ```{python}
 import folium
@@ -34,3 +33,4 @@ else:
     print("Aucune géométrie sélectionnée. Vérifiez vos codes de département.")
 ```
 
+Ici on aura le code de la carte

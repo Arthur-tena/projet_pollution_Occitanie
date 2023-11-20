@@ -1,7 +1,17 @@
 ---
-title: "Pollution"
+title: "Accueil"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+```{python}
+#| echo: false
+# %%
+import os 
+from IPython.display import display, HTML
+url_carte="https://arthur-tena.github.io/projet_pollution_occitanie/Carte/"
+url_visu="https://arthur-tena.github.io/projet_pollution_occitanie/Visualisation/"
+image_carte=occitanie-carte-france-region.png
+image_visu=graphiques.png
+html_code_carte = f'<a href="{url_carte}" target="_blank"><img src="{image_carte}" alt="Image"></a>'
+html_code_visu = f'<a href="{url_visu}" target="_blank"><img src="{image_visu}" alt="Image"></a>'
+display(HTML(html_code_carte,html_code_visu))
+```

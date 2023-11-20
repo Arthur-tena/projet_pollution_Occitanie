@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Pollution",
+    "section": "",
+    "text": "Ici ça sera notre launding page, là où on pourra accéder aux autres pages\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "Visualisation/Visualisation.html",
+    "href": "Visualisation/Visualisation.html",
+    "title": "Visualisation",
+    "section": "",
+    "text": "Ici on aura toute la visualisation des données\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "Carte/Carte.html",
+    "href": "Carte/Carte.html",
+    "title": "Carte",
+    "section": "",
+    "text": "Ici on aura le code de la carte\n\n\n\n Back to top"
+  }
+]
