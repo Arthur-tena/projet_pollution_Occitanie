@@ -31,29 +31,31 @@ if response.status_code == 200:
 
     print(df_data)
 
-    # Créer un GeoDataFrame à partir du DataFrame avec les données
-    gdf_data = gpd.GeoDataFrame(df_data, geometry=gpd.points_from_xy(df_data['x_wgs84'], df_data['y_wgs84']), crs='EPSG:4326')
-
-    # Charger les données des départements
-    departements = gpd.read_file('data/departements_occitanie.geojson')
-
-    # Fusion des deux GeoDataFrames
-    result = gpd.sjoin(gdf_data, departements, how='inner', op='within')
-
-    # Afficher le résultat
-    print(result)
-
-    """# Créer un GeoDataFrame à partir du DataFrame avec les données
-    gdf_data = gpd.GeoDataFrame(df_data, geometry=gpd.points_from_xy(df_data['x_wgs84'], df_data['y_wgs84']),crs='EPSG:4326')
-
-    #Charger les données des départements 
-    departements = gpd.read_file('data/departements_occitanie.geojson')
-
-    #Fusion des deux GeoDataFrames
-    result = gpd.sjoin(gdf_data, departements, how='inner', op='within')
-
-    # Afficher le résultat
-    print(gdf_data)"""
-
+   # Ariège
+df_Ariège = df_data[df_data['code_zone'].isin(data['Ariège'])]
+# Aude
+df_Aude = df_data[df_data['code_zone'].isin(data['Aude'])]
+# Averyron
+df_Averyron = df_data[df_data['code_zone'].isin(data['Averyron'])]
+# Gard
+df_Gard = df_data[df_data['code_zone'].isin(data['Gard'])]
+# Gers 
+df_Gers = df_data[df_data['code_zone'].isin(data['Gers'])]
+# Hautes_Pyrénées
+df_Hautes_Pyrénées = df_data[df_data['code_zone'].isin(data['Hautes-Pyrénées'])]
+# Hérlaut
+df_Hérlaut = df_data[df_data['code_zone'].isin(data['Hérlaut'])]
+#Lot
+df_Lot = df_data[df_data['code_zone'].isin(data['Lot'])]
+# Lozère
+df_Lozère = df_data[df_data['code_zone'].isin(data['Lozère'])]
+# Pyrénées_Orientales
+df_Pyrénées_Orientales = df_data[df_data['code_zone'].isin(data['Pyrénées-Orientales'])]
+# Tarn
+df_Tarn = df_data[df_data['code_zone'].isin(data['Tarn'])]
+# Tarn_garonne
+df_Tarn_garonne = df_data[df_data['code_zone'].isin(data['Tarn-et garonne'])]
+# Haute_Garonne
+df_Haute_Garonne = df_data[df_data['code_zone'].isin(data['la Haute-Garonne'])]
    
 
