@@ -1,6 +1,5 @@
 ---
 title: "Visualisation"
-format: html
 ---
 
 Ici on aura toute la visualisation des données 
