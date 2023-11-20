@@ -1,25 +1,41 @@
-import pygal_maps_fr
+import folium
+import geopandas as gpd
 
-# Créer une carte de la France
-france_map = pygal_maps_fr.Regions()
+# Lecture du fichier GeoJSON
+donnees_geojson= gpd.read_file('Carte\Data_Carte\departements.geojson')
+# Sélection des lignes avec code égal à 30 ou 34
+codes_a_selectionner = ['11','09','12','30','31','32','34','46','48','65','66','81','82']
+donnees_selectionnees = donnees_geojson[donnees_geojson['code'].isin(codes_a_selectionner)]
 
-# Ajouter la région Occitanie avec une couleur spécifique
-france_map.add('Occitanie', ['mpl', 'lrr', 'lr', 'ar', 'hp', 'av', 'gm', 'ta'], colors=['#00FF00'])
+# Affichage des lignes sélectionnées
+print(donnees_selectionnees)
 
-# Enregistrer la carte dans un fichier SVG
-france_map.render_to_file('carte_occitanie.svg')
+# Vérifier si des géométries ont été sélectionnées
+if not donnees_selectionnees.empty:
+    # Reprojeter les géométries dans un CRS projeté (par exemple, Web Mercator)
+    donnees_selectionnees = donnees_selectionnees.to_crs(epsg=3857)
 
+    # Créer une carte centrée sur la position moyenne des géométries sélectionnées
+    latitude, longitude = donnees_selectionnees.geometry.centroid.y.mean(), donnees_selectionnees.geometry.centroid.x.mean()
+    ma_carte = folium.Map(location=[latitude, longitude], zoom_start=10)
 
-import pygal  # First import pygal
+    # Ajouter les géométries sélectionnées à la carte
+    folium.GeoJson(donnees_selectionnees).add_to(ma_carte)
 
-# from pygal.maps.fr import aggregate_regions
+    # Enregistrer la carte au format HTML
+    ma_carte.save("ma_carte.html")
+    print("Carte générée avec succès.")
+else:
+    print("Aucune géométrie sélectionnée. Vérifiez vos codes de département.")
+  
 
+# Créer une carte centrée sur la position moyenne des géométries
+"""latitude, longitude = donnees_selectionnees.geometry.centroid.y.mean(), donnees_selectionnees.geometry.centroid.x.mean()
+ma_carte = folium.Map(location=[latitude, longitude], zoom_start=10)
 
-def plot_location(gd):
-    fr_chart = pygal.maps.fr.Departments(human_readable=True)
-    fr_chart.title = "Accident by region"
+# Ajouter les géométries à la carte
+folium.GeoJson(donnees_selectionnees).add_to(ma_carte)
 
-    fr_chart.add("Accidents", gd.to_dict())
-
-    fr_chart.render_in_browser()
-    # fr_chart.render_to_file('./chart.svg')  # Write the chart in the specified file
+# Enregistrer la carte au format HTML
+ma_carte.save("ma_carte.html")"""
+ma_carte
