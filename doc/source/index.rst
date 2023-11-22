@@ -10,7 +10,7 @@ Welcome to Pollution en Occitanie's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-  modules
+
 
 Indices and tables
 ==================
