@@ -67,6 +67,7 @@ if response.status_code == 200:
     df_emplacements = {}
     for emplacement, group in df_data.groupby('Emplacement'):
         df_emplacements[emplacement] = group
+        
 
     # Imprimer les DataFrames pour chaque emplacement
     for emplacement, df_emp in df_emplacements.items():
