@@ -57,14 +57,15 @@ if response.status_code == 200:
     df_emplacements = pd.read_csv('c:/Users/aicha/OneDrive/Bureau/Projet pollution Occitanie/projet_pollution_Occitanie/data/code_station_emplacement.csv', encoding='latin-1',sep=';')
 
     # Créer un dictionnaire à partir du DataFrame
-    dict_emplacements = df_emplacements.set_index('code_station')['emplacement'].to_dict()
+    dict_emplacements = df_emplacements.set_index('Code_Station')['Emplacement'].to_dict()
+    print(df_emplacements.columns,'colonne emplacements')
     
     # Ajouter une colonne 'emplacement' en utilisant le dictionnaire
-    df_data['emplacement'] = df_data['code_station'].map(dict_emplacements).fillna('Autre')
+    df_data['Emplacement'] = df_data['code_station'].map(dict_emplacements).fillna('Autre')
 
     # Créer un DataFrame par emplacement
     df_emplacements = {}
-    for emplacement, group in df_data.groupby('emplacement'):
+    for emplacement, group in df_data.groupby('Emplacement'):
         df_emplacements[emplacement] = group
 
     # Imprimer les DataFrames pour chaque emplacement
