@@ -32,30 +32,30 @@ if response.status_code == 200:
     print(df_data)
 
    # Ariège
-df_Ariège = df_data[df_data['code_zone'].isin(data['Ariège'])]
-# Aude
-df_Aude = df_data[df_data['code_zone'].isin(data['Aude'])]
-# Averyron
-df_Averyron = df_data[df_data['code_zone'].isin(data['Averyron'])]
-# Gard
-df_Gard = df_data[df_data['code_zone'].isin(data['Gard'])]
-# Gers 
-df_Gers = df_data[df_data['code_zone'].isin(data['Gers'])]
-# Hautes_Pyrénées
-df_Hautes_Pyrénées = df_data[df_data['code_zone'].isin(data['Hautes-Pyrénées'])]
-# Hérlaut
-df_Hérlaut = df_data[df_data['code_zone'].isin(data['Hérlaut'])]
-#Lot
-df_Lot = df_data[df_data['code_zone'].isin(data['Lot'])]
-# Lozère
-df_Lozère = df_data[df_data['code_zone'].isin(data['Lozère'])]
-# Pyrénées_Orientales
-df_Pyrénées_Orientales = df_data[df_data['code_zone'].isin(data['Pyrénées-Orientales'])]
-# Tarn
-df_Tarn = df_data[df_data['code_zone'].isin(data['Tarn'])]
-# Tarn_garonne
-df_Tarn_garonne = df_data[df_data['code_zone'].isin(data['Tarn-et garonne'])]
-# Haute_Garonne
-df_Haute_Garonne = df_data[df_data['code_zone'].isin(data['la Haute-Garonne'])]
+    df_Ariège = df_data[df_data['code_zone'].isin(data['ariège'])]
+    # Aude
+    df_Aude = df_data[df_data['code_zone'].isin(data['Aude'])]
+    # Averyron
+    df_Averyron = df_data[df_data['code_zone'].isin(data['Averyron'])]
+    # Gard
+    df_Gard = df_data[df_data['code_zone'].isin(data['Gard'])]
+    # Gers 
+    df_Gers = df_data[df_data['code_zone'].isin(data['Gers'])]
+    # Hautes_Pyrénées
+    df_Hautes_Pyrénées = df_data[df_data['code_zone'].isin(data['Hautes-Pyrénées'])]
+    # Hérlaut
+    df_Hérlaut = df_data[df_data['code_zone'].isin(data['Hérlaut'])]
+    #Lot
+    df_Lot = df_data[df_data['code_zone'].isin(data['Lot'])]
+    # Lozère
+    df_Lozère = df_data[df_data['code_zone'].isin(data['Lozère'])]
+    # Pyrénées_Orientales
+    df_Pyrénées_Orientales = df_data[df_data['code_zone'].isin(data['Pyrénées-Orientales'])]
+    # Tarn
+    df_Tarn = df_data[df_data['code_zone'].isin(data['Tarn'])]
+    # Tarn_garonne
+    df_Tarn_garonne = df_data[df_data['code_zone'].isin(data['Tarn-et garonne'])]
+    # Haute_Garonne
+    df_Haute_Garonne = df_data[df_data['code_zone'].isin(data['la Haute-Garonne'])]
    
 
