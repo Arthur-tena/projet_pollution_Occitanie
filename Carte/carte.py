@@ -10,6 +10,7 @@ occitanie_geojson = occitanie_geojson.to_crs(epsg=4326)
 # Créer une carte centrée sur l'Occitanie
 latitude, longitude = 43.648785, 2.343568
 carte = folium.Map(location=[latitude, longitude], zoom_start=8)
+folium.TileLayer('cartodbpositron').add_to(carte)
 
 # Ajouter les contours de l'Occitanie à la carte
 folium.GeoJson(occitanie_geojson).add_to(carte)
