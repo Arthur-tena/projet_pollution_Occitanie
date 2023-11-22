@@ -41,33 +41,37 @@ if response.status_code == 200:
     df_departements = {}
     for dept, group in df_data.groupby('nom_dept'):
         df_departements[dept] = group
-    """# Imprimer les DataFrames pour chaque département
+    # Imprimer les DataFrames pour chaque département
     for dept, df_dept in df_departements.items():
         print(f"\nDataFrame pour le département {dept} :")
     pd.set_option('display.max_rows', None)  # Afficher toutes les lignes du DataFrame    
-    print(df_departements['GERS'])"""
+    print(df_departements['GERS'])
     
     # Regrouper les données par code_station dans chaque DataFrame de département
     df_departements_par_station = {}
     for dept, df_dept in df_departements.items():
         df_station = df_dept.groupby('code_station')
-        df_departements_par_station[dept] = df_station
-
-    # Imprimer les DataFrames regroupés par code_station pour chaque département
-    for dept, df_station in df_departements_par_station.items():
-        print(f"\nDataFrame pour le département {dept} regroupé par code_station:")
-        for station, df in df_station:
-            print(f"\nCode de station {station}:")
-            
+        df_departements_par_station[dept] = df_station      
     
-    # Créer un dictionnaire pour stocker les DataFrames par emplacement
+    # Charger les données depuis le fichier CSV
+    df_emplacements = pd.read_csv('c:/Users/aicha/OneDrive/Bureau/Projet pollution Occitanie/projet_pollution_Occitanie/data/code_station_emplacement.csv', encoding='latin-1',sep=';')
+
+    # Créer un dictionnaire à partir du DataFrame
+    dict_emplacements = df_emplacements.set_index('Code_Station')['Emplacement'].to_dict()
+    print(df_emplacements.columns,'colonne emplacements')
+    
+    # Ajouter une colonne 'emplacement' en utilisant le dictionnaire
+    df_data['Emplacement'] = df_data['code_station'].map(dict_emplacements).fillna('Autre')
+
+    # Créer un DataFrame par emplacement
     df_emplacements = {}
-    # Ajouter des paires clé-valeur
-    df_emplacements['FR50004','FR50021','FR50030','FR50039','FR50040','FR50048','FR50054','FR50821'] = 'Toulouse'
+    for emplacement, group in df_data.groupby('Emplacement'):
+        df_emplacements[emplacement] = group
 
-    # Regrouper les données par code_station dans l'ensemble du DataFrame
-    df_par_station = df_data.groupby('code_station')
+    # Imprimer les DataFrames pour chaque emplacement
+    for emplacement, df_emp in df_emplacements.items():
+        print(f"\nDataFrame pour l'emplacement {emplacement} :")
+        print(df_emp)
 
-    print(df_par_station,'par station')
 
 
