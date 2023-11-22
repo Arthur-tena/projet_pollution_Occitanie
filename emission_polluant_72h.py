@@ -30,8 +30,6 @@ if response.status_code == 200:
     in_proj = Proj(init='epsg:2154')  # Lambert 93
     out_proj = Proj(init='epsg:4326')  # WGS84 (latitude, longitude)
     df_data['longitude'], df_data['latitude'] = transform(in_proj, out_proj, df_data['x_l93'].values, df_data['y_l93'].values)
-    
-    print(df_data.tail()) 
 
     # Supposons que vous avez une colonne 'date_debut' avec des durées en millisecondes
     df_data['date_debut'] = pd.to_datetime(df_data['date_debut'], unit='ms')
@@ -43,60 +41,33 @@ if response.status_code == 200:
     df_departements = {}
     for dept, group in df_data.groupby('nom_dept'):
         df_departements[dept] = group
-    # Imprimer les DataFrames pour chaque département
+    """# Imprimer les DataFrames pour chaque département
     for dept, df_dept in df_departements.items():
         print(f"\nDataFrame pour le département {dept} :")
-        print(df_dept)
+    pd.set_option('display.max_rows', None)  # Afficher toutes les lignes du DataFrame    
+    print(df_departements['GERS'])"""
     
-    
-    
-    """df_departements = {}
-    for dept, group in df_data.groupby('nom_dept'):
-        df_departements[dept] = group
-    # Imprimer les DataFrames pour chaque département
+    # Regrouper les données par code_station dans chaque DataFrame de département
+    df_departements_par_station = {}
     for dept, df_dept in df_departements.items():
-        print(f"\nDataFrame pour le département {dept} :")
-        print(df_dept)"""
+        df_station = df_dept.groupby('code_station')
+        df_departements_par_station[dept] = df_station
 
-        # Créer une colonne 'polluant_valeur' en combinant le nom du polluant et la valeur
-        #df_data['polluant_valeur'] = df_data['nom_poll'] + '_' + df_data['valeur'].astype(str)
+    # Imprimer les DataFrames regroupés par code_station pour chaque département
+    for dept, df_station in df_departements_par_station.items():
+        print(f"\nDataFrame pour le département {dept} regroupé par code_station:")
+        for station, df in df_station:
+            print(f"\nCode de station {station}:")
+            
+    
+    # Créer un dictionnaire pour stocker les DataFrames par emplacement
+    df_emplacements = {}
+    # Ajouter des paires clé-valeur
+    df_emplacements['FR50004','FR50021','FR50030','FR50039','FR50040','FR50048','FR50054','FR50821'] = 'Toulouse'
 
-        # Créer un DataFrame par département en regroupant par la colonne 'polluant_valeur'
-    # Créer un DataFrame par département
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    """df_departements = {}
-    for dept, group in df_data.groupby('nom_dept'):
-        # Regrouper les polluants dans chaque DataFrame de département
-        df_dept_polluants = group.groupby('nom_poll').agg({'unite': 'first'}).reset_index()
-        df_departements[dept] = df_dept_polluants
+    # Regrouper les données par code_station dans l'ensemble du DataFrame
+    df_par_station = df_data.groupby('code_station')
 
-        # Imprimer les DataFrames pour chaque département
-        print(f"\nDataFrame pour le département {dept} avec les polluants regroupés :")
-        print(df_dept_polluants)"""
-
+    print(df_par_station,'par station')
 
 
