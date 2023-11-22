@@ -18,6 +18,6 @@
     "href": "Carte/Carte.html",
     "title": "Carte",
     "section": "",
-    "text": "Ici on aura le code de la carte\n\n\n\n Back to top"
+    "text": "import folium\nimport geopandas as gpd\n\ncarte=folium.Map(location=[43.648785,2.343568],zoom_start=8)\ncarte\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\nIci on aura le code de la carte\n\n\n\n Back to top"
   }
 ]
