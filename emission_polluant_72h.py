@@ -60,14 +60,19 @@ if response.status_code == 200:
             print(f"\nCode de station {station}:")
             
     
-    # Créer un dictionnaire pour stocker les DataFrames par emplacement
-    df_emplacements = {}
-    # Ajouter des paires clé-valeur
-    df_emplacements['FR50004','FR50021','FR50030','FR50039','FR50040','FR50048','FR50054','FR50821'] = 'Toulouse'
+   # Charger les données depuis le fichier CSV
+    df_emplacements = pd.read_csv('data\code_station_emplacement.csv', encoding='latin-1')
+
+
+    # Créer un dictionnaire à partir du DataFrame
+    dict_emplacements = dict(zip(df_emplacements['code_station'], df_emplacements['emplacement']))
 
     # Regrouper les données par code_station dans l'ensemble du DataFrame
     df_par_station = df_data.groupby('code_station')
 
-    print(df_par_station,'par station')
-
+    # Utiliser le dictionnaire pour associer chaque code de station à son emplacement correspondant
+    for code_station, df_station in df_par_station:
+        emplacement = dict_emplacements.get(code_station, 'Autre')  # 'Autre' par défaut si le code n'est pas dans le dictionnaire
+        print(f"\nDataFrame pour la station {code_station} à l'emplacement {emplacement}:")
+        print(df_station)
 
