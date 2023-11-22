@@ -1,6 +1,7 @@
 ---
 title: "Carte"
 ---
+
 ```{python}
 import folium
 import geopandas as gpd
