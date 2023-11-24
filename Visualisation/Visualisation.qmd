@@ -1,5 +1,134 @@
 ---
-title: "Visualisation"
+title: "Visualisation de nos données"
 ---
 
-Ici on aura toute la visualisation des données 
+# Visualisation des données des principaux polluants par année :
+
+## Concentrons nous sur les concentrations observées dans chaque départements...
+
+Sur le graphique ci-dessous, nous pouvons voir un diagramme en camenbert montrant la proportion des polluants dans les différents départements entre 2018 et aujourd'hui, nous avons regroupé nos données par départeements sans tenir compte de l'annéee mais seulement des départements dans lesquels les mesures ont été prélevées.
+
+```{python}
+#| echo: false
+# %%
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+data=pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+df=pd.DataFrame(data)
+columns_to_drop=['code_station','typologie','influence','id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid' ]
+df=df.drop(columns=columns_to_drop)
+df_departements = {}
+for dept, group in df.groupby('nom_dept'):
+ df_departements[dept] = group
+
+num_cols = 4
+num_rows=3
+fig, axes = plt.subplots(nrows=num_rows, ncols=num_cols, figsize=(7.5, 6))
+for i, (dept, df_dept) in enumerate(df_departements.items()):
+    df_dept = df_dept.dropna()
+    
+    df_dept = df_dept.groupby('nom_poll')['valeur'].sum().reset_index()
+
+    name = df_dept['nom_poll']
+    value = df_dept['valeur']
+
+    row = i // num_cols
+    col = i % num_cols
+
+    ax = axes[row, col]
+    ax.pie(value, labels=name, autopct='%1.1f%%', startangle=90, shadow=True)
+    ax.axis('equal')
+    ax.set_title(f"{dept}")
+plt.tight_layout()
+
+plt.show()
+```
+
+Nous remarquons que le polluant principal de ses dernières années dans la région Occitanie est l'O3, il s'agit d'un pollant dit secondaire car il n'est pas émis directement dans l'air mais est formé à partir de réaction chimiqe entre les oxyde d'azote (NOx) et les composés organiques volatile (COV) sous l'effet du soleil. Oxyde d'azote qui se trouve souvent être le deuxième polluant que l'on a le plus mesuré dans l'air.
+
+## Et maintenant qu'est ce que ça donne par année ? 
+
+Dans le graphique ci-après , nous pouvons voir la proportion des polluants par années, chaque polluant à une couleur spécifique.
+```{python}
+#| echo: false
+# %%
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+df = pd.DataFrame(data)
+
+columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
+df = df.drop(columns=columns_to_drop)
+grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
+grouped_df = grouped_df.sort_values(by=['date_debut', 'nom_poll'])
+grouped_df['date_debut'] = pd.to_datetime(grouped_df['date_debut'])
+grouped_df['date_debut'] = grouped_df['date_debut'].dt.year
+plt.figure(figsize=(7.5, 6))
+colors = plt.cm.get_cmap('tab10', len(grouped_df['nom_poll'].unique()))
+bar_width = 0.2
+bar_spacing = 0.1
+year_indexes = {year: i for i, year in enumerate(grouped_df['date_debut'].unique())}
+for polluant, color in zip(grouped_df['nom_poll'].unique(), colors.colors):
+    plt.bar(
+        [year_indexes[annee] + j * (bar_width + bar_spacing) for j, annee in enumerate(grouped_df['date_debut'].unique())],
+        grouped_df[grouped_df['nom_poll'] == polluant]['valeur'],
+        width=bar_width,
+        label=polluant,
+        color=color
+    )
+plt.xlabel('Année')
+plt.ylabel('Somme des valeurs')
+plt.title('Valeurs des principaux polluants par année')
+plt.legend(title='Polluant', bbox_to_anchor=(1, 1))
+plt.xticks([i for i in range(len(grouped_df['date_debut'].unique()))], grouped_df['date_debut'].unique())
+
+plt.show()
+
+```
+
+Nous remarquons que les polluants que l'on mesure le plus dans l'Occitanie sont l'O3, le PM10 et le PM2.5, ce qui rentre en conflit avec ce que l'on avait observé avec les camenberts du graphique précédent. 
+
+## Aie aie aie l'évolution !!
+
+```{python}
+#| echo: false
+# %%
+import pandas as pd
+import plotly.graph_objects as go
+import numpy as np
+
+data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+df = pd.DataFrame(data)
+columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
+df = df.drop(columns=columns_to_drop)
+grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
+grouped_df = grouped_df.sort_values(by=['date_debut', 'nom_poll'])
+grouped_df['date_debut'] = pd.to_datetime(grouped_df['date_debut'])
+grouped_df['date_debut'] = grouped_df['date_debut'].dt.year
+
+fig = go.FigureWidget()
+polluants = sorted(grouped_df["nom_poll"].unique())
+for polluant in polluants:
+    trace_data = grouped_df[grouped_df["nom_poll"] == polluant]
+    fig.add_trace(
+        go.Scatter(
+            x=trace_data["date_debut"],
+            y=trace_data["valeur"],
+            mode='lines',
+            name=f"Polluant = {polluant}",
+        )
+    )
+fig.update_layout(
+    template="simple_white",
+    title="Polluants en fonction de l'année",
+    showlegend=True,
+    xaxis_title="Polluants",
+    yaxis_title="Fréquence normalisée",
+)
+
+
+fig.show()
+```
+
