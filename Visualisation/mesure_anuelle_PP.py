@@ -114,3 +114,20 @@ plt.xticks([i for i in range(len(grouped_df['date_debut'].unique()))], grouped_d
 plt.show()
 # %%
 #crée un graphique qui montre l'évolution des polluants années après années avec des lignes 
+import pandas as pd
+import matplotlib.pyplot as plt
+import plotly.graph_objects as go
+import numpy as np
+from scipy import stats
+
+# Charger les données
+data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+df = pd.DataFrame(data)
+
+# Supprimer les colonnes inutiles
+columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
+df = df.drop(columns=columns_to_drop)
+
+# Grouper par 'date_debut' et 'nom_poll', puis calculer la somme des valeurs
+grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
+print(grouped_df)
