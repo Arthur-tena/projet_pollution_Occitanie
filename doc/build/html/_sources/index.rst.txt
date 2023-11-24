@@ -23,5 +23,5 @@ Sommaire
 * :ref:`Acceuil`
 * :ref:`Indice de qualité de l'air`
 * :ref:`Épisodes de Pollution`
-* :ref:`Concentrations observées`
+* :ref:`Concentrations observées `
 * :ref:`Carte intéractive de l'Occitanie`
