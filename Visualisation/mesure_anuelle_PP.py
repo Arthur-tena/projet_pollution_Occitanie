@@ -115,10 +115,8 @@ plt.show()
 # %%
 #crée un graphique qui montre l'évolution des polluants années après années avec des lignes 
 import pandas as pd
-import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import numpy as np
-from scipy import stats
 
 # Charger les données
 data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
@@ -130,4 +128,34 @@ df = df.drop(columns=columns_to_drop)
 
 # Grouper par 'date_debut' et 'nom_poll', puis calculer la somme des valeurs
 grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
-print(grouped_df)
+grouped_df = grouped_df.sort_values(by=['date_debut', 'nom_poll'])
+
+# Créer la figure
+fig = go.FigureWidget()
+
+polluants = sorted(df["nom_poll"].unique())
+for polluant in polluants:
+    trace_data = grouped_df[grouped_df["nom_poll"] == polluant]
+    fig.add_trace(
+        go.Scatter(
+            x=trace_data["date_debut"],
+            y=trace_data["valeur"],
+            mode='lines',
+            name=f"Polluant = {polluant}",
+        )
+    )
+
+# Mise en forme du layout
+fig.update_layout(
+    template="simple_white",
+    title="Polluants en fonction de l'année",
+    showlegend=True,  # Afficher la légende
+    xaxis_title="Polluants",
+    yaxis_title="Fréquence normalisée",
+)
+
+# Afficher la figure
+fig.show()
+
+
+# %%
