@@ -7,12 +7,10 @@ Pollution en Occitanie
 ==================================================
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 3
    :caption: Contents:
    index
-   Visualisation/Ind_air/Visualisation
-   Visualisation/Episode_Pollution/Visualisation
-   Visualisation/Concentration_obs/Visualisation
+   Visualisation/Visualisation
    Carte/Carte
 
 
@@ -22,6 +20,4 @@ Sommaire
 
 * :ref:`Acceuil`
 * :ref:`Indice de qualité de l'air`
-* :ref:`Épisodes de Pollution`
-* :ref:`Concentrations observées`
 * :ref:`Carte intéractive de l'Occitanie`
