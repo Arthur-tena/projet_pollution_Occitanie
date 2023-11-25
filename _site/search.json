@@ -11,7 +11,7 @@
     "href": "Visualisation/Visualisation.html",
     "title": "Visualisation de nos données",
     "section": "",
-    "text": "Sur le graphique ci-dessous, nous pouvons voir un diagramme en camenbert montrant la proportion des polluants dans les différents départements entre 2018 et aujourd’hui, nous avons regroupé nos données par départeements sans tenir compte de l’annéee mais seulement des départements dans lesquels les mesures ont été prélevées.\n\n\n\n\n\nNous remarquons que le polluant principal de ses dernières années dans la région Occitanie est l’O3, il s’agit d’un pollant dit secondaire car il n’est pas émis directement dans l’air mais est formé à partir de réaction chimiqe entre les oxyde d’azote (NOx) et les composés organiques volatile (COV) sous l’effet du soleil. Oxyde d’azote qui se trouve souvent être le deuxième polluant que l’on a le plus mesuré dans l’air.\n\n\n\nDans le graphique ci-après , nous pouvons voir la proportion des polluants par années, chaque polluant à une couleur spécifique.\n\n\n/var/folders/9j/zsfd4_7n3qq8kchmn7xm9jwm0000gn/T/ipykernel_47184/4199858611.py:15: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\nNous remarquons que les polluants que l’on mesure le plus dans l’Occitanie sont l’O3, le PM10 et le PM2.5, ce qui rentre en conflit avec ce que l’on avait observé avec les camenberts du graphique précédent."
+    "text": "Sur le graphique ci-dessous, nous pouvons voir un diagramme en camenbert montrant la proportion des polluants dans les différents départements entre 2018 et aujourd’hui, nous avons regroupé nos données par départeements sans tenir compte de l’annéee mais seulement des départements dans lesquels les mesures ont été prélevées.1\n\n\n\n\n\n\n\n\nDans le graphique ci-après , nous pouvons voir la proportion des polluants par années, chaque polluant à une couleur spécifique.\n\n\n/var/folders/9j/zsfd4_7n3qq8kchmn7xm9jwm0000gn/T/ipykernel_6079/4199858611.py:15: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nLes polluants que l’on mesure le plus dans l’Occitanie sont l’O3, le PM10 et le PM2.5, ce qui rentre en conflit avec ce que l’on avait observé avec les camenberts du graphique précédent."
   },
   {
     "objectID": "Carte/Carte.html",
@@ -25,13 +25,20 @@
     "href": "Visualisation/Visualisation.html#concentrons-nous-sur-les-concentrations-observées-dans-chaque-départements",
     "title": "Visualisation de nos données",
     "section": "",
-    "text": "Sur le graphique ci-dessous, nous pouvons voir un diagramme en camenbert montrant la proportion des polluants dans les différents départements entre 2018 et aujourd’hui, nous avons regroupé nos données par départeements sans tenir compte de l’annéee mais seulement des départements dans lesquels les mesures ont été prélevées.\n\n\n\n\n\nNous remarquons que le polluant principal de ses dernières années dans la région Occitanie est l’O3, il s’agit d’un pollant dit secondaire car il n’est pas émis directement dans l’air mais est formé à partir de réaction chimiqe entre les oxyde d’azote (NOx) et les composés organiques volatile (COV) sous l’effet du soleil. Oxyde d’azote qui se trouve souvent être le deuxième polluant que l’on a le plus mesuré dans l’air."
+    "text": "Sur le graphique ci-dessous, nous pouvons voir un diagramme en camenbert montrant la proportion des polluants dans les différents départements entre 2018 et aujourd’hui, nous avons regroupé nos données par départeements sans tenir compte de l’annéee mais seulement des départements dans lesquels les mesures ont été prélevées.1"
   },
   {
     "objectID": "Visualisation/Visualisation.html#et-maintenant-quest-ce-que-ça-donne-par-année",
     "href": "Visualisation/Visualisation.html#et-maintenant-quest-ce-que-ça-donne-par-année",
     "title": "Visualisation de nos données",
     "section": "",
-    "text": "Dans le graphique ci-après , nous pouvons voir la proportion des polluants par années, chaque polluant à une couleur spécifique.\n\n\n/var/folders/9j/zsfd4_7n3qq8kchmn7xm9jwm0000gn/T/ipykernel_47184/4199858611.py:15: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\nNous remarquons que les polluants que l’on mesure le plus dans l’Occitanie sont l’O3, le PM10 et le PM2.5, ce qui rentre en conflit avec ce que l’on avait observé avec les camenberts du graphique précédent."
+    "text": "Dans le graphique ci-après , nous pouvons voir la proportion des polluants par années, chaque polluant à une couleur spécifique.\n\n\n/var/folders/9j/zsfd4_7n3qq8kchmn7xm9jwm0000gn/T/ipykernel_6079/4199858611.py:15: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nLes polluants que l’on mesure le plus dans l’Occitanie sont l’O3, le PM10 et le PM2.5, ce qui rentre en conflit avec ce que l’on avait observé avec les camenberts du graphique précédent."
+  },
+  {
+    "objectID": "Visualisation/Visualisation.html#footnotes",
+    "href": "Visualisation/Visualisation.html#footnotes",
+    "title": "Visualisation de nos données",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nNous remarquons que le polluant principal de ses dernières années dans la région Occitanie est l’O3, il s’agit d’un pollant dit secondaire car il n’est pas émis directement dans l’air mais est formé à partir de réaction chimiqe entre les oxyde d’azote (NOx) et les composés organiques volatile (COV) sous l’effet du soleil. Oxyde d’azote qui se trouve souvent être le deuxième polluant que l’on a le plus mesuré dans l’air.↩︎"
   }
 ]
