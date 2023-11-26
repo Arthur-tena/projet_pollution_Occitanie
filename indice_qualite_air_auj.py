@@ -42,8 +42,7 @@ if response.status_code == 200:
 
     # Create a dictionary that assign each dept to it's codes of zone   
     data2= dict(zip(dept_names,dept_lists))
-    print("Names of departments from data:", data.keys())
-    print("Names of departments from data2:", data2.keys())
+
     
     # Ariège
     df_Ariège = df_data[df_data['code_zone'].isin(data2['Ariège'])]
@@ -71,6 +70,9 @@ if response.status_code == 200:
     df_Tarn_garonne = df_data[df_data['code_zone'].isin(data2['Tarn-et garonne'])]
     # Haute_Garonne
     df_Haute_Garonne = df_data[df_data['code_zone'].isin(data2['Haute-Garonne'])]
+
+    print(df_Averyron)
+
 
     
 

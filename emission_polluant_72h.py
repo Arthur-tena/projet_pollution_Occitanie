@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import requests
 from pyproj import Proj, transform
 from datetime import datetime, timedelta
+import os
 
 url='https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_72h_poll_princ/FeatureServer/0/query?where=1%3D1&outFields=nom_dept,nom_station,code_station,nom_poll,valeur,unite,date_debut,x_l93,y_l93&outSR=4326&f=json'
 
@@ -58,7 +59,6 @@ if response.status_code == 200:
 
     # Créer un dictionnaire à partir du DataFrame
     dict_emplacements = df_emplacements.set_index('Code_Station')['Emplacement'].to_dict()
-    print(df_emplacements.columns,'colonne emplacements')
     
     # Ajouter une colonne 'emplacement' en utilisant le dictionnaire
     df_data['Emplacement'] = df_data['code_station'].map(dict_emplacements).fillna('Autre')
@@ -73,6 +73,21 @@ if response.status_code == 200:
     for emplacement, df_emp in df_emplacements.items():
         print(f"\nDataFrame pour l'emplacement {emplacement} :")
         print(df_emp)
+    
+    # Répertoire où vous souhaitez enregistrer les fichiers CSV
+    output_directory = 'c:/Users/aicha/OneDrive/Bureau/Projet pollution Occitanie/projet_pollution_Occitanie/data'
+
+    # Enregistrez chaque département dans un fichier CSV
+    for dept, df_dept in df_departements.items():
+        # Construisez le chemin complet du fichier CSV
+        csv_filename = os.path.join(output_directory, f"{dept}.csv")
+
+        # Enregistrez le DataFrame au format CSV
+        df_dept.to_csv(csv_filename, index=False)
+
+        print(f"Fichier CSV enregistré pour le département {dept} : {csv_filename}")
+
+
 
 
 
