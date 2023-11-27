@@ -1,2 +1,5 @@
 
 /.quarto/
+*.html
+/*_files/
+*.DS_store
