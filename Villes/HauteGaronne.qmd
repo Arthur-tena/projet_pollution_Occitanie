@@ -41,7 +41,7 @@ for polluant in polluants:
 
 # Créer un graphique en ligne pour chaque polluant
 for polluant in polluants:
-    fig = px.scatter(df[df['nom_poll'] == polluant], x='date_debut', y='valeur', 
+    fig = px.scatter(filt_data[filt_data['nom_poll'] == polluant], x='date_debut', y='valeur', 
                   title=f'Évolution de {polluant} au fil du temps dans le département Haute-Garonne',
                   labels={'valeur':'Concentration de Polluant', 'date_debut': 'Date'})
 
