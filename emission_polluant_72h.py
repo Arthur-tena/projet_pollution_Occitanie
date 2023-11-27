@@ -86,6 +86,17 @@ if response.status_code == 200:
         df_dept.to_csv(csv_filename, index=False)
 
         print(f"Fichier CSV enregistré pour le département {dept} : {csv_filename}")
+    
+    # Enregistrez un fichier CSV spécifique pour l'emplacement 'Toulouse'
+    csv_filename_toulouse = os.path.join(output_directory, 'Toulouse.csv')
+    df_emplacements['Toulouse'].to_csv(csv_filename_toulouse, index=False)
+    print(f"Fichier CSV enregistré pour l'emplacement Toulouse : {csv_filename_toulouse}")
+
+    # Enregistrez un fichier CSV spécifique pour l'emplacement 'Montpellier'
+    csv_filename_montpellier = os.path.join(output_directory, 'Montpellier.csv')
+    df_emplacements['Montpellier'].to_csv(csv_filename_montpellier, index=False)
+    print(f"Fichier CSV enregistré pour l'emplacement Montpellier : {csv_filename_montpellier}")
+        
 
 
 
