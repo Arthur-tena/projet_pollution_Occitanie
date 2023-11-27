@@ -1,3 +1,9 @@
+---
+title: "Hérault"
+format: html
+---
+```{python}
+#|code-fold: true
 import pandas as pd
 import requests
 import plotly.express as px
@@ -46,6 +52,6 @@ for polluant in polluants:
                   labels={'valeur':'Concentration de Polluant', 'date_debut': 'Date'})
 
     fig.show()
-
+```
 
 

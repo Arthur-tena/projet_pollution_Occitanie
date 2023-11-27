@@ -35,7 +35,7 @@ if response.status_code == 200:
 
     # Liste des polluants à afficher
     polluants = ['NO', 'NOX', 'O3', 'PM10', 'NO2','PM2.5']
-    # Boucle à travers les polluants pour créer les graphiques
+# Boucle à travers les polluants pour créer les graphiques
 for polluant in polluants:
     #Regrouper les données de la ville de Montpellier
     filt_data = df_data[(df_data['nom_com'] == 'MONTPELLIER') & (df_data['nom_poll'] == polluant)]
