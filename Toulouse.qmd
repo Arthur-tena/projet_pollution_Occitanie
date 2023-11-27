@@ -30,7 +30,7 @@ if response.status_code == 200:
 
     # Création d'un DataFrame
     df_data = pd.DataFrame(records)
-    df_data['valeur'].fillna(0, inplace=True)
+    df_data['valeur'].drop(0, inplace=True)
     # Conversion des coordonnées Lambert 93 en latitude et longitude
     in_proj = Proj(init='epsg:2154')  # Lambert 93
     out_proj = Proj(init='epsg:4326')  # WGS84 (latitude, longitude)

@@ -28,7 +28,7 @@ if response.status_code == 200:
 
     # Création d'un DataFrame
     df_h = pd.DataFrame(records)
-    df_h['valeur'].fillna(0, inplace=True)
+    df_h['valeur'].dropna()
     # Conversion de la colonne 'date_debut' qui est en millisecondes
     df_h['date_debut'] = pd.to_datetime(df_h['date_debut'], unit='ms')
 

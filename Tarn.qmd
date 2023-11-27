@@ -28,7 +28,7 @@ if response.status_code == 200:
 
     # Création d'un DataFrame
     df = pd.DataFrame(records)
-    df['valeur'].fillna(0, inplace=True)
+    df['valeur'].dropna()
     # Conversion de la colonne 'date_debut' qui est en millisecondes
     df['date_debut'] = pd.to_datetime(df['date_debut'], unit='ms')
 # Liste des polluants à afficher
