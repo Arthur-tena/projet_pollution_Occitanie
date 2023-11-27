@@ -30,32 +30,49 @@ if response.status_code == 200:
     df_data['date_formatee'] = df_data['date_ech'].dt.strftime('%d/%m/%Y')
 
     print(df_data)
+    #c:/Users/aicha/OneDrive/Bureau/Projet pollution Occitanie/projet_pollution_Occitanie/data
+    # Lecture d'un csv contenant tout les codes zone associées aux 13 départements
+    dept = pd.read_excel("data/dept.xlsx")
 
-   # Ariège
-df_Ariège = df_data[df_data['code_zone'].isin(data['Ariège'])]
-# Aude
-df_Aude = df_data[df_data['code_zone'].isin(data['Aude'])]
-# Averyron
-df_Averyron = df_data[df_data['code_zone'].isin(data['Averyron'])]
-# Gard
-df_Gard = df_data[df_data['code_zone'].isin(data['Gard'])]
-# Gers 
-df_Gers = df_data[df_data['code_zone'].isin(data['Gers'])]
-# Hautes_Pyrénées
-df_Hautes_Pyrénées = df_data[df_data['code_zone'].isin(data['Hautes-Pyrénées'])]
-# Hérlaut
-df_Hérlaut = df_data[df_data['code_zone'].isin(data['Hérlaut'])]
-#Lot
-df_Lot = df_data[df_data['code_zone'].isin(data['Lot'])]
-# Lozère
-df_Lozère = df_data[df_data['code_zone'].isin(data['Lozère'])]
-# Pyrénées_Orientales
-df_Pyrénées_Orientales = df_data[df_data['code_zone'].isin(data['Pyrénées-Orientales'])]
-# Tarn
-df_Tarn = df_data[df_data['code_zone'].isin(data['Tarn'])]
-# Tarn_garonne
-df_Tarn_garonne = df_data[df_data['code_zone'].isin(data['Tarn-et garonne'])]
-# Haute_Garonne
-df_Haute_Garonne = df_data[df_data['code_zone'].isin(data['la Haute-Garonne'])]
-   
+    # Get  13 clean (i.e doesn't contain empty values) lists that contains the codes of zones of each departments from our data frame "dept"
+    dept_lists = [dept[col].dropna().tolist() for col in dept.columns]
+
+    # From the "dept" df get the names of each department 
+    dept_names = dept.columns.to_list()
+
+    # Create a dictionary that assign each dept to it's codes of zone   
+    data2= dict(zip(dept_names,dept_lists))
+
+    
+    # Ariège
+    df_Ariège = df_data[df_data['code_zone'].isin(data2['Ariège'])]
+    # Aude
+    df_Aude = df_data[df_data['code_zone'].isin(data2['Aude'])]
+    # Averyron
+    df_Averyron = df_data[df_data['code_zone'].isin(data2['Averyron'])]
+    # Gard
+    df_Gard = df_data[df_data['code_zone'].isin(data2['Gard'])]
+    # Gers 
+    df_Gers = df_data[df_data['code_zone'].isin(data2['Gers'])]
+    # Hautes_Pyrénées
+    df_Hautes_Pyrénées = df_data[df_data['code_zone'].isin(data2['Hautes-Pyrénées'])]
+    # Hérlaut
+    df_Hérlaut = df_data[df_data['code_zone'].isin(data2['Hérlaut'])]
+    #Lot
+    df_Lot = df_data[df_data['code_zone'].isin(data2['Lot'])]
+    # Lozère
+    df_Lozère = df_data[df_data['code_zone'].isin(data2['Lozère'])]
+    # Pyrénées_Orientales
+    df_Pyrénées_Orientales = df_data[df_data['code_zone'].isin(data2['Pyrénées-Orientales'])]
+    # Tarn
+    df_Tarn = df_data[df_data['code_zone'].isin(data2['Tarn'])]
+    # Tarn_garonne
+    df_Tarn_garonne = df_data[df_data['code_zone'].isin(data2['Tarn-et garonne'])]
+    # Haute_Garonne
+    df_Haute_Garonne = df_data[df_data['code_zone'].isin(data2['Haute-Garonne'])]
+
+    print(df_Averyron)
+
+
+    
 
