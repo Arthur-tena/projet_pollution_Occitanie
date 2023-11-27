@@ -29,16 +29,11 @@ if response.status_code == 200:
     # Création d'un DataFrame
     df_h = pd.DataFrame(records)
     df_h['valeur'].fillna(0, inplace=True)
-    # Conversion des coordonnées Lambert 93 en latitude et longitude
-    in_proj = Proj(init='epsg:2154')  # Lambert 93
-    out_proj = Proj(init='epsg:4326')  # WGS84 (latitude, longitude)
-    df_h['longitude'], df_h['latitude'] = transform(in_proj, out_proj, df_h['x_l93'].values, df_h['y_l93'].values)
-
     # Conversion de la colonne 'date_debut' qui est en millisecondes
     df_h['date_debut'] = pd.to_datetime(df_h['date_debut'], unit='ms')
 
 # Liste des polluants à afficher
-polluants = ['NO', 'NOX', 'O3', 'PM10', 'NO2']
+polluants = ['NO', 'NOX', 'O3', 'PM10', 'NO2','PM2.5']
 for polluant in polluants:
     #Regrouper les données de la ville de Montpellier
     filt_data = df_h[(df_h['nom_dept'] == 'HERAULT') & (df_h['nom_poll'] == polluant)]
