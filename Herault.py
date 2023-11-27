@@ -1,9 +1,35 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+import requests
 import plotly.express as px
+import plotly.graph_objects as go
+from pyproj import Proj, transform
 
-df_h=pd.read_csv('C:/Users/aicha/OneDrive/Bureau/Projet pollution Occitanie/projet_pollution_Occitanie/data/HERAULT.csv')
-df_h['valeur'].fillna(0, inplace=True)
+url='https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_annuelle_poll_princ/FeatureServer/0/query?where=1%3D1&outFields=nom_dept,nom_com,insee_com,nom_station,nom_poll,valeur,unite,date_debut,x_l93,y_l93&outSR=4326&f=json'
+
+#Extraction des données
+response = requests.get(url)
+if response.status_code == 200:
+    data = response.json()
+
+    # Extraction des entités de la réponse JSON
+    features = data.get('features', [])
+
+    # Extraction des données pertinentes de chaque entité
+    records = []
+    for feature in features:
+        attributes = feature.get('attributes', {})
+        records.append(attributes)
+
+    # Création d'un DataFrame
+    df_h = pd.DataFrame(records)
+    df_h['valeur'].fillna(0, inplace=True)
+    # Conversion des coordonnées Lambert 93 en latitude et longitude
+    in_proj = Proj(init='epsg:2154')  # Lambert 93
+    out_proj = Proj(init='epsg:4326')  # WGS84 (latitude, longitude)
+    df_h['longitude'], df_h['latitude'] = transform(in_proj, out_proj, df_h['x_l93'].values, df_h['y_l93'].values)
+
+    # Conversion de la colonne 'date_debut' qui est en millisecondes
+    df_h['date_debut'] = pd.to_datetime(df_h['date_debut'], unit='ms')
 
 # Liste des polluants à afficher
 polluants = ['NO', 'NOX', 'O3', 'PM10', 'NO2']
@@ -11,24 +37,10 @@ polluants = ['NO', 'NOX', 'O3', 'PM10', 'NO2']
 # Créer un graphique en ligne pour chaque polluant
 for polluant in polluants:
     fig = px.scatter(df_h[df_h['nom_poll'] == polluant], x='date_debut', y='valeur', 
-                  title=f'Évolution de {polluant} au fil du temps',
-                  labels={'valeur': 'Concentration de Polluant', 'date_debut': 'Date'})
+                  title=f'Évolution de {polluant} au fil du temps dans le département Hérault',
+                  labels={'valeur':'Concentration de Polluant', 'date_debut': 'Date'})
 
     fig.show()
 
-#MONTPELLIER
 
-montpellier72h=pd.read_csv('C:/Users/aicha/OneDrive/Bureau/Projet pollution Occitanie/projet_pollution_Occitanie/data/Montpellier.csv')
-montpellier72h['valeur'].fillna(0, inplace=True)
-
-# Liste des polluants à afficher
-polluants = ['NO', 'NOX', 'O3', 'PM10', 'NO2']
-
-# Créer un graphique en ligne pour chaque polluant
-for polluant in polluants:
-    fig = px.scatter(montpellier72h[montpellier72h['nom_poll'] == polluant], x='date_debut', y='valeur', 
-                  title=f'Évolution de {polluant} au fil du temps à Montpellier',
-                  labels={'valeur': 'Concentration de Polluant', 'date_debut': 'Date'})
-
-    fig.show()
 

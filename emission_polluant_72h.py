@@ -31,7 +31,7 @@ if response.status_code == 200:
     out_proj = Proj(init='epsg:4326')  # WGS84 (latitude, longitude)
     df_data['longitude'], df_data['latitude'] = transform(in_proj, out_proj, df_data['x_l93'].values, df_data['y_l93'].values)
 
-    # Supposons que vous avez une colonne 'date_debut' avec des durées en millisecondes
+    # Conversion de la colonne 'date_debut' qui est en millisecondes
     df_data['date_debut'] = pd.to_datetime(df_data['date_debut'], unit='ms')
 
     # Extraire les composants jour, mois, année et heure
