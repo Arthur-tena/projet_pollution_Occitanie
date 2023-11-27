@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 import requests
 from pyproj import Proj, transform
 from datetime import datetime, timedelta
