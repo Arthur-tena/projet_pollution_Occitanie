@@ -1,8 +1,0 @@
----
-title: "Accueil"
----
-
-
-occitanie_carte.png
-
-graphique.png
