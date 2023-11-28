@@ -15,7 +15,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
-data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+data = pd.read_csv("/home/zack/projet_pollution_occitanie/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 df = pd.DataFrame(data)
 columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
 df = df.drop(columns=columns_to_drop)
@@ -76,7 +76,7 @@ Dans le graphique ci-après , nous pouvons voir la proportion des polluants par 
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+data = pd.read_csv("/home/zack/projet_pollution_occitanie/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 df = pd.DataFrame(data)
 
 columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
@@ -122,7 +122,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
 
-data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+data = pd.read_csv("/home/zack/projet_pollution_occitanie/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 df = pd.DataFrame(data)
 columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
 df = df.drop(columns=columns_to_drop)
