@@ -2,7 +2,4 @@
 title: "Accueil"
 ---
 
-
-carte_occitanie.png
-
-graphique.png
+Ici ça sera la page d'accueil
