@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-
 /.quarto/
 /*_files/
 *.DS_store
-=======
-*.html
-/*_files/
-*.DS_store
->>>>>>> Extraction_et_visiluation_des_données
+/roadmap/README_files/
+/roadmap/README.html
+/.quarto/
+/docs/
