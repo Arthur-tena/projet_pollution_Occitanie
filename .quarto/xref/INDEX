@@ -30,6 +30,13 @@
     "Tarn.html": "acdf6311"
   },
   "Villes/Montpellier.qmd": {
+<<<<<<< HEAD
     "Montpellier.html": "1508d0d0"
+=======
+    "Montpellier.html": "a2a3d5ad"
+  },
+  "index.qmd": {
+    "index.html": "0238cff6"
+>>>>>>> 3589fe979c42758bc9b3f2b1092008a8963ad057
   }
 }

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+<<<<<<< HEAD
     <loc>https://arthur-tena.github.io/projet_pollution_occitanie/Carte/Carte.html</loc>
     <lastmod>2023-11-28T16:31:56.583Z</lastmod>
+=======
+    <loc>https://arthur-tena.github.io/projet_pollution_occitanie/index.html</loc>
+    <lastmod>2023-11-28T16:38:53.111Z</lastmod>
+>>>>>>> 3589fe979c42758bc9b3f2b1092008a8963ad057
   </url>
 </urlset>

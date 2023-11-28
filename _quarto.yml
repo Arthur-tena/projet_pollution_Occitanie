@@ -1,7 +1,7 @@
 project:
   type: website
   render:
-    - Villes/index.qmd
+    - index.qmd
     - Carte/Carte.qmd
     - Villes/Gard.qmd
     - Villes/Gers.qmd
