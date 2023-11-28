@@ -45,7 +45,7 @@ for polluant in polluants:
     # Création d'un graphique
     fig = px.scatter(
         filt_data, x='date_debut', y='valeur',
-        color='nom_station', size='valeur', hover_name='date_debut',
+        color='nom_station',hover_name='date_debut',
         title=f'Évolution de la pollution {polluant} à Montpellier',
         labels={'valeur': f'Valeur {polluant} (ug.m-3)', 'date_debut': 'Année'}
     )
