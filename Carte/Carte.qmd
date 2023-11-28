@@ -1,15 +1,6 @@
 ---
 title: "Carte"
+format: html
 ---
-```{python}
-import folium
-import geopandas as gpd
 
-# Charger le fichier GeoJSON pour les contours de l'Occitanie
-occitanie_geojson=gpd.read_file('Carte/Data_Carte/departements.geojson')
 
-carte=folium.Map(location=[43.648785,2.343568],zoom_start=8)
-carte
-```
-
-Ici on aura le code de la carte

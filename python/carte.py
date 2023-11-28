@@ -37,10 +37,5 @@ ma_carte = folium.Map(location=[latitude, longitude], zoom_start=10)
 folium.GeoJson(donnees_selectionnees).add_to(ma_carte)
 
 # Enregistrer la carte au format HTML
-<<<<<<< HEAD
-carte.save("ma_carte_occitanie.html")
-
-=======
 ma_carte.save("ma_carte.html")"""
 ma_carte
->>>>>>> main
