@@ -1,8 +1,7 @@
 ---
-title: "Toulouse"
+title: "Nimes"
 format: html
 ---
-
 ```{python}
 #|code-fold: true
 import pandas as pd
@@ -30,34 +29,24 @@ if response.status_code == 200:
 
     # Création d'un DataFrame
     df_data = pd.DataFrame(records)
-<<<<<<< HEAD:Villes/Toulouse.qmd
-    df_data['valeur'].drop(0, inplace=True)
-    # Conversion des coordonnées Lambert 93 en latitude et longitude
-    in_proj = Proj(init='epsg:2154')  # Lambert 93
-    out_proj = Proj(init='epsg:4326')  # WGS84 (latitude, longitude)
-    
-    df_data['longitude'], df_data['latitude'] = transform(in_proj, out_proj, df_data['x_l93'].values, df_data['y_l93'].values)
-=======
     df_data['valeur'].fillna(0, inplace=True)
->>>>>>> Extraction_et_visiluation_des_données:Toulouse.qmd
 
     # Conversion de la colonne 'date_debut' qui est en millisecondes
     df_data['date_debut'] = pd.to_datetime(df_data['date_debut'], unit='ms')
 
     # Liste des polluants à afficher
-    polluants = ['NO', 'NOX', 'O3', 'PM10', 'NO2','PM2.5']
+    polluants = ['O3', 'PM10', 'NO2','PM2.5']
     # Boucle à travers les polluants pour créer les graphiques
 for polluant in polluants:
-    #Regrouper les données de la ville de Toulouse
-    filt_data = df_data[(df_data['nom_com'] == 'TOULOUSE') & (df_data['nom_poll'] == polluant)]
+    #Regrouper les données de la ville de Nimes
+    filt_data = df_data[(df_data['nom_com'] == 'NIMES') & (df_data['nom_poll'] == polluant)]
     filt_data = filt_data.sort_values(by='date_debut')
-    filt_data = filt_data.dropna()
         
     # Création d'un graphique
     fig = px.scatter(
         filt_data, x='date_debut', y='valeur',
         color='nom_station', size='valeur', hover_name='date_debut',
-        title=f'Évolution de la pollution {polluant} à Toulouse',
+        title=f'Évolution de la pollution {polluant} à Nimes',
         labels={'valeur': f'Valeur {polluant} (ug.m-3)', 'date_debut': 'Année'}
     )
 
