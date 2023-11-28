@@ -2,7 +2,7 @@ project:
   type: website
   render:
     - Villes/index.qmd
-    - Villes/Carte.qmd
+    - Carte/Carte.qmd
     - Villes/Gard.qmd
     - Villes/Gers.qmd
     - Villes/Haute-Pyrénées.qmd
@@ -37,7 +37,7 @@ website:
     - id: Carte
       title: "Carte"
       contents:
-        - Villes/Carte.qmd
+        - Carte/Carte.qmd
     - id: Dpt
       title: "Visualisation des données"
       collapse-level: 2
