@@ -3,6 +3,6 @@ title: "Accueil"
 ---
 
 
-occitanie_carte.png
+carte_occitanie.png
 
 graphique.png

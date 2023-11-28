@@ -47,6 +47,7 @@ for polluant in polluants:
     #Regrouper les données de la ville de Montpellier
     filt_data = df_data[(df_data['nom_com'] == 'TOULOUSE') & (df_data['nom_poll'] == polluant)]
     filt_data = filt_data.sort_values(by='date_debut')
+    filt_data = filt_data.dropna(subset=['valeur'])
     
         
     # Création d'un graphique
