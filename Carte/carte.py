@@ -18,5 +18,3 @@ folium.GeoJson(occitanie_geojson).add_to(carte)
 # Enregistrer la carte au format HTML
 carte.save("ma_carte_occitanie.html")
 
-# Afficher la carte dans le navigateur (facultatif)
-carte
