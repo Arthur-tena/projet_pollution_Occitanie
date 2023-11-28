@@ -1,8 +1,7 @@
 ---
-title: "Toulouse"
+title: "Perpignan"
 format: html
 ---
-
 ```{python}
 #|code-fold: true
 import pandas as pd
@@ -39,16 +38,15 @@ if response.status_code == 200:
     polluants = ['NO', 'NOX', 'O3', 'PM10', 'NO2','PM2.5']
     # Boucle à travers les polluants pour créer les graphiques
 for polluant in polluants:
-    #Regrouper les données de la ville de Toulouse
-    filt_data = df_data[(df_data['nom_com'] == 'TOULOUSE') & (df_data['nom_poll'] == polluant)]
+    #Regrouper les données de la ville de Perpignan
+    filt_data = df_data[(df_data['nom_com'] == 'PERPIGNAN') & (df_data['nom_poll'] == polluant)]
     filt_data = filt_data.sort_values(by='date_debut')
-    
         
     # Création d'un graphique
     fig = px.scatter(
         filt_data, x='date_debut', y='valeur',
         color='nom_station', size='valeur', hover_name='date_debut',
-        title=f'Évolution de la pollution {polluant} à Toulouse',
+        title=f'Évolution de la pollution {polluant} à Perpignan',
         labels={'valeur': f'Valeur {polluant} (ug.m-3)', 'date_debut': 'Année'}
     )
 
