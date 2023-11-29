@@ -2,7 +2,7 @@ project:
   type: website
   render:
     - index.qmd
-    #-Carte/Carte.qmd
+    - Carte/Carte.qmd
     - Villes/Gard.qmd
     - Villes/Gers.qmd
     - Villes/Haute-Pyrénées.qmd
@@ -31,12 +31,12 @@ website:
         href: https://github.com/arthur-tena/projet_pollution_occitanie
         text: GitHub
     left:
-      #- sidebar:Carte
+      - sidebar:Carte
       - sidebar:Dpt
   sidebar:
-    #- id: Carte
-     # title: "Carte"
-     # contents:
+    - id: Carte
+      title: "Carte"
+      contents:
         - Carte/Carte.qmd
     - id: Dpt
       title: "Visualisation des données"
