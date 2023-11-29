@@ -2,19 +2,6 @@ project:
   type: website
   render:
     - index.qmd
-    - Carte/Carte.qmd
-    - Villes/Gard.qmd
-    - Villes/Gers.qmd
-    - Villes/Haute-Pyrénées.qmd
-    - Villes/HauteGaronne.qmd
-    - Villes/Herault.qmd
-    - Villes/Pyrenees_Orientales.qmd
-    - Villes/Tarn-et-Garonne.qmd
-    - Villes/Tarn.qmd
-    - Villes/Montpellier.qmd
-    - Villes/Toulouse.qmd
-    - Villes/Nimes.qmd
-    - Villes/Perpignan.qmd
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -30,34 +17,6 @@ website:
       - icon: github
         href: https://github.com/arthur-tena/projet_pollution_occitanie
         text: GitHub
-    left:
-      - sidebar:Carte
-      - sidebar:Dpt
-  sidebar:
-    - id: Carte
-      title: "Carte"
-      contents:
-        - Carte/Carte.qmd
-    - id: Dpt
-      title: "Visualisation des données"
-      collapse-level: 2
-      contents:
-        - section: "Départements"
-          contents:
-            - Villes/Gard.qmd
-            - Villes/Gers.qmd
-            - Villes/Haute-Pyrénées.qmd
-            - Villes/HauteGaronne.qmd
-            - Villes/Herault.qmd
-            - Villes/Pyrenees_Orientales.qmd
-            - Villes/Tarn-et-Garonne.qmd
-            - Villes/Tarn.qmd
-        - section: "Villes"
-          contents:
-            - Villes/Nimes.qmd
-            - Villes/Montpellier.qmd
-            - Villes/Toulouse.qmd
-            - Villes/Perpignan.qmd
 format:
   html:
     theme: cosmo
