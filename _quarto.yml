@@ -1,0 +1,68 @@
+project:
+  type: website
+  render:
+    - index.qmd
+    - Carte/Carte_finale.qmd
+    - Villes/Aveyron.qmd
+    - Villes/Gard.qmd
+    - Villes/Gers.qmd
+    - Villes/Haute-Pyrénées.qmd
+    - Villes/HauteGaronne.qmd
+    - Villes/Herault.qmd
+    - Villes/Pyrenees_Orientales.qmd
+    - Villes/Tarn-et-Garonne.qmd
+    - Villes/Tarn.qmd
+    - Villes/Montpellier.qmd
+    - Villes/Toulouse.qmd
+    - Villes/Nimes.qmd
+    - Villes/Perpignan.qmd
+website:
+  back-to-top-navigation: true
+  page-navigation: true # true not working in website
+  title: "Pollution en Occitanie"
+  site-url: https://arthur-tena.github.io/projet_pollution_occitanie/
+  repo-url: https://github.com/arthur-tena/projet_pollution_occitanie
+  repo-actions: [source]
+  navbar:
+    title: "Pollution en Occitanie"
+    background: primary
+    search: true
+    tools:
+      - icon: github
+        href: https://github.com/arthur-tena/projet_pollution_occitanie
+        text: GitHub
+    left:
+      - sidebar:Carte
+      - sidebar:Dpt
+  sidebar:
+    - id: Carte
+      title: "Carte"
+      contents:
+        - Carte/Carte_finale.qmd
+    - id: Dpt
+      title: "Visualisation des données"
+      collapse-level: 2
+      contents:
+        - section: "Départements"
+          contents:
+            - Villes/Aveyron.qmd
+            - Villes/Gard.qmd
+            - Villes/Gers.qmd
+            - Villes/HauteGaronne.qmd
+            - Villes/Haute-Pyrénées.qmd
+            - Villes/Herault.qmd
+            - Villes/Pyrenees_Orientales.qmd
+            - Villes/Tarn-et-Garonne.qmd
+            - Villes/Tarn.qmd
+        - section: "Villes"
+          contents:
+            - Villes/Montpellier.qmd
+            - Villes/Nimes.qmd
+            - Villes/Perpignan.qmd
+            - Villes/Toulouse.qmd
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
