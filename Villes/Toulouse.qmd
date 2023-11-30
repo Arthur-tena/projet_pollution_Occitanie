@@ -12,7 +12,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 
-url='https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_annuelle_poll_princ/FeatureServer/0/query?where=1%3D1&outFields=nom_dept,nom_com,insee_com,nom_station,nom_poll,valeur,unite,date_debut,x_l93,y_l93&outSR=4326&f=json'
+url='https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_annuelle_poll_princ/FeatureServer/0/query?where=1%3D1&outFields=nom_dept,nom_com,nom_station,nom_poll,valeur,unite,date_debut&outSR=4326&f=json'
 
 #Extraction des données
 response = requests.get(url)
@@ -49,8 +49,7 @@ if response.status_code == 200:
             filt_data, x='date_debut', y='valeur',
             color='nom_station', size='valeur', hover_name='date_debut',
             title=f'Évolution de la pollution {polluant} à Toulouse',
-            labels={'valeur': f'Valeur {polluant} (ug.m-3)', 'date_debut': 'Année'}
-        )
+            labels={'valeur': f'Valeur {polluant} (ug.m-3)', 'date_debut': 'Année'})
 
         # Relier les points pour chaque station
         for nom_station in filt_data['nom_station'].unique():
@@ -59,8 +58,7 @@ if response.status_code == 200:
                 x=trace_data['date_debut'],
                 y=trace_data['valeur'],
                 mode='lines',  
-                showlegend=False
-            ))
+                showlegend=False ))
         fig.show()
 ```
 
