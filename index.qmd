@@ -1,5 +1,0 @@
----
-title: "Accueil"
----
-
-Ici ça sera la page d'accueil
