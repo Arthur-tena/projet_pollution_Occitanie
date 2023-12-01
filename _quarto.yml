@@ -2,7 +2,7 @@ project:
   type: website
   render:
     - index.qmd
-    - Carte/Carte.qmd
+    - Carte/Carte_final.qmd
     - Villes/Gard.qmd
     - Villes/Gers.qmd
     - Villes/Haute-Pyrénées.qmd
@@ -19,8 +19,8 @@ website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
   title: "Pollution en Occitanie"
-  site-url: https://arthur-tena.github.io/projet_pollution_occitanie/
-  repo-url: https://github.com/arthur-tena/projet_pollution_occitanie
+  site-url: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
+  repo-url: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
   repo-actions: [source]
   navbar:
     title: "Pollution en Occitanie"
@@ -28,7 +28,7 @@ website:
     search: true
     tools:
       - icon: github
-        href: https://github.com/arthur-tena/projet_pollution_occitanie
+        href: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
         text: GitHub
     left:
       - sidebar:Carte
@@ -37,7 +37,7 @@ website:
     - id: Carte
       title: "Carte"
       contents:
-        - Carte/Carte.qmd
+        - Carte/Carte_final.qmd
     - id: Dpt
       title: "Visualisation des données"
       collapse-level: 2

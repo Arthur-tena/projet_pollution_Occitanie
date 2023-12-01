@@ -2,3 +2,6 @@
 /.quarto/
 /*_files/
 *.DS_store
+*.html
+Villes/*_files/
+Carte/Carte_final_*
