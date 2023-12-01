@@ -10,7 +10,7 @@ import folium
 from folium.plugins import HeatMap
 # Importez les  nécessaire pour afficher la carte
 df_IQA = pd.read_csv(
-    "/home/zack/projet_pollution_occitanie/data/IQA.csv",
+    "/projet_pollution_occitanie/data/IQA.csv",
     usecols=[
         "X",
         "Y",
