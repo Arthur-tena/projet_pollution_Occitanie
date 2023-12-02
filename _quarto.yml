@@ -61,5 +61,5 @@ website:
 format:
   html:
     theme: yeti
-    css: styles.css
+    css: styles.cssgit 
     toc: true
