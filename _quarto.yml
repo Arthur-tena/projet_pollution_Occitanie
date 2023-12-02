@@ -60,6 +60,6 @@ website:
             - Villes/Perpignan.qmd
 format:
   html:
-    theme: cosmo
+    theme: yeti
     css: styles.css
     toc: true
