@@ -1,0 +1,17 @@
+---
+title: "Untitled"
+format: html
+---
+
+```{python}
+#|code-fold: true
+
+from concentration_mois import *
+
+url = 'https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?where=1%3D1&outFields=nom_dept,nom_com,nom_station,nom_poll,valeur,unite,date_fin&outSR=4326&f=json'
+attribut = 'nom_poll'
+ville = 'Toulouse'
+
+graph(url,attribut,ville)
+```
+

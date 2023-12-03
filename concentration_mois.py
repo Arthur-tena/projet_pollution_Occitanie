@@ -3,6 +3,9 @@ import pandas as pd
 import plotly.express as px
 import matplotlib.pyplot as plt
 import datetime
+import plotly.graph_objects as go
+import numpy as np
+
 
 #url='https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?where=1%3D1&outFields=nom_dept,nom_com,nom_station,nom_poll,valeur,unite,date_fin&outSR=4326&f=json'
 
@@ -47,26 +50,21 @@ def graph(url, attribute, city):
         filt_data = df_data[(df_data['nom_com'].str.upper() == city.upper()) & (df_data['nom_poll'].isin(polluants))]
         filt_data = filt_data.sort_values(by='date_fin').dropna()
 
-        average_data =filt_data.groupby(['nom_poll','nom_com','date_debut'.dt.to_period('M')])['valeur'].mean().reset_index
+         # Agrégation des données par mois et polluant
+        agg_data = filt_data.groupby(['nom_poll', pd.Grouper(key='date_fin', freq='M')])['valeur'].mean().reset_index()
 
-        
+        # Créer la figure
+        fig = px.line(agg_data, x='date_fin', y='valeur', color='nom_poll', labels={'valeur': 'Valeur moyenne'})
 
-        custom_palette = plt.get_cmap('tab10', len(polluants))
-        # Créer le tracé avec une couleur différente pour chaque polluant
-        fig, ax = plt.subplots(figsize=(10, 6))
-
-        for polluant, color in zip(polluants, custom_palette.colors):
-            polluant_data = filt_data[filt_data['nom_poll'] == polluant]
-            ax.plot(polluant_data['date_fin'], polluant_data['valeur'], label=polluant, color=color)
-
-        # Afficher la légende
-        ax.legend()
+        # Personnaliser la mise en page
+        fig.update_layout(
+            title=f"Valeur moyenne mensuelle des polluants à {city} en (ug.m-3)",
+            xaxis_title="Mois",
+            yaxis_title="Valeur moyenne en (ug.m-3)",
+            template="simple_white",
+        )
 
         # Afficher le graphique
-        plt.show()
+        fig.show()
 
-url = 'https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?where=1%3D1&outFields=nom_dept,nom_com,nom_station,nom_poll,valeur,unite,date_fin&outSR=4326&f=json'
-attribut = 'nom_poll'
-ville = 'Montpellier'
-
-graph(url, attribut, ville)
+        
