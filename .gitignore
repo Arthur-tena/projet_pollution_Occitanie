@@ -1,7 +1,14 @@
 /.quarto/
+/_site/
 /*_files/
 *.DS_store
+<<<<<<< HEAD
 /roadmap/README_files/
 /roadmap/README.html
 /.quarto/
 /docs/
+=======
+*.html
+Villes/*_files/
+Carte/Carte_final_*
+>>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
