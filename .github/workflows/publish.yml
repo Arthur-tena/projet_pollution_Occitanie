@@ -1,13 +1,4 @@
 on:
-<<<<<<< HEAD
-  schedule:
-    - cron: "0 5 1 * *" # 5am on the first of every month
-  workflow_dispatch:
-  push:
-    branches: main
-
-name: Quarto Publish
-=======
   #schedule:
   #  - cron: "0 */2 * * *" # push a workflow every two hours. 
   workflow_dispatch:
@@ -15,7 +6,6 @@ name: Quarto Publish
     branches: ["main"]
 
 name: Update
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
 
 jobs:
   build-deploy:
@@ -32,11 +22,7 @@ jobs:
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
         with:
-<<<<<<< HEAD
-          python-version: "3.12"
-=======
           python-version: "3.11.5"
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
           cache: "pip"
       - run: python3 -m pip install jupyter
       - run: python3 -m pip install -r requirements.txt
