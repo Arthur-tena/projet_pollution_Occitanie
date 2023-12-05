@@ -4,9 +4,24 @@ project:
 <<<<<<< HEAD
 =======
     - index.qmd
+<<<<<<< HEAD
+    - Carte/Carte_finale.qmd
+    - Villes/Aveyron.qmd
+=======
     - Carte/Carte_final.qmd
 >>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
     - Villes/Gard.qmd
+    - Villes/Gers.qmd
+    - Villes/Haute-Pyrénées.qmd
+    - Villes/HauteGaronne.qmd
+    - Villes/Herault.qmd
+    - Villes/Pyrenees_Orientales.qmd
+    - Villes/Tarn-et-Garonne.qmd
+    - Villes/Tarn.qmd
+    - Villes/Montpellier.qmd
+    - Villes/Toulouse.qmd
+    - Villes/Nimes.qmd
+    - Villes/Perpignan.qmd
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -22,20 +37,41 @@ website:
       - icon: github
         href: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
         text: GitHub
+    left:
+      - sidebar:Carte
+      - sidebar:Dpt
   sidebar:
 <<<<<<< HEAD
 =======
     - id: Carte
       title: "Carte"
       contents:
+<<<<<<< HEAD
+        - Carte/Carte_finale.qmd
+=======
         - Carte/Carte_final.qmd
 >>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
     - id: Dpt
       title: "Visualisation des données"
       collapse-level: 2
       contents:
+        - section: "Départements"
+          contents:
+            - Villes/Aveyron.qmd
             - Villes/Gard.qmd
-
+            - Villes/Gers.qmd
+            - Villes/HauteGaronne.qmd
+            - Villes/Haute-Pyrénées.qmd
+            - Villes/Herault.qmd
+            - Villes/Pyrenees_Orientales.qmd
+            - Villes/Tarn-et-Garonne.qmd
+            - Villes/Tarn.qmd
+        - section: "Villes"
+          contents:
+            - Villes/Montpellier.qmd
+            - Villes/Nimes.qmd
+            - Villes/Perpignan.qmd
+            - Villes/Toulouse.qmd
 format:
   html:
 <<<<<<< HEAD
