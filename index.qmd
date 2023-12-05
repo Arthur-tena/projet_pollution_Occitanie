@@ -1,5 +1,8 @@
 ---
 title: "Accueil"
 ---
+<<<<<<< HEAD
 
 Page d'accueil.
+=======
+>>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034

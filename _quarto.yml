@@ -1,6 +1,8 @@
 project:
   type: website
   render:
+<<<<<<< HEAD
+=======
     - index.qmd
 <<<<<<< HEAD
     - Carte/Carte_finale.qmd
@@ -39,6 +41,8 @@ website:
       - sidebar:Carte
       - sidebar:Dpt
   sidebar:
+<<<<<<< HEAD
+=======
     - id: Carte
       title: "Carte"
       contents:
@@ -74,6 +78,7 @@ format:
     theme: cosmo
     css: styles.css
     toc: true 
+
 =======
     theme: yeti
     css: styles.cssgit 
