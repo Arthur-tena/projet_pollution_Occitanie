@@ -79,8 +79,8 @@ if response.status_code == 200:
      df_station = df_Tls[df_Tls['code_station'] == station]
      fig = px.line_polar(
         df_station,
-        r=df_station["valeur"],
-        theta=df_station["date_debut"],
+        r="valeur",
+        theta="date_debut",
         color="nom_poll",
         line_close=True,
         range_r=[0, 300],

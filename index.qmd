@@ -6,3 +6,43 @@ title: "Accueil"
 Page d'accueil.
 =======
 >>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
+
+```{python}
+#| echo: false
+# %%
+import pandas as pd
+import plotly.graph_objects as go
+import numpy as np
+
+data = pd.read_csv("data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+df = pd.DataFrame(data)
+columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
+df = df.drop(columns=columns_to_drop)
+grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
+grouped_df = grouped_df.sort_values(by=['date_debut', 'nom_poll'])
+grouped_df['date_debut'] = pd.to_datetime(grouped_df['date_debut'])
+grouped_df['date_debut'] = grouped_df['date_debut'].dt.year
+
+fig = go.FigureWidget()
+polluants = sorted(grouped_df["nom_poll"].unique())
+for polluant in polluants:
+    trace_data = grouped_df[grouped_df["nom_poll"] == polluant]
+    fig.add_trace(
+        go.Scatter(
+            x=trace_data["date_debut"],
+            y=trace_data["valeur"],
+            mode='lines',
+            name=f"Polluant = {polluant}",
+        )
+    )
+fig.update_layout(
+    template="simple_white",
+    title="Polluants en fonction de l'année",
+    showlegend=True,
+    xaxis_title="Polluants",
+    yaxis_title="Fréquence normalisée",
+)
+
+
+fig.show()
+```
