@@ -7,3 +7,5 @@
 /.quarto/
 /docs/
 Villes/VILZ.ipynb
+Villes/*_files/
+*.html
