@@ -3,10 +3,7 @@ title: "Accueil"
 ---
 
 Page d'accueil.
-<<<<<<< HEAD
-=======
 PROBLEMATIQUE
->>>>>>> f6a02d15348b45fe10c73c8de62d5c29e484fa74
 
 ```{python}
 #| echo: false

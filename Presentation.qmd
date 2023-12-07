@@ -1,0 +1,11 @@
+---
+title: "Pollution en Occitanie"
+author: "Tena Lahjiouj Khodri Zhu"
+format: revealjs
+---
+
+## Problématique 
+
+## Différents Polluants
+En Occitanie nous retrouvons une grosse concentration de Polluants notament de l'O3,
+
