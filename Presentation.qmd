@@ -1,7 +1,10 @@
 ---
 title: "Pollution en Occitanie"
 author: "Tena Lahjiouj Khodri Zhu"
-format: revealjs
+format: 
+ revealjs :
+     theme: dark
+
 ---
 
 # Problématique 
@@ -19,4 +22,3 @@ format: revealjs
 ## Montpellier
 
 # Conclusion 
-

@@ -1,15 +1,9 @@
 project:
   type: website
   render:
-<<<<<<< HEAD
-=======
     - index.qmd
-<<<<<<< HEAD
     - Carte/Carte_finale.qmd
     - Villes/Aveyron.qmd
-=======
-    - Carte/Carte_final.qmd
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
     - Villes/Gard.qmd
     - Villes/Gers.qmd
     - Villes/Haute-Pyrénées.qmd
@@ -38,19 +32,10 @@ website:
         href: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
         text: GitHub
     left:
-      - sidebar:Carte
       - sidebar:Dpt
   sidebar:
-<<<<<<< HEAD
-=======
-    - id: Carte
-      title: "Carte"
-      contents:
-<<<<<<< HEAD
-        - Carte/Carte_finale.qmd
-=======
-        - Carte/Carte_final.qmd
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
+    - text: "Carte"
+      href: "Carte_final.qmd"
     - id: Dpt
       title: "Visualisation des données"
       collapse-level: 2
@@ -74,13 +59,7 @@ website:
             - Villes/Toulouse.qmd
 format:
   html:
-<<<<<<< HEAD
     theme: cosmo
     css: styles.css
     toc: true 
 
-=======
-    theme: yeti
-    css: styles.cssgit 
-    toc: true
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
