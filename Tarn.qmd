@@ -1,0 +1,32 @@
+---
+title: "Tarn"
+format: html
+---
+
+```{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+from module.py import plot_pie
+
+plot_pie("TARN")
+```
+
+
+```{python}
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from module.py import plot_polluant_evolution
+
+plot_polluant_evolution("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv","TARN",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])
+```
+
+
+```{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+from module.py import polluant_evolution_dept
+
+polluant_evolution_dept("../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],"TARN")
+```
+
