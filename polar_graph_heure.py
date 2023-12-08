@@ -1,6 +1,6 @@
 def create_polar_plot(ville):
     # chargez csv
-    df = pd.read_csv("/home/zack/projet_pollution_occitanie/Mesure_30j.csv")
+    df = pd.read_csv("/home/zack/gprojet_pollution_occitanie/Mesure_30j.csv")
     # convert data
     df['date_debut'] = pd.to_datetime(df['date_debut'], format='%Y/%m/%d %H:%M:%S%z')
     # polluants

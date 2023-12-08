@@ -56,15 +56,13 @@ def pollutants_evolution_ville(csv, polluants, ville):
 
 
     fig.show()
-pollutants_evolution_ville("/Users/arthurtena/Downloads/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv", ['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],"MONTPELLIER")
-pollutants_evolution_ville("/Users/arthurtena/Downloads/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv", ['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],"TOULOUSE")
 
 
 
 
 
 def plot_pie(department):
-    data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+    data = pd.read_csv("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
     df = pd.DataFrame(data)
     columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
     df = df.drop(columns=columns_to_drop)
