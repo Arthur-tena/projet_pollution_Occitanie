@@ -4,8 +4,19 @@ author: "Tena Lahjiouj Khodri Zhu"
 format: revealjs
 ---
 
-## Problématique 
+# Problématique 
 
-## Différents Polluants
-En Occitanie nous retrouvons une grosse concentration de Polluants notament de l'O3,
+# En Occitanie 
+
+# Par département 
+## Herault
+
+## Haute-Garonne 
+
+# Quelques villes 
+## Toulouse
+
+## Montpellier
+
+# Conclusion 
 
