@@ -2,7 +2,7 @@ project:
   type: website
   render:
     - index.qmd
-    - Carte/Carte_finale.qmd
+    - Carte/Carte_final.qmd
     - Villes/Aveyron.qmd
     - Villes/Ariege.qmd
     - Villes/Gard.qmd
