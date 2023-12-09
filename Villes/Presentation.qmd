@@ -1,0 +1,34 @@
+---
+title: "Pollution en Occitanie"
+author: "Tena Lahjiouj Khodri Zhu"
+format: 
+ revealjs :
+     theme: dark
+
+---
+
+# Problématique 
+Comment exploiter des données pour mieux visualiser un problème actuel
+
+# Introduction 
+::: {.incremental}
+- La pollution : une préoccupation majeure
+- En Occitanie
+- À l'échelle des départements
+- À l'échelle des villes 
+- Conclusion
+:::
+# En Occitanie 
+## Graphiques généraux 
+
+# Par département 
+## Herault
+
+## Haute-Garonne 
+
+# Quelques villes 
+## Toulouse
+
+## Montpellier
+
+# Conclusion 
