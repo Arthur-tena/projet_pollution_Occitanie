@@ -7,32 +7,32 @@
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"ALBI\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])"
   },
   {
-    "objectID": "Villes/Albi.html#graph-par-année-des-polluants-présent",
-    "href": "Villes/Albi.html#graph-par-année-des-polluants-présent",
+    "objectID": "Villes/Albi.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
+    "href": "Villes/Albi.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
     "title": "Albi",
     "section": "",
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"ALBI\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])"
   },
   {
-    "objectID": "Villes/Albi.html#polar-graph-par-mois",
-    "href": "Villes/Albi.html#polar-graph-par-mois",
+    "objectID": "Villes/Albi.html#evolution-de-la-pollution-mensuelle",
+    "href": "Villes/Albi.html#evolution-de-la-pollution-mensuelle",
     "title": "Albi",
-    "section": "Polar graph par mois",
-    "text": "Polar graph par mois"
+    "section": "Evolution de la pollution mensuelle",
+    "text": "Evolution de la pollution mensuelle"
   },
   {
-    "objectID": "Villes/Albi.html#polar-graph-par-semaine",
-    "href": "Villes/Albi.html#polar-graph-par-semaine",
+    "objectID": "Villes/Albi.html#evolution-de-la-pollution-au-cours-de-la-semaine",
+    "href": "Villes/Albi.html#evolution-de-la-pollution-au-cours-de-la-semaine",
     "title": "Albi",
-    "section": "Polar graph par semaine",
-    "text": "Polar graph par semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"ALBI\")"
+    "section": "Evolution de la pollution au cours de la semaine",
+    "text": "Evolution de la pollution au cours de la semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"ALBI\")"
   },
   {
-    "objectID": "Villes/Albi.html#polar-graph-par-jour",
-    "href": "Villes/Albi.html#polar-graph-par-jour",
+    "objectID": "Villes/Albi.html#evolution-de-la-pollution-journalière",
+    "href": "Villes/Albi.html#evolution-de-la-pollution-journalière",
     "title": "Albi",
-    "section": "Polar graph par jour",
-    "text": "Polar graph par jour\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"ALBI\")"
+    "section": "Evolution de la pollution journalière",
+    "text": "Evolution de la pollution journalière\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"ALBI\")"
   },
   {
     "objectID": "Villes/Perpignan.html",
@@ -42,32 +42,32 @@
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"PERPIGNAN\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])"
   },
   {
-    "objectID": "Villes/Perpignan.html#graph-par-année-des-polluants-présent",
-    "href": "Villes/Perpignan.html#graph-par-année-des-polluants-présent",
+    "objectID": "Villes/Perpignan.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
+    "href": "Villes/Perpignan.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
     "title": "Perpignan",
     "section": "",
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"PERPIGNAN\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])"
   },
   {
-    "objectID": "Villes/Perpignan.html#polar-graph-par-mois",
-    "href": "Villes/Perpignan.html#polar-graph-par-mois",
+    "objectID": "Villes/Perpignan.html#evolution-de-la-pollution-mensuelle",
+    "href": "Villes/Perpignan.html#evolution-de-la-pollution-mensuelle",
     "title": "Perpignan",
-    "section": "Polar graph par mois",
-    "text": "Polar graph par mois"
+    "section": "Evolution de la pollution mensuelle",
+    "text": "Evolution de la pollution mensuelle"
   },
   {
-    "objectID": "Villes/Perpignan.html#polar-graph-par-semaine",
-    "href": "Villes/Perpignan.html#polar-graph-par-semaine",
+    "objectID": "Villes/Perpignan.html#evolution-de-la-pollution-au-cours-de-la-semaine",
+    "href": "Villes/Perpignan.html#evolution-de-la-pollution-au-cours-de-la-semaine",
     "title": "Perpignan",
-    "section": "Polar graph par semaine",
-    "text": "Polar graph par semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"PERPIGNAN\")"
+    "section": "Evolution de la pollution au cours de la semaine",
+    "text": "Evolution de la pollution au cours de la semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"PERPIGNAN\")"
   },
   {
-    "objectID": "Villes/Perpignan.html#polar-graph-par-jour",
-    "href": "Villes/Perpignan.html#polar-graph-par-jour",
+    "objectID": "Villes/Perpignan.html#evolution-de-la-pollution-journalière",
+    "href": "Villes/Perpignan.html#evolution-de-la-pollution-journalière",
     "title": "Perpignan",
-    "section": "Polar graph par jour",
-    "text": "Polar graph par jour\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"PERPIGNAN\")"
+    "section": "Evolution de la pollution journalière",
+    "text": "Evolution de la pollution journalière\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"PERPIGNAN\")"
   },
   {
     "objectID": "Villes/Toulouse.html",
@@ -77,67 +77,172 @@
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"TOULOUSE\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])"
   },
   {
-    "objectID": "Villes/Toulouse.html#graph-par-année-des-polluants-présent",
-    "href": "Villes/Toulouse.html#graph-par-année-des-polluants-présent",
+    "objectID": "Villes/Toulouse.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
+    "href": "Villes/Toulouse.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
     "title": "Toulouse",
     "section": "",
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"TOULOUSE\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])"
   },
   {
-    "objectID": "Villes/Toulouse.html#polar-graph-par-mois",
-    "href": "Villes/Toulouse.html#polar-graph-par-mois",
+    "objectID": "Villes/Toulouse.html#evolution-de-la-pollution-mensuelle",
+    "href": "Villes/Toulouse.html#evolution-de-la-pollution-mensuelle",
     "title": "Toulouse",
-    "section": "Polar graph par mois",
-    "text": "Polar graph par mois"
+    "section": "Evolution de la pollution mensuelle",
+    "text": "Evolution de la pollution mensuelle"
   },
   {
-    "objectID": "Villes/Toulouse.html#polar-graph-par-semaine",
-    "href": "Villes/Toulouse.html#polar-graph-par-semaine",
+    "objectID": "Villes/Toulouse.html#evolution-de-la-pollution-au-cours-de-la-semaine",
+    "href": "Villes/Toulouse.html#evolution-de-la-pollution-au-cours-de-la-semaine",
     "title": "Toulouse",
-    "section": "Polar graph par semaine",
-    "text": "Polar graph par semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"TOULOUSE\")"
+    "section": "Evolution de la pollution au cours de la semaine",
+    "text": "Evolution de la pollution au cours de la semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"TOULOUSE\")"
   },
   {
-    "objectID": "Villes/Toulouse.html#polar-graph-par-jour",
-    "href": "Villes/Toulouse.html#polar-graph-par-jour",
+    "objectID": "Villes/Toulouse.html#evolution-de-la-pollution-journalière",
+    "href": "Villes/Toulouse.html#evolution-de-la-pollution-journalière",
     "title": "Toulouse",
-    "section": "Polar graph par jour",
-    "text": "Polar graph par jour\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"TOULOUSE\")"
+    "section": "Evolution de la pollution journalière",
+    "text": "Evolution de la pollution journalière\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"TOULOUSE\")"
   },
   {
     "objectID": "Villes/Tarn.html",
     "href": "Villes/Tarn.html",
     "title": "Tarn",
     "section": "",
-    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"TARN\")\n\n\n\n\n\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"TARN\",['NO2', 'PM10', 'O3', 'NO'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM10', 'O3', 'NO'],\"TARN\")\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"TARN\")"
+  },
+  {
+    "objectID": "Villes/Tarn.html#part-de-chaque-polluant-dans-le-département-du-tarn",
+    "href": "Villes/Tarn.html#part-de-chaque-polluant-dans-le-département-du-tarn",
+    "title": "Tarn",
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"TARN\")"
+  },
+  {
+    "objectID": "Villes/Tarn.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "href": "Villes/Tarn.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "title": "Tarn",
+    "section": "Concentration de chaque polluant observé ses dernières années dans le département",
+    "text": "Concentration de chaque polluant observé ses dernières années dans le département\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"TARN\",['NO2', 'PM10', 'O3', 'NO'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information."
+  },
+  {
+    "objectID": "Villes/Tarn.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "href": "Villes/Tarn.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "title": "Tarn",
+    "section": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours",
+    "text": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM10', 'O3', 'NO'],\"TARN\")"
   },
   {
     "objectID": "Villes/Pyrenees_orientales.html",
     "href": "Villes/Pyrenees_orientales.html",
     "title": "Pyrénées-Orientales",
     "section": "",
-    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"PYRENEES-ORIENTALES\")\n\n\n\n\n\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"PYRENEES-ORIENTALES\",['NO2', 'PM2.5', 'PM10', 'O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'O3'],\"PYRENEES-ORIENTALES\")\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"PYRENEES-ORIENTALES\")"
+  },
+  {
+    "objectID": "Villes/Pyrenees_orientales.html#part-de-chaque-polluant-dans-le-département-des-pyrénées-orientales",
+    "href": "Villes/Pyrenees_orientales.html#part-de-chaque-polluant-dans-le-département-des-pyrénées-orientales",
+    "title": "Pyrénées-Orientales",
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"PYRENEES-ORIENTALES\")"
+  },
+  {
+    "objectID": "Villes/Pyrenees_orientales.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "href": "Villes/Pyrenees_orientales.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "title": "Pyrénées-Orientales",
+    "section": "Concentration de chaque polluant observé ses dernières années dans le département",
+    "text": "Concentration de chaque polluant observé ses dernières années dans le département\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"PYRENEES-ORIENTALES\",['NO2', 'PM2.5', 'PM10', 'O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information."
+  },
+  {
+    "objectID": "Villes/Pyrenees_orientales.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "href": "Villes/Pyrenees_orientales.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "title": "Pyrénées-Orientales",
+    "section": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours",
+    "text": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'O3'],\"PYRENEES-ORIENTALES\")"
   },
   {
     "objectID": "Villes/Haute_pyrenee.html",
     "href": "Villes/Haute_pyrenee.html",
     "title": "Hautes-Pyrénées",
     "section": "",
-    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"HAUTES-PYRENEES\")\n\n\n\n\n\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"HAUTES-PYRENEES\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'],\"HAUTES-PYRENEES\")\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"HAUTES-PYRENEES\")"
+  },
+  {
+    "objectID": "Villes/Haute_pyrenee.html#part-de-chaque-polluant-dans-le-département-du-haute-pyrénées",
+    "href": "Villes/Haute_pyrenee.html#part-de-chaque-polluant-dans-le-département-du-haute-pyrénées",
+    "title": "Hautes-Pyrénées",
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"HAUTES-PYRENEES\")"
+  },
+  {
+    "objectID": "Villes/Haute_pyrenee.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "href": "Villes/Haute_pyrenee.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "title": "Hautes-Pyrénées",
+    "section": "Concentration de chaque polluant observé ses dernières années dans le département",
+    "text": "Concentration de chaque polluant observé ses dernières années dans le département\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"HAUTES-PYRENEES\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information."
+  },
+  {
+    "objectID": "Villes/Haute_pyrenee.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "href": "Villes/Haute_pyrenee.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "title": "Hautes-Pyrénées",
+    "section": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours",
+    "text": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'],\"HAUTES-PYRENEES\")"
   },
   {
     "objectID": "Villes/Gers.html",
     "href": "Villes/Gers.html",
     "title": "Gers",
     "section": "",
-    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"GERS\")\n\n\n\n\n\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"GERS\",['NO2', 'PM2.5', 'PM10','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10','O3'],\"GERS\")\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"GERS\")"
+  },
+  {
+    "objectID": "Villes/Gers.html#part-de-chaque-polluant-dans-le-département-du-gers",
+    "href": "Villes/Gers.html#part-de-chaque-polluant-dans-le-département-du-gers",
+    "title": "Gers",
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"GERS\")"
+  },
+  {
+    "objectID": "Villes/Gers.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "href": "Villes/Gers.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "title": "Gers",
+    "section": "Concentration de chaque polluant observé ses dernières années dans le département",
+    "text": "Concentration de chaque polluant observé ses dernières années dans le département\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"GERS\",['NO2', 'PM2.5', 'PM10','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information."
+  },
+  {
+    "objectID": "Villes/Gers.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "href": "Villes/Gers.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "title": "Gers",
+    "section": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours",
+    "text": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10','O3'],\"GERS\")"
   },
   {
     "objectID": "Villes/Ariege.html",
     "href": "Villes/Ariege.html",
     "title": "Ariège",
     "section": "",
-    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"ARIEGE\")\n\n\n\n\n\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"ARIEGE\",['NO2', 'PM2.5', 'PM10', 'NO','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NO','O3'],\"ARIEGE\")\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Nous allons maintenant nous intéressé au département de l’Ariège."
+  },
+  {
+    "objectID": "Villes/Ariege.html#part-de-chaque-polluant-dans-le-département-de-lariège",
+    "href": "Villes/Ariege.html#part-de-chaque-polluant-dans-le-département-de-lariège",
+    "title": "Ariège",
+    "section": "Part de chaque polluant dans le département de l’Ariège",
+    "text": "Part de chaque polluant dans le département de l’Ariège\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"ARIEGE\")\n\n\n\n\n\nOn constate que globalement la tendance est la même que la région, les polluants majoritairement présents sont l’O3, le PM10 et le PM2.5."
+  },
+  {
+    "objectID": "Villes/Ariege.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "href": "Villes/Ariege.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "title": "Ariège",
+    "section": "Concentration de chaque polluant observé ses dernières années dans le département",
+    "text": "Concentration de chaque polluant observé ses dernières années dans le département\nLes graphiques ci-dessous représentent la concentration observée de certains polluants à la station de St-Giron Urbain la seule station de l’Ariège qui est repésentés dans nos données.\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"ARIEGE\",['NO2', 'PM2.5', 'PM10', 'NO','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information."
+  },
+  {
+    "objectID": "Villes/Ariege.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "href": "Villes/Ariege.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "title": "Ariège",
+    "section": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours",
+    "text": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NO','O3'],\"ARIEGE\")"
   },
   {
     "objectID": "Carte/Carte_final.html",
@@ -151,42 +256,154 @@
     "href": "index.html",
     "title": "Accueil",
     "section": "",
-    "text": "/tmp/ipykernel_2311/4020931299.py:11: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "La pollution, sous ses multiples formes, émerge comme l’un des enjeux les plus pressants de notre époque, affectant la qualité de l’air que nous respirons, de l’eau que nous buvons, et du sol sur lequel nous marchons. Nous allons, nous intéresser ici à la pollution dans la région Occitanie, et plus précisément à la pollution de l’air. Pour cela, nous allons nous intéresser à la concentration de certains polluants au cours des cinq dernières années. Afin de vous exposer au mieux la situation en Occitanie, nous allons observer les données que nous avons récupérées sur le site Atmo-Occitanie à différentes échelles.\nNous allons tout d’abord, nous intéresser à la pollution dans la région."
+  },
+  {
+    "objectID": "index.html#quantité-totale-des-polluants-mesurés",
+    "href": "index.html#quantité-totale-des-polluants-mesurés",
+    "title": "Accueil",
+    "section": "Quantité totale des polluants mesurés",
+    "text": "Quantité totale des polluants mesurés\nPour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\n\n\n/tmp/ipykernel_2179/4020931299.py:11: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O3 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
   },
   {
     "objectID": "Villes/Aveyron.html",
     "href": "Villes/Aveyron.html",
     "title": "Aveyron",
     "section": "",
-    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"AVEYRON\")\n\n\n\n\n\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"AVEYRON\", ['NO2', 'PM2.5', 'PM10', 'NO','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NO','O3'],\"AVEYRON\")\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"AVEYRON\")"
+  },
+  {
+    "objectID": "Villes/Aveyron.html#part-de-chaque-polluant-dans-le-département-de-laveyron",
+    "href": "Villes/Aveyron.html#part-de-chaque-polluant-dans-le-département-de-laveyron",
+    "title": "Aveyron",
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"AVEYRON\")"
+  },
+  {
+    "objectID": "Villes/Aveyron.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "href": "Villes/Aveyron.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "title": "Aveyron",
+    "section": "Concentration de chaque polluant observé ses dernières années dans le département",
+    "text": "Concentration de chaque polluant observé ses dernières années dans le département\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"AVEYRON\", ['NO2', 'PM2.5', 'PM10', 'NO','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information."
+  },
+  {
+    "objectID": "Villes/Aveyron.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "href": "Villes/Aveyron.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "title": "Aveyron",
+    "section": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours",
+    "text": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NO','O3'],\"AVEYRON\")"
   },
   {
     "objectID": "Villes/Gard.html",
     "href": "Villes/Gard.html",
     "title": "Gard",
     "section": "",
-    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import *\n\nplot_pie(\"GARD\")\n\n\n\n\n\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"GARD\",['NO2', 'PM2.5', 'PM10','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import *\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10','O3'],\"GARD\")\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import *\n\nplot_pie(\"GARD\")"
+  },
+  {
+    "objectID": "Villes/Gard.html#part-de-chaque-polluant-dans-le-département-du-gard",
+    "href": "Villes/Gard.html#part-de-chaque-polluant-dans-le-département-du-gard",
+    "title": "Gard",
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import *\n\nplot_pie(\"GARD\")"
+  },
+  {
+    "objectID": "Villes/Gard.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "href": "Villes/Gard.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "title": "Gard",
+    "section": "Concentration de chaque polluant observé ses dernières années dans le département",
+    "text": "Concentration de chaque polluant observé ses dernières années dans le département\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"GARD\",['NO2', 'PM2.5', 'PM10','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information."
+  },
+  {
+    "objectID": "Villes/Gard.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "href": "Villes/Gard.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "title": "Gard",
+    "section": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours",
+    "text": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import *\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10','O3'],\"GARD\")"
   },
   {
     "objectID": "Villes/Haute_garonne.html",
     "href": "Villes/Haute_garonne.html",
     "title": "Haute-Garonne",
     "section": "",
-    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"HAUTE-GARONNE\")\n\n\n\n\n\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"HAUTE-GARONNE\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'],\"HAUTE-GARONNE\")\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"HAUTE-GARONNE\")"
+  },
+  {
+    "objectID": "Villes/Haute_garonne.html#part-de-chaque-polluant-dans-le-département-du-haute-garonne",
+    "href": "Villes/Haute_garonne.html#part-de-chaque-polluant-dans-le-département-du-haute-garonne",
+    "title": "Haute-Garonne",
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"HAUTE-GARONNE\")"
+  },
+  {
+    "objectID": "Villes/Haute_garonne.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "href": "Villes/Haute_garonne.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "title": "Haute-Garonne",
+    "section": "Concentration de chaque polluant observé ses dernières années dans le département",
+    "text": "Concentration de chaque polluant observé ses dernières années dans le département\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"HAUTE-GARONNE\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information."
+  },
+  {
+    "objectID": "Villes/Haute_garonne.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "href": "Villes/Haute_garonne.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "title": "Haute-Garonne",
+    "section": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours",
+    "text": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'],\"HAUTE-GARONNE\")"
   },
   {
     "objectID": "Villes/Herault.html",
     "href": "Villes/Herault.html",
     "title": "Herault",
     "section": "",
-    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"HERAULT\")\n\n\n\n\n\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"HERAULT\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'],\"HERAULT\")\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"HERAULT\")"
+  },
+  {
+    "objectID": "Villes/Herault.html#part-de-chaque-polluant-dans-le-département-du-hérault",
+    "href": "Villes/Herault.html#part-de-chaque-polluant-dans-le-département-du-hérault",
+    "title": "Herault",
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"HERAULT\")"
+  },
+  {
+    "objectID": "Villes/Herault.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "href": "Villes/Herault.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "title": "Herault",
+    "section": "Concentration de chaque polluant observé ses dernières années dans le département",
+    "text": "Concentration de chaque polluant observé ses dernières années dans le département\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"HERAULT\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information."
+  },
+  {
+    "objectID": "Villes/Herault.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "href": "Villes/Herault.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "title": "Herault",
+    "section": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours",
+    "text": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'],\"HERAULT\")"
   },
   {
     "objectID": "Villes/Tarn_et_garonne.html",
     "href": "Villes/Tarn_et_garonne.html",
     "title": "Tarn et Garonne",
     "section": "",
-    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"TARN-ET-GARONNE\")\n\n\n\n\n\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"TARN-ET-GARONNE\",['NO2', 'PM2.5', 'PM10', 'O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n                                                \n\n\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'O3'],\"TARN-ET-GARONNE\")\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"TARN-ET-GARONNE\")"
+  },
+  {
+    "objectID": "Villes/Tarn_et_garonne.html#part-de-chaque-polluant-dans-le-département-du-tarn-et-garonne",
+    "href": "Villes/Tarn_et_garonne.html#part-de-chaque-polluant-dans-le-département-du-tarn-et-garonne",
+    "title": "Tarn et Garonne",
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"TARN-ET-GARONNE\")"
+  },
+  {
+    "objectID": "Villes/Tarn_et_garonne.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "href": "Villes/Tarn_et_garonne.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
+    "title": "Tarn et Garonne",
+    "section": "Concentration de chaque polluant observé ses dernières années dans le département",
+    "text": "Concentration de chaque polluant observé ses dernières années dans le département\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"TARN-ET-GARONNE\",['NO2', 'PM2.5', 'PM10', 'O3'])\n\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information.\n\n/home/runner/work/projet_pollution_Occitanie/projet_pollution_Occitanie/Villes/module.py:111: UserWarning:\n\nConverting to PeriodArray/Index representation will drop timezone information."
+  },
+  {
+    "objectID": "Villes/Tarn_et_garonne.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "href": "Villes/Tarn_et_garonne.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
+    "title": "Tarn et Garonne",
+    "section": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours",
+    "text": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'O3'],\"TARN-ET-GARONNE\")"
   },
   {
     "objectID": "Villes/Montpellier.html",
@@ -196,32 +413,32 @@
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"MONTPELLIER\",\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])"
   },
   {
-    "objectID": "Villes/Montpellier.html#graph-par-année-des-polluants-présent",
-    "href": "Villes/Montpellier.html#graph-par-année-des-polluants-présent",
+    "objectID": "Villes/Montpellier.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
+    "href": "Villes/Montpellier.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
     "title": "Montpellier",
     "section": "",
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"MONTPELLIER\",\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])"
   },
   {
-    "objectID": "Villes/Montpellier.html#polar-graph-par-mois",
-    "href": "Villes/Montpellier.html#polar-graph-par-mois",
+    "objectID": "Villes/Montpellier.html#evolution-de-la-pollution-mensuelle",
+    "href": "Villes/Montpellier.html#evolution-de-la-pollution-mensuelle",
     "title": "Montpellier",
-    "section": "Polar graph par mois",
-    "text": "Polar graph par mois"
+    "section": "Evolution de la pollution mensuelle",
+    "text": "Evolution de la pollution mensuelle"
   },
   {
-    "objectID": "Villes/Montpellier.html#polar-graph-par-semaine",
-    "href": "Villes/Montpellier.html#polar-graph-par-semaine",
+    "objectID": "Villes/Montpellier.html#evolution-de-la-pollution-au-cours-de-la-semaine",
+    "href": "Villes/Montpellier.html#evolution-de-la-pollution-au-cours-de-la-semaine",
     "title": "Montpellier",
-    "section": "Polar graph par semaine",
-    "text": "Polar graph par semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"MONTPELLIER\")"
+    "section": "Evolution de la pollution au cours de la semaine",
+    "text": "Evolution de la pollution au cours de la semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"MONTPELLIER\")"
   },
   {
-    "objectID": "Villes/Montpellier.html#polar-graph-par-jour",
-    "href": "Villes/Montpellier.html#polar-graph-par-jour",
+    "objectID": "Villes/Montpellier.html#evolution-de-la-pollution-journalière",
+    "href": "Villes/Montpellier.html#evolution-de-la-pollution-journalière",
     "title": "Montpellier",
-    "section": "Polar graph par jour",
-    "text": "Polar graph par jour\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"MONTPELLIER\")"
+    "section": "Evolution de la pollution journalière",
+    "text": "Evolution de la pollution journalière\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"MONTPELLIER\")"
   },
   {
     "objectID": "Villes/Nimes.html",
@@ -231,32 +448,32 @@
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"NIMES\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10'])"
   },
   {
-    "objectID": "Villes/Nimes.html#graph-par-année-des-polluants-présent",
-    "href": "Villes/Nimes.html#graph-par-année-des-polluants-présent",
+    "objectID": "Villes/Nimes.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
+    "href": "Villes/Nimes.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
     "title": "Nîmes",
     "section": "",
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"NIMES\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10'])"
   },
   {
-    "objectID": "Villes/Nimes.html#polar-graph-par-mois",
-    "href": "Villes/Nimes.html#polar-graph-par-mois",
+    "objectID": "Villes/Nimes.html#evolution-de-la-pollution-mensuelle",
+    "href": "Villes/Nimes.html#evolution-de-la-pollution-mensuelle",
     "title": "Nîmes",
-    "section": "Polar graph par mois",
-    "text": "Polar graph par mois"
+    "section": "Evolution de la pollution mensuelle",
+    "text": "Evolution de la pollution mensuelle"
   },
   {
-    "objectID": "Villes/Nimes.html#polar-graph-par-semaine",
-    "href": "Villes/Nimes.html#polar-graph-par-semaine",
+    "objectID": "Villes/Nimes.html#evolution-de-la-pollution-au-cours-de-la-semaine",
+    "href": "Villes/Nimes.html#evolution-de-la-pollution-au-cours-de-la-semaine",
     "title": "Nîmes",
-    "section": "Polar graph par semaine",
-    "text": "Polar graph par semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"NIMES\")"
+    "section": "Evolution de la pollution au cours de la semaine",
+    "text": "Evolution de la pollution au cours de la semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"NIMES\")"
   },
   {
-    "objectID": "Villes/Nimes.html#polar-graph-par-jour",
-    "href": "Villes/Nimes.html#polar-graph-par-jour",
+    "objectID": "Villes/Nimes.html#evolution-de-la-pollution-journalière",
+    "href": "Villes/Nimes.html#evolution-de-la-pollution-journalière",
     "title": "Nîmes",
-    "section": "Polar graph par jour",
-    "text": "Polar graph par jour\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"NIMES\")"
+    "section": "Evolution de la pollution journalière",
+    "text": "Evolution de la pollution journalière\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"NIMES\")"
   },
   {
     "objectID": "Villes/Rodez.html",
@@ -266,31 +483,31 @@
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"RODEZ\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])"
   },
   {
-    "objectID": "Villes/Rodez.html#graph-par-année-des-polluants-présent",
-    "href": "Villes/Rodez.html#graph-par-année-des-polluants-présent",
+    "objectID": "Villes/Rodez.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
+    "href": "Villes/Rodez.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
     "title": "Rodez",
     "section": "",
     "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"RODEZ\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])"
   },
   {
-    "objectID": "Villes/Rodez.html#polar-graph-par-mois",
-    "href": "Villes/Rodez.html#polar-graph-par-mois",
+    "objectID": "Villes/Rodez.html#evolution-de-la-pollution-mensuelle",
+    "href": "Villes/Rodez.html#evolution-de-la-pollution-mensuelle",
     "title": "Rodez",
-    "section": "Polar graph par mois",
-    "text": "Polar graph par mois"
+    "section": "Evolution de la pollution mensuelle",
+    "text": "Evolution de la pollution mensuelle"
   },
   {
-    "objectID": "Villes/Rodez.html#polar-graph-par-semaine",
-    "href": "Villes/Rodez.html#polar-graph-par-semaine",
+    "objectID": "Villes/Rodez.html#evolution-de-la-pollution-au-cours-de-la-semaine",
+    "href": "Villes/Rodez.html#evolution-de-la-pollution-au-cours-de-la-semaine",
     "title": "Rodez",
-    "section": "Polar graph par semaine",
-    "text": "Polar graph par semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"RODEZ\")"
+    "section": "Evolution de la pollution au cours de la semaine",
+    "text": "Evolution de la pollution au cours de la semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"RODEZ\")"
   },
   {
-    "objectID": "Villes/Rodez.html#polar-graph-par-jour",
-    "href": "Villes/Rodez.html#polar-graph-par-jour",
+    "objectID": "Villes/Rodez.html#evolution-de-la-pollution-journalière",
+    "href": "Villes/Rodez.html#evolution-de-la-pollution-journalière",
     "title": "Rodez",
-    "section": "Polar graph par jour",
-    "text": "Polar graph par jour\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"RODEZ\")"
+    "section": "Evolution de la pollution journalière",
+    "text": "Evolution de la pollution journalière\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"RODEZ\")"
   }
 ]
