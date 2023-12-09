@@ -31,5 +31,5 @@ import plotly.express as px
 import numpy as np
 from module.py import create_polar_plot
 
-create_polar_plot("../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],"ALBI")
+create_polar_plot("ALBI")
 ```
