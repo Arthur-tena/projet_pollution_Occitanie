@@ -93,7 +93,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 pd.options.mode.chained_assignment= None
 
-def plot_pollutant_evolution_annuelle(data_file, department, polluants):
+def plot_polluant_evolution_annuelle(data_file, department, polluants):
     """Cette fonction prend en argument le fichier CSV, le département et la liste des polluants à afficher et affiche l'évolution de la concentration par station de chaque polluants """
     # Charger les données
     df = pd.read_csv(data_file)
@@ -129,7 +129,6 @@ def plot_pollutant_evolution_annuelle(data_file, department, polluants):
             ))
         fig.show()
 
-plot_pollutant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv","GARD",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])
 # Villes
 
 import numpy as np
