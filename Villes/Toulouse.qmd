@@ -20,23 +20,17 @@ afficher_evolution_pollution("TOULOUSE", "../data_visu/Mesure_annuelle_Region_Oc
 ```{python}
 import pandas as pd
 import plotly.express as px
-from module.py import pollutants_evolution_ville
+from module import *
 
 pollutants_evolution_ville("../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],"TOULOUSE")
 ```
-```{python}
-
-from Concentrations_mensuelles.py import *
-
-```
-
 
 ## Polar graph par jour
 ```{python}
 import pandas as pd
 import plotly.express as px
 import numpy as np
-from module.py import create_polar_plot
+from module import *
 
 create_polar_plot("../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],"TOULOUSE")
 ```
