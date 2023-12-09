@@ -38,10 +38,10 @@ website:
       - sidebar:Dpt
       - sidebar:carte
   sidebar:
-    - id: carte
-     title: "Carte"
-     contents: 
-       - Carte/Carte_final.qmd
+    - id: Carte
+      title: "Carte"
+      contents:
+        - Carte/Carte_final.qmd
     - id: Dpt
       title: "Visualisation des données"
       collapse-level: 2
