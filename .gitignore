@@ -6,3 +6,10 @@
 /roadmap/README.html
 /.quarto/
 /docs/
+<<<<<<< HEAD
+=======
+Villes/VILZ.ipynb
+Villes/*_files/
+*.html
+/home/zack/projet_pollution_occitanie/data/departments.json
+>>>>>>> 0e67274f2682046197fc4468c92a3324990f77b7

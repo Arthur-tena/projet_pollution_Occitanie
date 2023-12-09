@@ -4,18 +4,21 @@ project:
     - index.qmd
     - Carte/Carte_finale.qmd
     - Villes/Aveyron.qmd
+    - Villes/Ariege.qmd
     - Villes/Gard.qmd
     - Villes/Gers.qmd
-    - Villes/Haute-Pyrénées.qmd
-    - Villes/HauteGaronne.qmd
+    - Villes/Haute_garonne.qmd
+    - Villes/Haute_pyreeneees.qmd
     - Villes/Herault.qmd
-    - Villes/Pyrenees_Orientales.qmd
-    - Villes/Tarn-et-Garonne.qmd
+    - Villes/Pyrenees_orientales.qmd
+    - Villes/Tarn_et_garonne.qmd
     - Villes/Tarn.qmd
     - Villes/Montpellier.qmd
     - Villes/Toulouse.qmd
     - Villes/Nimes.qmd
     - Villes/Perpignan.qmd
+    - Villes/Rodez.qmd
+    - Villes/Albi.qmd
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -35,28 +38,32 @@ website:
       - sidebar:Dpt
   sidebar:
     - text: "Carte"
-      href: "Carte_final.qmd"
+      href: "Carte_finale.qmd"
     - id: Dpt
       title: "Visualisation des données"
       collapse-level: 2
       contents:
         - section: "Départements"
           contents:
+            - Villes/Ariege.qmd
             - Villes/Aveyron.qmd
             - Villes/Gard.qmd
             - Villes/Gers.qmd
-            - Villes/HauteGaronne.qmd
-            - Villes/Haute-Pyrénées.qmd
+            - Villes/Haute_garonne.qmd
+            - Villes/Haute_pyreeneees.qmd
             - Villes/Herault.qmd
-            - Villes/Pyrenees_Orientales.qmd
-            - Villes/Tarn-et-Garonne.qmd
+            - Villes/Pyrenees_orientales.qmd
+            - Villes/Tarn_et_garonne.qmd
             - Villes/Tarn.qmd
         - section: "Villes"
           contents:
+            - Villes/Albi.qmd
             - Villes/Montpellier.qmd
             - Villes/Nimes.qmd
             - Villes/Perpignan.qmd
+            - Villes/Rodez.qmd
             - Villes/Toulouse.qmd
+            
 format:
   html:
     theme: cosmo
