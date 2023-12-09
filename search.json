@@ -144,7 +144,7 @@
     "href": "index.html",
     "title": "Accueil",
     "section": "",
-    "text": "Page d’accueil.\nINTRODUCTION PROBLEMATIQUE\n\n\n/tmp/ipykernel_2285/4020931299.py:11: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\n\n\n\n                                                \n\n\n\n\n\n Back to top"
+    "text": "Page d’accueil.\nINTRODUCTION PROBLEMATIQUE\n\n\n/tmp/ipykernel_2166/4020931299.py:11: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\n\n\n\n                                                \n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "Carte/Carte_final.html",
