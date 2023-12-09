@@ -39,7 +39,6 @@ website:
       - sidebar:Dpt
   sidebar:
     - id: carte
-      title: "Carte"
       contents:
         - Carte/Carte_final.qmd
     - id: Dpt
@@ -48,53 +47,25 @@ website:
       contents:
         - section: "Départements"
           contents:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            - Villes/Aveyron.qmd
-            - Villes/Gard.qmd
-            - Villes/Gers.qmd
-            - Villes/HauteGaronne.qmd
-            - Villes/Haute-Pyrénées.qmd
-=======
-            - Villes/Gard.qmd
-            - Villes/Gers.qmd
-            - Villes/Haute-Pyrénées.qmd
-            - Villes/HauteGaronne.qmd
->>>>>>> 609d115beff013f463134466f2fc269054dcecb1
-=======
             - Villes/Ariege.qmd
             - Villes/Aveyron.qmd
             - Villes/Gard.qmd
             - Villes/Gers.qmd
             - Villes/Haute_garonne.qmd
             - Villes/Haute_pyrenee.qmd
->>>>>>> 86c063793ec7ca01c0692709785d2473c9765084
             - Villes/Herault.qmd
             - Villes/Pyrenees_orientales.qmd
             - Villes/Tarn_et_garonne.qmd
             - Villes/Tarn.qmd
         - section: "Villes"
           contents:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             - Villes/Albi.qmd
->>>>>>> 86c063793ec7ca01c0692709785d2473c9765084
             - Villes/Montpellier.qmd
             - Villes/Nimes.qmd
             - Villes/Perpignan.qmd
             - Villes/Rodez.qmd
             - Villes/Toulouse.qmd
-<<<<<<< HEAD
-=======
-            - Villes/Nimes.qmd
-            - Villes/Montpellier.qmd
-            - Villes/Toulouse.qmd
-            - Villes/Perpignan.qmd
->>>>>>> 609d115beff013f463134466f2fc269054dcecb1
-=======
-            
->>>>>>> 86c063793ec7ca01c0692709785d2473c9765084
+           
 format:
   html:
     theme: cosmo

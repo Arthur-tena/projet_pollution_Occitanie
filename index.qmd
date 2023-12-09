@@ -1,16 +1,6 @@
 ---
 title: "Accueil"
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 86c063793ec7ca01c0692709785d2473c9765084
-
-Page d'accueil.
-
-INTRODUCTION
-PROBLEMATIQUE
-
 ```{python}
 #| echo: false
 # %%
@@ -79,10 +69,3 @@ fig.update_layout(
 
 fig.show()
 ```
-<<<<<<< HEAD
->>>>>>> 06fb5b745af48ed639f12c1fd1d57b6bed17eafc
-=======
-Page d'accueil.
->>>>>>> 609d115beff013f463134466f2fc269054dcecb1
-=======
->>>>>>> 86c063793ec7ca01c0692709785d2473c9765084
