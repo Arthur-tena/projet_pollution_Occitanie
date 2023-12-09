@@ -1,0 +1,113 @@
+---
+title: "Carte Pollution sur l'Occitanie depuis"
+---
+```{python}
+#|echo : false
+# Importez les packages à utiliser
+import pandas as pd
+import folium
+from folium import FeatureGroup
+from folium.plugins import HeatMap
+import branca.colormap as cm
+import geopandas as gpd
+
+dept = gpd.read_file("../data/dept_occi.json")
+df_IQA = pd.read_csv('../data/Mesure_horaire.csv',
+                 usecols=["X","Y",'nom_com',"nom_poll","valeur"])
+df_IQA_mod = df_IQA.dropna()
+df_IQA_g = df_IQA_mod.groupby(['nom_com','nom_poll']).mean()
+# Longitude de chaque zone
+long = df_IQA["X"].unique().tolist()
+# Latittude de chaque zone
+lat = df_IQA["Y"].unique().tolist()
+
+O3 = df_IQA_mod[df_IQA_mod['nom_poll'] =='O3']['valeur'].tolist()
+
+NO2 = df_IQA_mod[df_IQA_mod['nom_poll'] =='NO2']['valeur'].tolist()
+
+NOX = df_IQA_mod[df_IQA_mod['nom_poll'] =='NOX']['valeur'].tolist()
+
+PM10 = df_IQA_mod[df_IQA_mod['nom_poll'] =='PM10']['valeur'].tolist()
+
+PM25 = df_IQA_mod[df_IQA_mod['nom_poll'] =='PM2.5']['valeur'].tolist()
+
+SO2 = df_IQA_mod[df_IQA_mod['nom_poll'] =='SO2']['valeur'].tolist()
+
+grad = {
+    0:   "#DE5B30",
+    0.1: "#CC5333",
+    0.2: "#B94A35",
+    0.3: "#A64238",
+    0.4: "#93393B",
+    0.5: "#80313E",
+    0.6: "#6E2841",
+    0.7: "#5B2044",
+    0.8: "#481747",
+    0.9: "#350F4A",
+    1:   "#23074D",
+}
+hm_occi = folium.Map([43.716671, 2.15], zoom_start=5)
+dept_map = folium.GeoJson(
+    dept,
+    style_function=lambda feature: {
+        "fillColor": "blue",
+        "color": "white",
+        "weight": 0.5,
+        "dashArray": "5, 5",
+        "fillOpacity": 0.1,
+    },
+    name="Departements de l'occitanie",
+    zoom_on_click=True,
+).add_to(hm_occi)
+
+hm_no2 = HeatMap(list(zip(lat, long, NO2)), name="NO2", blur=30, radius=40,show=False, gradient= grad).add_to(
+    hm_occi
+)
+# Calque O3
+
+hm_o3 = HeatMap(list(zip(lat, long, O3)), name="O3", blur=30, radius=40,show=False,gradient= grad).add_to(hm_occi)
+# Calque PM10
+hm_pm10 = HeatMap(list(zip(lat, long, PM10)), name="PM10", blur=30, radius=40,show=False, gradient= grad).add_to(
+    hm_occi
+)
+# Calque PM25
+hm_pm25 = HeatMap(list(zip(lat, long, PM25)), name="PM25", blur=30, radius=40,show=True, gradient=grad).add_to(
+    hm_occi
+)
+# Calque NOX
+hm_nox = HeatMap(list(zip(lat, long, NOX)), name="NOX", blur=30, radius=40,show=False, gradient=grad).add_to(
+    hm_occi
+)
+# Calque SO2
+hm_nox = HeatMap(list(zip(lat, long, NOX)), name="SO2", blur=30, radius=40,show=False, gradient=grad).add_to(
+    hm_occi
+)
+
+villes = ['TOULOUSE','MONTPELLIER','RODEZ','NIMES','PERPIGNAN','ALBI']
+for i in villes:
+    folium.Marker(
+    location=list(df_IQA_g.loc[i][["Y","X"]].mean()),
+    tooltip= i,
+    popup=i,
+    icon=folium.Icon(color="orange"),
+).add_to(hm_occi)
+folium.TileLayer("CartoDB Positron", name="Clair").add_to(hm_occi)
+folium.TileLayer('cartodbdark_matter',name = "Sombre",show=False).add_to(hm_occi)
+folium.LayerControl(position="bottomleft",collapsed=False, overlay= True).add_to(hm_occi)
+color_mapa = cm.LinearColormap(
+    colors=["#DE5B30",
+"#CC5333",
+"#B94A35",
+"#A64238",
+"#93393B",
+"#80313E",
+"#6E2841",
+"#5B2044",
+"#481747",
+"#350F4A",
+"#23074D"],
+    caption="intensité de concentration du polluant",
+)
+color_mapa.add_to(hm_occi)
+hm_occi
+```
