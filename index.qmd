@@ -1,11 +1,6 @@
 ---
 title: "Accueil"
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 86c063793ec7ca01c0692709785d2473c9765084
-
 La pollution, sous ses multiples formes, émerge comme l'un des enjeux les plus pressants de notre époque, affectant la qualité de l'air que nous respirons, de l'eau que nous buvons, et du sol sur lequel nous marchons.
 Nous allons, nous intéresser ici à la pollution dans la région Occitanie, et plus précisément à la pollution de l'air.
 Pour cela, nous allons nous intéresser à la concentration de certains polluants au cours des cinq dernières années. 
@@ -92,10 +87,4 @@ fig.update_layout(
 
 fig.show()
 ```
-<<<<<<< HEAD
->>>>>>> 06fb5b745af48ed639f12c1fd1d57b6bed17eafc
-=======
-Page d'accueil.
->>>>>>> 609d115beff013f463134466f2fc269054dcecb1
-=======
->>>>>>> 86c063793ec7ca01c0692709785d2473c9765084
+
