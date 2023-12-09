@@ -12,7 +12,7 @@ import branca.colormap as cm
 import geopandas as gpd
 
 dept = gpd.read_file("../data/dept_occi.json")
-df_IQA = pd.read_csv('../data/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv',
+df_IQA = pd.read_csv('../data/Mesure_horaire.csv',
                  usecols=["X","Y",'nom_com',"nom_poll","valeur"])
 df_IQA_mod = df_IQA.dropna()
 df_IQA_g = df_IQA_mod.groupby(['nom_com','nom_poll']).mean()
