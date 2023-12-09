@@ -13,6 +13,7 @@ Afin de vous exposer au mieux la situation en Occitanie, nous allons observer le
 
 Nous allons tout d'abord, nous intéresser à la pollution dans la région.
 
+## Quantité totale des polluants mesurés 
 Pour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants. 
 
 

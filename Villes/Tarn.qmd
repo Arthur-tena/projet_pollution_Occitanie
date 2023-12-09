@@ -3,6 +3,7 @@ title: "Tarn"
 format: html
 ---
 
+## Part de chaque polluant dans le département du Tarn
 ```{python}
 #|code-fold: true
 import matplotlib.pyplot as plt
@@ -12,6 +13,7 @@ from module import plot_pie
 plot_pie("TARN")
 ```
 
+## Concentration de chaque polluant observé ses dernières années dans le département
 
 ```{python}
 #|code-fold: true
@@ -23,6 +25,7 @@ from module import plot_polluant_evolution_annuelle
 plot_polluant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv","TARN",['NO2', 'PM10', 'O3', 'NO'])
 ```
 
+## Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours
 
 ```{python}
 #|code-fold: true

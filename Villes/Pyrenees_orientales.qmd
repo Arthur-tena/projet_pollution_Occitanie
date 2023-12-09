@@ -3,6 +3,8 @@ title: "Pyrénées-Orientales"
 format: html
 ---
 
+## Part de chaque polluant dans le département des Pyrénées-Orientales
+
 ```{python}
 #|code-fold: true
 import matplotlib.pyplot as plt
@@ -11,6 +13,8 @@ from module import plot_pie
 
 plot_pie("PYRENEES-ORIENTALES")
 ```
+
+## Concentration de chaque polluant observé ses dernières années dans le département
 
 
 ```{python}
@@ -23,6 +27,7 @@ from module import plot_polluant_evolution_annuelle
 plot_polluant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv","PYRENEES-ORIENTALES",['NO2', 'PM2.5', 'PM10', 'O3'])
 ```
 
+## Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours
 
 ```{python}
 #|code-fold: true
