@@ -40,7 +40,7 @@ website:
   sidebar:
     - id: carte
      title: "Carte"
-      contents: 
+     contents: 
        - Carte/Carte_final.qmd
     - id: Dpt
       title: "Visualisation des données"
