@@ -1,9 +1,8 @@
 project:
   type: website
+  output-dir: docs
   render:
-    - index.qmd
     - Carte/Carte_final.qmd
-    - Villes/Gard.qmd
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
