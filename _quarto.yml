@@ -36,9 +36,12 @@ website:
         text: GitHub
     left:
       - sidebar:Dpt
+      - sidebar:carte
   sidebar:
-    - text: "Carte"
-      href: "Carte_finale.qmd"
+    - id: carte
+     title: "Carte"
+      contents: 
+       - Carte/Carte_final.qmd
     - id: Dpt
       title: "Visualisation des données"
       collapse-level: 2
