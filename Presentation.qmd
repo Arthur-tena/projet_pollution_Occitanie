@@ -1,0 +1,24 @@
+---
+title: "Pollution en Occitanie"
+author: "Tena Lahjiouj Khodri Zhu"
+format: 
+ revealjs :
+     theme: dark
+
+---
+
+# Problématique 
+
+# En Occitanie 
+
+# Par département 
+## Herault
+
+## Haute-Garonne 
+
+# Quelques villes 
+## Toulouse
+
+## Montpellier
+
+# Conclusion 

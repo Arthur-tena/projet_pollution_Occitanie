@@ -73,11 +73,24 @@ if response.status_code == 200:
 
  # Liste des polluants à afficher
     polluants = ['NO', 'NOX', 'O3', 'PM10', 'NO2', 'PM2.5'] 
+    df_Tls["month"] = df_Tls["date_debut"].dt.month
+    df_Tls_month = df_Tls.groupby(["month", df_Tls['month']]).size().unstack(level=0)
+    print(df_Tls_month.head())
 
+    """df_Tls["month"] = df_Tls.index.month
+    df_Tls_month = (
+    df_Tls.groupby(["month", df_Tls.index.hour])["valeur"]
+    .count()
+    .unstack(level=0))
+    df_Tls.head()"""
  # Créer un graphique polaire pour chaque station
     for station in stations_Tls:
-     df_station = df_Tls[df_Tls['code_station'] == station]
-     fig = px.line_polar(
+     df_station = df_Tls_month[df_Tls_month.index.isin(df_Tls[df_Tls['code_station'] == station]["month"].unique())]
+     df_station.reset_index(inplace=True)
+     df_station.columns = ['date_debut'] + list(df_station.columns[1:])
+     df_Tls={df_station,df_Tls}
+     print(df_Tls)
+     """fig = px.line_polar(
         df_station,
         r="valeur",
         theta="date_debut",
@@ -89,7 +102,7 @@ if response.status_code == 200:
         title=f"Évolution des polluants pour la station {station}",
      )
 
-     fig.show()
+     fig.show()"""
     
    
 

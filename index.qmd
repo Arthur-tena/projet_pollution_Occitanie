@@ -2,18 +2,52 @@
 title: "Accueil"
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 86c063793ec7ca01c0692709785d2473c9765084
 
 Page d'accueil.
+
+INTRODUCTION
 PROBLEMATIQUE
 
 ```{python}
 #| echo: false
 # %%
 import pandas as pd
-import plotly.graph_objects as go
-import numpy as np
+import matplotlib.pyplot as plt
+data = pd.read_csv("data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+df = pd.DataFrame(data)
+grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
+grouped_df = grouped_df.sort_values(by=['date_debut', 'nom_poll'])
+grouped_df['date_debut'] = pd.to_datetime(grouped_df['date_debut'])
+grouped_df['date_debut'] = grouped_df['date_debut'].dt.year
+plt.figure(figsize=(7.5, 6))
+colors = plt.cm.get_cmap('tab10', len(grouped_df['nom_poll'].unique()))
+year_indexes = {year: i for i, year in enumerate(grouped_df['date_debut'].unique())}
+for polluant, color in zip(grouped_df['nom_poll'].unique(), colors.colors):
+    plt.bar(
+        [year_indexes[annee] for annee in grouped_df['date_debut'].unique()],
+        grouped_df[grouped_df['nom_poll'] == polluant]['valeur'],
+        label=polluant,
+        color=color
+    )
+plt.xlabel('Année')
+plt.ylabel('Somme des valeurs')
+plt.title('Valeurs des principaux polluants par année')
+plt.legend(title='Polluant', bbox_to_anchor=(1, 1))
+plt.xticks([i for i in range(len(grouped_df['date_debut'].unique()))], grouped_df['date_debut'].unique())
+plt.show()
+```
 
-data = pd.read_csv("data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+```{python,}
+#| echo: false
+#| code-summary: "Une évolution de la concentration des polluants en Occitanie"
+# %%
+import pandas as pd
+import plotly.graph_objects as go
+
+data = pd.read_csv("data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 df = pd.DataFrame(data)
 columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
 df = df.drop(columns=columns_to_drop)
@@ -23,7 +57,7 @@ grouped_df['date_debut'] = pd.to_datetime(grouped_df['date_debut'])
 grouped_df['date_debut'] = grouped_df['date_debut'].dt.year
 
 fig = go.FigureWidget()
-polluants = sorted(grouped_df["nom_poll"].unique())
+polluants = ['NO','NO2','NOX','O3','PM10','PM2.5']
 for polluant in polluants:
     trace_data = grouped_df[grouped_df["nom_poll"] == polluant]
     fig.add_trace(
@@ -38,14 +72,17 @@ fig.update_layout(
     template="simple_white",
     title="Polluants en fonction de l'année",
     showlegend=True,
-    xaxis_title="Polluants",
-    yaxis_title="Fréquence normalisée",
+    xaxis_title="Année",
+    yaxis_title="Fréquence normalisée en ug.m-3",
 )
 
 
 fig.show()
 ```
+<<<<<<< HEAD
 >>>>>>> 06fb5b745af48ed639f12c1fd1d57b6bed17eafc
 =======
 Page d'accueil.
 >>>>>>> 609d115beff013f463134466f2fc269054dcecb1
+=======
+>>>>>>> 86c063793ec7ca01c0692709785d2473c9765084

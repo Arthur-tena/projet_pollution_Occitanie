@@ -59,37 +59,34 @@ Dans le graphique ci-après , nous pouvons voir la proportion des polluants par 
 # %%
 import pandas as pd
 import matplotlib.pyplot as plt
+def plot_pollutants_by_year(csv_file):
+    data = pd.read_csv(csv_file)
+    df = pd.DataFrame(data)
 
-data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
-df = pd.DataFrame(data)
+    grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
+    grouped_df = grouped_df.sort_values(by=['date_debut', 'nom_poll'])
+    grouped_df['date_debut'] = pd.to_datetime(grouped_df['date_debut'])
+    grouped_df['date_debut'] = grouped_df['date_debut'].dt.year
+    plt.figure(figsize=(7.5, 6))
+    colors = plt.cm.get_cmap('tab10', len(grouped_df['nom_poll'].unique()))
+    year_indexes = {year: i for i, year in enumerate(grouped_df['date_debut'].unique())}
+    for polluant, color in zip(grouped_df['nom_poll'].unique(), colors.colors):
+        plt.bar(
+            [year_indexes[annee] for annee in grouped_df['date_debut'].unique()],
+            grouped_df[grouped_df['nom_poll'] == polluant]['valeur'],
+            label=polluant,
+            color=color
+        )
 
-columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
-df = df.drop(columns=columns_to_drop)
-grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
-grouped_df = grouped_df.sort_values(by=['date_debut', 'nom_poll'])
-grouped_df['date_debut'] = pd.to_datetime(grouped_df['date_debut'])
-grouped_df['date_debut'] = grouped_df['date_debut'].dt.year
-plt.figure(figsize=(7.5, 6))
-colors = plt.cm.get_cmap('tab10', len(grouped_df['nom_poll'].unique()))
-bar_width = 0.2
-bar_spacing = 0.1
-year_indexes = {year: i for i, year in enumerate(grouped_df['date_debut'].unique())}
-for polluant, color in zip(grouped_df['nom_poll'].unique(), colors.colors):
-    plt.bar(
-        [year_indexes[annee] + j * (bar_width + bar_spacing) for j, annee in enumerate(grouped_df['date_debut'].unique())],
-        grouped_df[grouped_df['nom_poll'] == polluant]['valeur'],
-        width=bar_width,
-        label=polluant,
-        color=color
-    )
-plt.xlabel('Année')
-plt.ylabel('Somme des valeurs')
-plt.title('Valeurs des principaux polluants par année')
-plt.legend(title='Polluant', bbox_to_anchor=(1, 1))
-plt.xticks([i for i in range(len(grouped_df['date_debut'].unique()))], grouped_df['date_debut'].unique())
+    plt.xlabel('Année')
+    plt.ylabel('Somme des valeurs')
+    plt.title('Valeurs des principaux polluants par année')
+    plt.legend(title='Polluant', bbox_to_anchor=(1, 1))
+    plt.xticks([i for i in range(len(grouped_df['date_debut'].unique()))], grouped_df['date_debut'].unique())
 
-plt.show()
+    plt.show()
 
+plot_pollutants_by_year("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 ```
 
 ::: {.callout-note}
@@ -129,7 +126,7 @@ for polluant in polluants:
     )
 fig.update_layout(
     template="simple_white",
-    title="Polluants en fonction de l'année",
+    title="Polluants en fonction de l'année en Occitanie",
     showlegend=True,
     xaxis_title="Polluants",
     yaxis_title="Fréquence normalisée",
