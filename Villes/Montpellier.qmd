@@ -7,7 +7,7 @@ format: html
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from module.py import afficher_evolution_pollution
+from module import *
 
 afficher_evolution_pollution("MONTPELLIER","../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv" ,['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'])
 ```
