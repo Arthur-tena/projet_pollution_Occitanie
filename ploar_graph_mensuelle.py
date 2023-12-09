@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.express as px
 import numpy as np
-def create_polar_plot(chemin,)    
+def create_polar_plot(ville, chemin):
     # Chargez le fichier CSV dans un DataFrame pandas
     chemin_fichier_csv = r'/home/zack/projet_pollution_occitanie/mensuelle.csv'
     df = pd.read_csv(chemin_fichier_csv)
@@ -17,8 +17,8 @@ def create_polar_plot(chemin,)
     df = df.sort_values(by='mois')
 
     # Définir les polluants et la ville spécifiques
-    polluants = ['O3', 'PM2.5', 'NO']  # Remplacez par les noms réels de vos polluants
-    ville = 'TOULOUSE'  # Remplacez par le nom réel de votre ville
+    polluants = ['O3', 'PM2.5', 'NO'] 
+    ville = 'TOULOUSE'  
 
     # Filtrer les données pour inclure uniquement les polluants spécifiés
     df_filtered = df[df['nom_poll'].isin(polluants)]
