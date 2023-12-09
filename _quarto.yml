@@ -24,7 +24,7 @@ website:
   page-navigation: true # true not working in website
   title: "Pollution en Occitanie"
   site-url: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
-  repo-url: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
+  repo-url: https://github.com/zakariakhodrium/projet_pollution_Occitanie/
   repo-actions: [source]
   navbar:
     title: "Pollution en Occitanie"
@@ -32,7 +32,7 @@ website:
     search: true
     tools:
       - icon: github
-        href: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
+        href: https://github.com/zakariakhodrium/projet_pollution_Occitanie/
         text: GitHub
     left:
       - sidebar:carte
