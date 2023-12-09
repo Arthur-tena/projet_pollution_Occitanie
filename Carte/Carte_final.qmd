@@ -1,31 +1,38 @@
 ---
-title: "Carte Pollution sur l'Occitanie depuis [2020]"
+title: "Carte Pollution sur l'Occitanie depuis"
 ---
 ```{python}
 #|echo : false
 # Importez les packages à utiliser
 import pandas as pd
-import geopandas as gpd
 import folium
 from folium import FeatureGroup
 from folium.plugins import HeatMap
 import branca.colormap as cm
+import geopandas as gpd
 
-# Importez les  nécessaire pour afficher la carte
-df_IQA = pd.read_csv(
-    "../data/IQA.csv",
-        usecols=[
-        "X",
-        "Y",
-        "code_qual",
-        "code_no2",
-        "code_so2",
-        "code_o3",
-        "code_pm10",
-        "code_pm25",
-        'lib_zone'
-    ],
-)
+dept = gpd.read_file("../data/dept_occi.json")
+df_IQA = pd.read_csv('../data/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv',
+                 usecols=["X","Y",'nom_com',"nom_poll","valeur"])
+df_IQA_mod = df_IQA.dropna()
+df_IQA_g = df_IQA_mod.groupby(['nom_com','nom_poll']).mean()
+# Longitude de chaque zone
+long = df_IQA["X"].unique().tolist()
+# Latittude de chaque zone
+lat = df_IQA["Y"].unique().tolist()
+
+O3 = df_IQA_mod[df_IQA_mod['nom_poll'] =='O3']['valeur'].tolist()
+
+NO2 = df_IQA_mod[df_IQA_mod['nom_poll'] =='NO2']['valeur'].tolist()
+
+NOX = df_IQA_mod[df_IQA_mod['nom_poll'] =='NOX']['valeur'].tolist()
+
+PM10 = df_IQA_mod[df_IQA_mod['nom_poll'] =='PM10']['valeur'].tolist()
+
+PM25 = df_IQA_mod[df_IQA_mod['nom_poll'] =='PM2.5']['valeur'].tolist()
+
+SO2 = df_IQA_mod[df_IQA_mod['nom_poll'] =='SO2']['valeur'].tolist()
+
 grad = {
     0:   "#DE5B30",
     0.1: "#CC5333",
@@ -39,33 +46,7 @@ grad = {
     0.9: "#350F4A",
     1:   "#23074D",
 }
-# df_IQA_g = df_IQA.groupby(['X','Y','lib_zone']).mean()
-df_IQA_g = df_IQA.groupby(['lib_zone']).mean()
-# 
-df_IQA_g = df_IQA_g.sort_values(by="code_qual", ascending=False)
-dept = gpd.read_file("../data/dept_occi.json")
-# Filtrer les données par :
-# Longitude de chaque zone
-long = df_IQA["X"].unique().tolist()
-# Latittude de chaque zone
-lat = df_IQA["Y"].unique().tolist()
-
-# Et par polluants:
-# NO2
-NO2 = df_IQA_g["code_no2"].tolist()
-# SO2
-# SO2 = df_IQA_g["code_so2"].tolist()
-# O3
-O3 = df_IQA_g["code_o3"].tolist()
-# PM10
-PM10 = df_IQA_g["code_pm10"].tolist()
-# PM25
-PM25 = df_IQA_g["code_pm25"].tolist()
-# Code qualittif du l'indice de qualité de l'air
-Code_Qual = df_IQA_g["code_qual"].tolist()
-# Création de la carte
-hm_occi = folium.Map([43.716671, 2.15], zoom_start=8)
-# Calque du départements
+hm_occi = folium.Map([43.716671, 2.15], zoom_start=5)
 dept_map = folium.GeoJson(
     dept,
     style_function=lambda feature: {
@@ -79,40 +60,40 @@ dept_map = folium.GeoJson(
     zoom_on_click=True,
 ).add_to(hm_occi)
 
-
-# Calque IQA
-hm_iqa = HeatMap(
-    list(zip(lat, long, Code_Qual)),
-    name="Indice de Qualité de l'Air",
-    blur=30,
-    radius=40,
-    gradient = grad
-).add_to(hm_occi)
-# Calque NO2
 hm_no2 = HeatMap(list(zip(lat, long, NO2)), name="NO2", blur=30, radius=40,show=False, gradient= grad).add_to(
     hm_occi
 )
 # Calque O3
+
 hm_o3 = HeatMap(list(zip(lat, long, O3)), name="O3", blur=30, radius=40,show=False,gradient= grad).add_to(hm_occi)
 # Calque PM10
 hm_pm10 = HeatMap(list(zip(lat, long, PM10)), name="PM10", blur=30, radius=40,show=False, gradient= grad).add_to(
     hm_occi
 )
 # Calque PM25
-hm_pm25 = HeatMap(list(zip(lat, long, PM25)), name="PM25", blur=30, radius=40,show=False, gradient=grad).add_to(
+hm_pm25 = HeatMap(list(zip(lat, long, PM25)), name="PM25", blur=30, radius=40,show=True, gradient=grad).add_to(
+    hm_occi
+)
+# Calque NOX
+hm_nox = HeatMap(list(zip(lat, long, NOX)), name="NOX", blur=30, radius=40,show=False, gradient=grad).add_to(
+    hm_occi
+)
+# Calque SO2
+hm_nox = HeatMap(list(zip(lat, long, NOX)), name="SO2", blur=30, radius=40,show=False, gradient=grad).add_to(
     hm_occi
 )
 
+villes = ['TOULOUSE','MONTPELLIER','RODEZ','NIMES','PERPIGNAN','ALBI']
+for i in villes:
+    folium.Marker(
+    location=list(df_IQA_g.loc[i][["Y","X"]].mean()),
+    tooltip= i,
+    popup=i,
+    icon=folium.Icon(color="orange"),
+).add_to(hm_occi)
 folium.TileLayer("CartoDB Positron", name="Clair").add_to(hm_occi)
 folium.TileLayer('cartodbdark_matter',name = "Sombre",show=False).add_to(hm_occi)
 folium.LayerControl(position="bottomleft",collapsed=False, overlay= True).add_to(hm_occi)
-for i in range(20):
-    folium.Marker(
-    location=list(df_IQA_g.iloc[i][['Y','X']]),
-    tooltip=str({i+1, df_IQA_g.index[i]}),
-    popup="Timberline Lodge",
-    icon=folium.Icon(color="green"),
-).add_to(hm_occi)
 color_mapa = cm.LinearColormap(
     colors=["#DE5B30",
 "#CC5333",
