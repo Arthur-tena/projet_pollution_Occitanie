@@ -36,7 +36,7 @@ website:
         text: GitHub
     left:
       - sidebar:Dpt
-      - sidebar:carte
+      - sidebar:Carte
   sidebar:
     - id: Carte
       title: "Carte"
