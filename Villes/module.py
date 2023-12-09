@@ -32,7 +32,7 @@ def plot_pie(department):
 import pandas as pd
 import plotly.express as px
 import matplotlib.pyplot as plt
-def pollutants_evolution_dept_jour(csv, polluants, dept):
+def polluants_evolution_dept_jour(csv, polluants, dept):
     """Cette fonction prend en argument un fichier CSV, la liste des polluants à afficher, ainsi que le département que l'on souhaite afficher et trace un graphique polair qui représente l'évolution de la concentration de chaque polluants choisis au cours de la journée"""
     df = pd.read_csv(csv)
 
