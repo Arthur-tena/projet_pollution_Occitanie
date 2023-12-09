@@ -35,10 +35,10 @@ website:
         href: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
         text: GitHub
     left:
+      - sidebar:carte
       - sidebar:Dpt
-      - sidebar:Carte
   sidebar:
-    - id: Carte
+    - id: carte
       title: "Carte"
       contents:
         - Carte/Carte_final.qmd
@@ -53,7 +53,7 @@ website:
             - Villes/Gard.qmd
             - Villes/Gers.qmd
             - Villes/Haute_garonne.qmd
-            - Villes/Haute_pyreeneees.qmd
+            - Villes/Haute_pyrenees.qmd
             - Villes/Herault.qmd
             - Villes/Pyrenees_orientales.qmd
             - Villes/Tarn_et_garonne.qmd
