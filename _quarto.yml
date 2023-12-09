@@ -1,15 +1,12 @@
 project:
   type: website
   render:
-<<<<<<< HEAD
-=======
     - index.qmd
 <<<<<<< HEAD
     - Carte/Carte_finale.qmd
     - Villes/Aveyron.qmd
 =======
     - Carte/Carte_final.qmd
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
     - Villes/Gard.qmd
     - Villes/Gers.qmd
     - Villes/Haute-Pyrénées.qmd
@@ -41,8 +38,6 @@ website:
       - sidebar:Carte
       - sidebar:Dpt
   sidebar:
-<<<<<<< HEAD
-=======
     - id: Carte
       title: "Carte"
       contents:
@@ -50,37 +45,43 @@ website:
         - Carte/Carte_finale.qmd
 =======
         - Carte/Carte_final.qmd
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
     - id: Dpt
       title: "Visualisation des données"
       collapse-level: 2
       contents:
         - section: "Départements"
           contents:
+<<<<<<< HEAD
             - Villes/Aveyron.qmd
             - Villes/Gard.qmd
             - Villes/Gers.qmd
             - Villes/HauteGaronne.qmd
             - Villes/Haute-Pyrénées.qmd
+=======
+            - Villes/Gard.qmd
+            - Villes/Gers.qmd
+            - Villes/Haute-Pyrénées.qmd
+            - Villes/HauteGaronne.qmd
+>>>>>>> 609d115beff013f463134466f2fc269054dcecb1
             - Villes/Herault.qmd
             - Villes/Pyrenees_Orientales.qmd
             - Villes/Tarn-et-Garonne.qmd
             - Villes/Tarn.qmd
         - section: "Villes"
           contents:
+<<<<<<< HEAD
             - Villes/Montpellier.qmd
             - Villes/Nimes.qmd
             - Villes/Perpignan.qmd
             - Villes/Toulouse.qmd
+=======
+            - Villes/Nimes.qmd
+            - Villes/Montpellier.qmd
+            - Villes/Toulouse.qmd
+            - Villes/Perpignan.qmd
+>>>>>>> 609d115beff013f463134466f2fc269054dcecb1
 format:
   html:
-<<<<<<< HEAD
-    theme: cosmo
-    css: styles.css
-    toc: true 
-
-=======
     theme: yeti
-    css: styles.cssgit 
+    css: styles.css
     toc: true
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
