@@ -1,11 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Carte/Carte_final.html</loc>
-    <lastmod>2023-12-09T13:19:24.585Z</lastmod>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Albi.html</loc>
+    <lastmod>2023-12-09T14:28:36.790Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Perpignan.html</loc>
+    <lastmod>2023-12-09T14:28:29.298Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Toulouse.html</loc>
+    <lastmod>2023-12-09T14:28:21.818Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Tarn.html</loc>
+    <lastmod>2023-12-09T14:28:14.198Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Pyrenees_orientales.html</loc>
+    <lastmod>2023-12-09T14:28:06.990Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Haute_garonne.html</loc>
+    <lastmod>2023-12-09T14:27:59.506Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Gard.html</loc>
+    <lastmod>2023-12-09T14:27:51.930Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Aveyron.html</loc>
+    <lastmod>2023-12-09T14:27:44.590Z</lastmod>
   </url>
   <url>
     <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/index.html</loc>
-    <lastmod>2023-12-09T13:19:18.461Z</lastmod>
+    <lastmod>2023-12-09T14:27:40.622Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Ariege.html</loc>
+    <lastmod>2023-12-09T14:27:48.258Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Gers.html</loc>
+    <lastmod>2023-12-09T14:27:55.586Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Herault.html</loc>
+    <lastmod>2023-12-09T14:28:03.390Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Tarn_et_garonne.html</loc>
+    <lastmod>2023-12-09T14:28:10.606Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Montpellier.html</loc>
+    <lastmod>2023-12-09T14:28:17.998Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Nimes.html</loc>
+    <lastmod>2023-12-09T14:28:25.522Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zakariakhodrium.github.io/projet_pollution_Occitanie/Villes/Rodez.html</loc>
+    <lastmod>2023-12-09T14:28:33.086Z</lastmod>
   </url>
 </urlset>

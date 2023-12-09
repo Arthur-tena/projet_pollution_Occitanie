@@ -59,12 +59,31 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-2.27.0.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+
 
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -82,24 +101,73 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-carte" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
- <span class="menu-text">Carte</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-carte">    
-        <li>
-    <a class="dropdown-item" href="./Carte/Carte_final.html" rel="" target="">
- <span class="dropdown-text">Carte Pollution sur l’Occitanie depuis</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visualisation-des-données" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Visualisation des données</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-visualisation-des-données">    
         <li class="dropdown-header">Départements</li>
+        <li>
+    <a class="dropdown-item" href="./Villes/Ariege.html" rel="" target="">
+ <span class="dropdown-text">Ariège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Aveyron.html" rel="" target="">
+ <span class="dropdown-text">Aveyron</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Gard.html" rel="" target="">
+ <span class="dropdown-text">Gard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Gers.html" rel="" target="">
+ <span class="dropdown-text">Gers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Haute_garonne.html" rel="" target="">
+ <span class="dropdown-text">Haute-Garonne</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Herault.html" rel="" target="">
+ <span class="dropdown-text">Herault</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Pyrenees_orientales.html" rel="" target="">
+ <span class="dropdown-text">Pyrénées-Orientales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Tarn_et_garonne.html" rel="" target="">
+ <span class="dropdown-text">Tarn et Garonne</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Tarn.html" rel="" target="">
+ <span class="dropdown-text">Tarn</span></a>
+  </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Villes</li>
+        <li>
+    <a class="dropdown-item" href="./Villes/Albi.html" rel="" target="">
+ <span class="dropdown-text">Albi</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Montpellier.html" rel="" target="">
+ <span class="dropdown-text">Montpellier</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Nimes.html" rel="" target="">
+ <span class="dropdown-text">Nîmes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Perpignan.html" rel="" target="">
+ <span class="dropdown-text">Perpignan</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Rodez.html" rel="" target="">
+ <span class="dropdown-text">Rodez</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Villes/Toulouse.html" rel="" target="">
+ <span class="dropdown-text">Toulouse</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -109,10 +177,23 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Accueil</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
@@ -139,6 +220,47 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Page d’accueil.</p>
 <p>INTRODUCTION PROBLEMATIQUE</p>
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-stderr">
+<pre><code>/tmp/ipykernel_2295/4020931299.py:11: MatplotlibDeprecationWarning:
+
+The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-2-output-2.png" width="734" height="524"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+
+<div>                            <div id="9dc42fe9-ba59-4937-9b25-e1785c431e75" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("9dc42fe9-ba59-4937-9b25-e1785c431e75")) {                    Plotly.newPlot(                        "9dc42fe9-ba59-4937-9b25-e1785c431e75",                        [{"mode":"lines","name":"Polluant = NO","x":[2018,2019,2020,2021,2022,2023],"y":[233.95,231.10000000000002,185.64,262.25,218.34,133.4],"type":"scatter","uid":"d80bf9a2-36d3-43d5-9709-a9f7f19af510"},{"mode":"lines","name":"Polluant = NO2","x":[2018,2019,2020,2021,2022,2023],"y":[422.72,444.01,350.2,419.28,424.81,261.6],"type":"scatter","uid":"ab3bdc50-99ac-4be4-91ec-3b3b0a6ec67b"},{"mode":"lines","name":"Polluant = NOX","x":[2018,2019,2020,2021,2022,2023],"y":[687.6,692.76,546.52,735.0,680.43,424.7],"type":"scatter","uid":"5daddebf-cbb9-40d1-abb2-74c13addcd1b"},{"mode":"lines","name":"Polluant = O3","x":[2018,2019,2020,2021,2022,2023],"y":[1248.8,1447.7,1283.6,1295.6000000000001,1460.1,1183.3],"type":"scatter","uid":"92d2ba70-994d-456a-8f78-d1af75c1934d"},{"mode":"lines","name":"Polluant = PM10","x":[2018,2019,2020,2021,2022,2023],"y":[338.5,368.6,305.5,376.2,470.0,163.4],"type":"scatter","uid":"e23f3106-7549-4348-9665-fbcfde907c43"},{"mode":"lines","name":"Polluant = PM2.5","x":[2018,2019,2020,2021,2022,2023],"y":[85.9,66.7,60.3,91.9,161.9,96.89999999999999],"type":"scatter","uid":"12fced66-4381-4688-9b26-da53beb43e16"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"rgb(36,36,36)"},"error_y":{"color":"rgb(36,36,36)"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"rgb(36,36,36)","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"rgb(36,36,36)"},"baxis":{"endlinecolor":"rgb(36,36,36)","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"rgb(36,36,36)"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"histogram2d"}],"histogram":[{"marker":{"line":{"color":"white","width":0.6}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"rgb(237,237,237)"},"line":{"color":"white"}},"header":{"fill":{"color":"rgb(217,217,217)"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"colorscale":{"diverging":[[0.0,"rgb(103,0,31)"],[0.1,"rgb(178,24,43)"],[0.2,"rgb(214,96,77)"],[0.3,"rgb(244,165,130)"],[0.4,"rgb(253,219,199)"],[0.5,"rgb(247,247,247)"],[0.6,"rgb(209,229,240)"],[0.7,"rgb(146,197,222)"],[0.8,"rgb(67,147,195)"],[0.9,"rgb(33,102,172)"],[1.0,"rgb(5,48,97)"]],"sequential":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"sequentialminus":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]]},"colorway":["#1F77B4","#FF7F0E","#2CA02C","#D62728","#9467BD","#8C564B","#E377C2","#7F7F7F","#BCBD22","#17BECF"],"font":{"color":"rgb(36,36,36)"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"bgcolor":"white","radialaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"yaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"zaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"}},"shapedefaults":{"fillcolor":"black","line":{"width":0},"opacity":0.3},"ternary":{"aaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"baxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"bgcolor":"white","caxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside","title":{"standoff":15},"zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"yaxis":{"automargin":true,"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside","title":{"standoff":15},"zeroline":false,"zerolinecolor":"rgb(36,36,36)"}}},"title":{"text":"Polluants en fonction de l'ann\u00e9e"},"showlegend":true,"xaxis":{"title":{"text":"Ann\u00e9e"}},"yaxis":{"title":{"text":"Fr\u00e9quence normalis\u00e9e en ug.m-3"}}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('9dc42fe9-ba59-4937-9b25-e1785c431e75');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+</div>
+</div>
 
 
 
