@@ -13,7 +13,7 @@ import branca.colormap as cm
 
 # Importez les  nécessaire pour afficher la carte
 df_IQA = pd.read_csv(
-    "../projet_pollution_occitanie/data/IQA.csv",
+    "../data/IQA.csv",
         usecols=[
         "X",
         "Y",
@@ -43,7 +43,7 @@ grad = {
 df_IQA_g = df_IQA.groupby(['lib_zone']).mean()
 # 
 df_IQA_g = df_IQA_g.sort_values(by="code_qual", ascending=False)
-dept = gpd.read_file("../projet_pollution_occitanie/data/dept_occi.json")
+dept = gpd.read_file("../data/dept_occi.json")
 # Filtrer les données par :
 # Longitude de chaque zone
 long = df_IQA["X"].unique().tolist()
