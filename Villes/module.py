@@ -379,7 +379,7 @@ def polar_plot_mensuelle(ville):
 
     # Créer un graphique polaire avec Plotly Express
     fig = px.line_polar(df_moyennes_ville, r='moyenne_valeur', theta=df_moyennes_ville['mois']*(360//12), line_close=True,
-                        color='nom_poll', line_dash='nom_poll', title='Évolution des polluants par mois de la région')
+                        color='nom_poll', line_dash='nom_poll', title=f'Évolution des polluants par mois de la région {ville}')
     liste_des_mois = ["Décembre","Janvier","Février", "Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre"]
     fig.update_polars(
         radialaxis=dict(
