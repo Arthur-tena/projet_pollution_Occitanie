@@ -185,9 +185,15 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
 def create_polar_plot(ville):
     """Cette fonction prend en argumenet une ville et renvoie un polar graph qui représente l'évolution de la pollution au cours des heures de la journée"""
     pd.options.mode.chained_assignment = None
+<<<<<<< HEAD
     # Chargement du CSV
     df = pd.read_csv("../Mesure_30j.csv")
     # Convertion en format datetime
+=======
+    # chargez csv
+    df = pd.read_csv(r'../data_visu/mensuelle.csv')
+    # convert data
+>>>>>>> 866c7db994c8008e19725bd7c3c4fe751343041e
     df["date_debut"] = pd.to_datetime(df["date_debut"], format="%Y/%m/%d %H:%M:%S%z")
     # Liste des polluants à afficher
     polluants = ["NO2", "PM2.5", "PM10", "NOX", "NO"]
