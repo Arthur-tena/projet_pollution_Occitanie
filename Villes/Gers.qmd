@@ -15,6 +15,7 @@ plot_pie("GERS")
 ## Concentration de chaque polluant observé ses dernières années dans le département
 ```{python}
 #|code-fold: true
+#| warning: false
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go

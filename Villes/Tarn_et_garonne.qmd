@@ -18,6 +18,7 @@ plot_pie("TARN-ET-GARONNE")
 
 ```{python}
 #|code-fold: true
+#| warning: false
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go

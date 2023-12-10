@@ -72,6 +72,7 @@ fig.show()
 Dans le graphique ci-après , nous pouvons voir la proportion des polluants par années, chaque polluant à une couleur spécifique.
 ```{python}
 #| echo: false
+#| warning: false
 # %%
 import pandas as pd
 import matplotlib.pyplot as plt
