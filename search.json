@@ -476,13 +476,6 @@
     "text": "Evolution de la pollution journalière\n\n\nCode\ncreate_polar_plot(\"MONTPELLIER\")"
   },
   {
-    "objectID": "Villes/Montpellier.html#weather",
-    "href": "Villes/Montpellier.html#weather",
-    "title": "Montpellier",
-    "section": "Weather",
-    "text": "Weather"
-  },
-  {
     "objectID": "Villes/Nimes.html",
     "href": "Villes/Nimes.html",
     "title": "Nîmes",
