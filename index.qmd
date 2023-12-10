@@ -2,8 +2,8 @@
 title: "Accueil"
 ---
 
-Page d'accueil.
-=======
+
+
 La pollution, sous ses multiples formes, émerge comme l'un des enjeux les plus pressants de notre époque, affectant la qualité de l'air que nous respirons, de l'eau que nous buvons, et du sol sur lequel nous marchons.
 Nous allons, nous intéresser ici à la pollution dans la région Occitanie, et plus précisément à la pollution de l'air.
 Pour cela, nous allons nous intéresser à la concentration de certains polluants au cours des cinq dernières années. 
@@ -14,8 +14,7 @@ Nous allons tout d'abord, nous intéresser à la pollution dans la région.
 ## Quantité totale des polluants mesurés 
 Pour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants. 
 
-INTRODUCTION
-PROBLEMATIQUE
+
 
 ```{python}
 #| echo: false
@@ -52,8 +51,6 @@ On constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et 
 On constate aussi qu'il y'a une baisse assez significative entre 2022 et 2023, même si toutefois l'année 2023 n'est pas encore totalement terminé.
 
 
-
-Cette fois-ci on s'intéresse 
 
 ```{python,}
 #| echo: false
