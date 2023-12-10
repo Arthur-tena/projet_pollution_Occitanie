@@ -7,7 +7,7 @@ title: "Accueil"
 =======
 >>>>>>> 86c063793ec7ca01c0692709785d2473c9765084
 
-Page d'accueil.
+
 =======
 La pollution, sous ses multiples formes, émerge comme l'un des enjeux les plus pressants de notre époque, affectant la qualité de l'air que nous respirons, de l'eau que nous buvons, et du sol sur lequel nous marchons.
 Nous allons, nous intéresser ici à la pollution dans la région Occitanie, et plus précisément à la pollution de l'air.
