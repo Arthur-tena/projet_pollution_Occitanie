@@ -30,5 +30,4 @@ pollutants_evolution_ville("../data_visu/Mesure_horaire_(30j)_Region_Occitanie_P
 create_polar_plot("MONTPELLIER")
 ```
 
-## Weather
  
