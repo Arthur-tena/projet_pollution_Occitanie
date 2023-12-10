@@ -249,21 +249,42 @@
     "href": "about.html",
     "title": "A propos",
     "section": "",
-    "text": "About this site\n\n\n\n Back to top"
+    "text": "Nous avons choisi de représenter plusieurs catégories de polluants."
+  },
+  {
+    "objectID": "about.html#les-particules-finies",
+    "href": "about.html#les-particules-finies",
+    "title": "A propos",
+    "section": "Les particules finies :",
+    "text": "Les particules finies :\n\nPM10: qui ont un diamètre &lt; 10 µm, elles sont émises au niveau national dans des proportions équivalentes par le secteur résidentiel, l’industrie et l’agriculture. Les PM10 peut provoquer une irritation des voies respiratoires supérieures et des bronches surtout chez les personnes sensibles (enfants, personnes-âgées)\nPM2.5 : qui ont un diamètre &lt; 2.5 µm, elles sont émises principalement par le secteur résidentiel et le chauffage au bois. Ces particules très finis sont capables de pénétrer profondément dans les poumons et dans la circulation sanguine, provoquant ainsi des troubles cardiovasculaires, des accidents vasculaire cérébral et respiratoires"
+  },
+  {
+    "objectID": "about.html#les-oxydes-dazote-nox",
+    "href": "about.html#les-oxydes-dazote-nox",
+    "title": "A propos",
+    "section": "Les Oxydes d’Azote (NOX) :",
+    "text": "Les Oxydes d’Azote (NOX) :\nLe terme «oxydes d’azote» désigne le monoxyde d’azote (NO) et le dioxyde d’azote (NO2). Toute combustion d’énergie produit du NO et NO2, mais au contact de l’air, le monoxyde d’azote est rapidement oxydé en dioxyde d’azote.\n\nNO : est formé lors de la combustion à haute température : moteurs thermiques des véhicules ou chaudières des installations de combustion\nNO2 : est un gaz irritant pour les yeux et les voies respiratoires. Il augmente aussi la fréquence et la gravité des crises d’asthme"
+  },
+  {
+    "objectID": "about.html#lozone",
+    "href": "about.html#lozone",
+    "title": "A propos",
+    "section": "L’Ozone",
+    "text": "L’Ozone\n\nO3 : est un polluant qui résultent principalement de la transformation chimique des autres polluants. L’ozone pose surtout problème dès lors que ses concentrations dans l’air sont élevées et qu’il n’a pas de vent pour les disperser. Il peut alors provoquer des réactions inflammatoires des bronches mais aussi cardiaques, en particuliers chez les personnes sensibles"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Accueil",
     "section": "",
-    "text": "La pollution, sous ses multiples formes, émerge comme l’un des enjeux les plus pressants de notre époque, affectant la qualité de l’air que nous respirons, de l’eau que nous buvons, et du sol sur lequel nous marchons. Nous allons, nous intéresser ici à la pollution dans la région Occitanie, et plus précisément à la pollution de l’air. Pour cela, nous allons nous intéresser à la concentration de certains polluants au cours des cinq dernières années. Afin de vous exposer au mieux la situation en Occitanie, nous allons observer les données que nous avons récupérées sur le site Atmo-Occitanie à différentes échelles.\nNous allons tout d’abord, nous intéresser à la pollution dans la région."
+    "text": "La pollution, sous ses multiples formes, émerge comme l’un des enjeux les plus pressants de notre époque, affectant la qualité de l’air que nous respirons, de l’eau que nous buvons, et du sol sur lequel nous marchons. Nous allons, nous intéresser ici à la pollution dans la région Occitanie, et plus précisément à la pollution de l’air. Pour cela, nous allons nous intéresser à la concentration de certains polluants au cours des cinq dernières années. Afin de vous exposer au mieux la situation en Occitanie, nous allons observer les données que nous avons récupérées sur le site Atmo-Occitanie à différentes échelles.\nNous allons tout d’abord, nous intéresser à la pollution dans la région.\n\n\nPour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\nINTRODUCTION PROBLEMATIQUE\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O31 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
   },
   {
     "objectID": "index.html#quantité-totale-des-polluants-mesurés",
     "href": "index.html#quantité-totale-des-polluants-mesurés",
     "title": "Accueil",
-    "section": "Quantité totale des polluants mesurés",
-    "text": "Quantité totale des polluants mesurés\nPour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O3 1 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
+    "section": "",
+    "text": "Pour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\nINTRODUCTION PROBLEMATIQUE\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O31 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
   },
   {
     "objectID": "index.html#footnotes",
