@@ -4,6 +4,8 @@
 
 La pollution de l'air est devenue une préoccupation majeure dans notre société. Notre objectif est d'exploiter des données mises à disposition par l'API afin de fournir des informations aux utilisateurs de notre site web de manière interactive, en offrant un aperçu de la situation actuelle de la pollution en Occitanie. À l'aide notamment, d'analyse en temps réel et d'une carte interactive qui résume l'état de la pollution dans la région.
 
+Notre site est disponible à l'addresse suivante:(https://zakariakhodrium.github.io/projet_pollution_Occitanie/)
+
 # Données utilisées
 
 On  a utilisé les données mises à notre disposition par le site [data_atmo-occitanie](https://data-atmo-occitanie.opendata.arcgis.com/) afin de pouvoir offrir l'aperçu le plus complet possible sur la situation écologique de la région Occitanie au cours de ces dernières années.
