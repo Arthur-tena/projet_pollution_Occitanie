@@ -1,5 +1,5 @@
 ---
-title: "Carte Pollution sur l'Occitanie depuis"
+title: "Carte Pollution sur l'Occitanie"
 ---
 ```{python}
 #|echo : false
