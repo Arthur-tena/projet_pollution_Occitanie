@@ -26,7 +26,7 @@ grad = {
     0.9: "#350F4A",
     1:   "#23074D",
 }
-hm_occi = folium.Map([43.716671, 2.15], zoom_start=5)
+hm_occi = folium.Map([43.716671, 2.15], zoom_start=6.2)
 dept_map = folium.GeoJson(
     dept,
     style_function=lambda feature: {
@@ -64,7 +64,7 @@ hm_SO2 = HeatMap(Load_datasets().YX_polluant('SO2'), name="SO2", blur=30, radius
     hm_occi
 )
 df = Load_datasets().charge_data()
-villes = ['TOULOUSE','MONTPELLIER','RODEZ','NIMES','PERPIGNAN','ALBI']
+villes = ['TOULOUSE','MONTPELLIER','RODEZ','NIMES','PERPIGNAN','ALBI','TARBES','LOURDES']
 for i in villes:
     folium.Marker(
     location=list(df[df['nom_com']==i][['Y','X']].mean()),
