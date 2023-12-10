@@ -48,7 +48,7 @@ plt.xticks([i for i in range(len(grouped_df['date_debut'].unique()))], grouped_d
 plt.show()
 ```
 
-On constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l'O3^[[à propos](https://zakariakhodrium.github.io/projet_pollution_Occitanie/about.html)] et que l'année la plus polluée parmi les cinq dernières années est l'année 2022.
+On constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l'O3^[[à propos](about.qmd)] et que l'année la plus polluée parmi les cinq dernières années est l'année 2022.
 On constate aussi qu'il y'a une baisse assez significative entre 2022 et 2023, même si toutefois l'année 2023 n'est pas encore totalement terminé.
 
 
