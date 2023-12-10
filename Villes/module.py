@@ -179,7 +179,7 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
 def create_polar_plot(ville):
     pd.options.mode.chained_assignment = None
     # chargez csv
-    df = pd.read_csv("../Mesure_30j.csv")
+    df = pd.read_csv(r'../data_visu/mensuelle.csv')
     # convert data
     df["date_debut"] = pd.to_datetime(df["date_debut"], format="%Y/%m/%d %H:%M:%S%z")
     # polluants
