@@ -9,6 +9,7 @@ PROBLEMATIQUE
 
 ```{python}
 #| echo: false
+#| warning: false
 # %%
 import pandas as pd
 import matplotlib.pyplot as plt
