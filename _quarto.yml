@@ -67,7 +67,7 @@ website:
             - Villes/Perpignan.qmd
             - Villes/Rodez.qmd
             - Villes/Toulouse.qmd
-     - id: prop
+    - id: prop
       title: "À propos"
       contents:
         - about.qmd
