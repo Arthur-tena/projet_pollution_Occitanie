@@ -68,7 +68,7 @@ website:
             - Villes/Rodez.qmd
             - Villes/Toulouse.qmd
      - id: about
-     title: "À propos"
+      title: "À propos"
       contents:
         - about.qmd
            
