@@ -174,18 +174,14 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
 
 
 # Villes
-
-
 def create_polar_plot(ville):
     """Cette fonction prend en argumenet une ville et renvoie un polar graph qui représente l'évolution de la pollution au cours des heures de la journée"""
     pd.options.mode.chained_assignment = None
-    # Convertion en format datetime
     # chargez csv
-    df = pd.read_csv(r'../data_visu/mensuelle.csv')
+    df = pd.read_csv("../data_visu/Mesure_30j.csv")
     # convert data
-
     df["date_debut"] = pd.to_datetime(df["date_debut"], format="%Y/%m/%d %H:%M:%S%z")
-    # Liste des polluants à afficher
+    # polluants
     polluants = ["NO2", "PM2.5", "PM10", "NOX", "NO"]
     # Trier le DataFrame par ordre croissant de date
     df = df.sort_values(by="date_debut")
@@ -208,16 +204,16 @@ def create_polar_plot(ville):
 
     fig_pol.update_polars(
         radialaxis=dict(
-            visible=True,  
+            visible=True,  # Set to False if you want to hide the radial axis
         ),
         angularaxis=dict(
-            visible=True,  
-            direction="clockwise",  
-            period=360,  
+            visible=True,  # Set to False if you want to hide the angular axis
+            direction="clockwise",  # Set the direction of the angular axis
+            period=360,  # Set the period of the angular axis
             tickvals=np.arange(0, 360, 15),
             ticktext=[
                 str(hour % 24) for hour in range(24)
-            ],  
+            ],  # Specify tick values on the angular axis
         ),
     )
     fig_pol.show()
