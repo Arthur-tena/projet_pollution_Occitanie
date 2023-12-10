@@ -11,6 +11,7 @@ pd.options.mode.chained_assignment = None
 
 
 def plot_pie(departement):
+    pd.options.mode.chained_assignment = None
     """
     Cette fonction prend en argument un département de l'Occiatnie et renvoie un
     pie chart qui représente la part de chaque polluants au cours des cinq dernières années
@@ -49,6 +50,7 @@ def plot_pie(departement):
 
 
 def polluant_evolution_dept_jour(csv, polluants, dept):
+    pd.options.mode.chained_assignment = None
     """Cette fonction prend en argument un fichier CSV, la liste des polluants à afficher, ainsi que le département que l'on souhaite afficher et trace un graphique polair qui représente l'évolution de la concentration de chaque polluants choisis au cours de la journée"""
     df = pd.read_csv(csv)
 
@@ -126,6 +128,7 @@ def polluant_evolution_dept_jour(csv, polluants, dept):
 
 
 def plot_polluant_evolution_annuelle(data_file, department, polluants):
+    pd.options.mode.chained_assignment = None
     """Cette fonction prend en argument le fichier CSV, le département et la liste des polluants à afficher et affiche l'évolution de la concentration par station de chaque polluants"""
     # Charger les données
     df = pd.read_csv(data_file)
@@ -174,6 +177,7 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
 
 
 def create_polar_plot(ville):
+    pd.options.mode.chained_assignment = None
     # chargez csv
     df = pd.read_csv("../Mesure_30j.csv")
     # convert data
@@ -264,6 +268,7 @@ def afficher_evolution_pollution(nom_ville, chemin_fichier_csv, polluants):
 
 
 def pollutants_evolution_ville(csv, polluants, ville):
+    pd.options.mode.chained_assignment = None
     df = pd.read_csv(csv)
 
     df["date_debut"] = pd.to_datetime(df["date_debut"], format="%Y/%m/%d %H:%M:%S%z")
@@ -338,6 +343,7 @@ def pollutants_evolution_ville(csv, polluants, ville):
     fig.show()
     
 def polar_plot_mensuelle(ville):  
+    pd.options.mode.chained_assignment = None
     # Chargez le fichier CSV dans un DataFrame pandas
     chemin_fichier_csv = r'../data_visu/mensuelle.csv'
     df = pd.read_csv(chemin_fichier_csv)
