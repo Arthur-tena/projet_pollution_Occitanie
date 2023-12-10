@@ -47,8 +47,6 @@ def plot_pie(departement):
     plt.title(f"Répartition des polluants pour le département {departement}")
     plt.show()
 
-
-
 def polluant_evolution_dept_jour(csv, polluants, dept):
     pd.options.mode.chained_assignment = None
     """Cette fonction prend en argument un fichier CSV, la liste des polluants à afficher, ainsi que le département que l'on souhaite afficher et trace un graphique polair qui représente l'évolution de la concentration de chaque polluants choisis au cours de la journée"""
