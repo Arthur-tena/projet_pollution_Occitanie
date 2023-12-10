@@ -868,7 +868,17 @@ def create_polar_plot(ville):
     )
     fig_pol.show()
 ```
+# Problèmes rencontrés
 
-# Déploiement du site
+## Déploiement du site
 
 Pour déployer le site on a utiliser gitub Pages où on a créé un workflow qui permet au site de se mettre à jour à chaque push qu'on fait.
+
+## Code 
+
+::: {.incremental}
+- Extraction des données
+- Changement de propriétaire du repository
+:::
+
+# Conclusion
