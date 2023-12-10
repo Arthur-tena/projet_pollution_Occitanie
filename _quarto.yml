@@ -40,7 +40,7 @@ website:
       - sidebar:Dpt
       - sidebar:prop
   sidebar:
-    - id: carte
+    - id: Carte
       contents:
         - Carte/Carte_final.qmd
     - id: Dpt
