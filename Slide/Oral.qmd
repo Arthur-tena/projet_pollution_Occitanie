@@ -1,12 +1,11 @@
 ---
 title: "Pollution en Occitanie"
-author: "TENA LAHJIOUJ KHODRI ZHU"
+author: "Tena Lahjiouj Khodri Zhu"
 format: 
  revealjs :
-     theme: serif
+     theme: dark
 
 ---
-
 # Problématique 
 Comment exploiter des données pour mieux visualiser un problème actuel ?
 
@@ -28,7 +27,7 @@ Comment exploiter des données pour mieux visualiser un problème actuel ?
 import pandas as pd
 import plotly.graph_objects as go
 
-data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+data = pd.read_csv("../data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 df = pd.DataFrame(data)
 columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
 df = df.drop(columns=columns_to_drop)
@@ -64,13 +63,14 @@ fig.show()
 ---
 Comment nous y sommes parvenue ?
 
-```{.python code-line-numbers="7,11,13" }
-#| echo: true
+```{python} 
+# {.python code-line-numbers="7,11,13" }
+#| echo: False
 # %%
 import pandas as pd
 import plotly.graph_objects as go
 
-data = pd.read_csv("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+data = pd.read_csv("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 df = pd.DataFrame(data)
 columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
 df = df.drop(columns=columns_to_drop)
@@ -110,12 +110,13 @@ On va prendre l'exemple de la Haute-Garonne
 
 ## Haute-Garonne 
 
-```{.python}
-#| echo: true
+```{python}
+#| echo: False
 # %%
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import numpy as np
 def plot_polluant_evolution_annuelle(data_file, department, polluants):
     pd.options.mode.chained_assignment = None
     """Cette fonction prend en argument le fichier CSV, le département et la liste des polluants à afficher et affiche l'évolution de la concentration par station de chaque polluants"""
@@ -165,7 +166,7 @@ plot_polluant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_
 ---
 
 ```{python}
-#| echo: false
+#| echo: False
 # %%
 import pandas as pd
 import plotly.express as px
@@ -276,7 +277,8 @@ def polar_plot_mensuelle(ville):
 
 --- 
 
-```{.python}
+```{python}
+#| echo : False
 def polar_plot_mensuelle(ville):  
     pd.options.mode.chained_assignment = None
     # Chargez le fichier CSV dans un DataFrame pandas
