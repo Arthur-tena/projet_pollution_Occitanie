@@ -36,11 +36,11 @@ website:
         href: https://github.com/zakariakhodrium/projet_pollution_Occitanie/
         text: GitHub
     left:
-      - sidebar:Carte
+      - sidebar:carte
       - sidebar:Dpt
       - sidebar:prop
   sidebar:
-    - id: Carte
+    - id: carte
       title: "Carte"
       contents:
         - Carte/Carte_final.qmd
