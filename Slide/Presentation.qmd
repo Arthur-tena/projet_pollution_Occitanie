@@ -19,15 +19,19 @@ Comment exploiter des données pour mieux visualiser un problème actuel ?
 - Conclusion
 :::
 # En Occitanie 
-## Graphiques généraux 
-```{python}
+## Graphiques généraux
+
+::: {.panel-tabset}
+
+### Évolution
+
+```{python, code-summary="Une évolution de la concentration des polluants en Occitanie"}
 #| echo: false
-#| code-summary: "Une évolution de la concentration des polluants en Occitanie"
 # %%
 import pandas as pd
 import plotly.graph_objects as go
 
-data = pd.read_csv("../data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+data = pd.read_csv("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 df = pd.DataFrame(data)
 columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
 df = df.drop(columns=columns_to_drop)
@@ -53,158 +57,49 @@ fig.update_layout(
     title="Polluants en fonction de l'année",
     showlegend=True,
     xaxis_title="Année",
-    yaxis_title="Fréquence normalisée en ug.m-3",
+    yaxis_title="taux du polluant (en ug.m-3)",
 )
 
 
 fig.show()
 ```
-Comment nous y sommes parvenue ?
-```{.python code-line-numbers="7,11,13" }
-#| echo: False
+
+### Proportion
+
+```{python, code-summary="proportions de polluqnts au court des ans"}
+#| echo: false
+#| warning: false
 # %%
 import pandas as pd
-import plotly.graph_objects as go
-
+import matplotlib.pyplot as plt
+pd.options.mode.chained_assignment = None
 data = pd.read_csv("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 df = pd.DataFrame(data)
-columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
-df = df.drop(columns=columns_to_drop)
 grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
 grouped_df = grouped_df.sort_values(by=['date_debut', 'nom_poll'])
 grouped_df['date_debut'] = pd.to_datetime(grouped_df['date_debut'])
 grouped_df['date_debut'] = grouped_df['date_debut'].dt.year
-
-fig = go.FigureWidget()
-polluants = sorted(grouped_df["nom_poll"].unique())
-for polluant in polluants:
-    trace_data = grouped_df[grouped_df["nom_poll"] == polluant]
-    fig.add_trace(
-        go.Scatter(
-            x=trace_data["date_debut"],
-            y=trace_data["valeur"],
-            mode='lines',
-            name=f"Polluant = {polluant}",
-        )
+plt.figure(figsize=(7.5, 6))
+colors = plt.cm.get_cmap('tab10', len(grouped_df['nom_poll'].unique()))
+year_indexes = {year: i for i, year in enumerate(grouped_df['date_debut'].unique())}
+for polluant, color in zip(grouped_df['nom_poll'].unique(), colors.colors):
+    plt.bar(
+        [year_indexes[annee] for annee in grouped_df['date_debut'].unique()],
+        grouped_df[grouped_df['nom_poll'] == polluant]['valeur'],
+        label=polluant,
+        color=color
     )
-fig.update_layout(
-    template="simple_white",
-    title="Polluants en fonction de l'année",
-    showlegend=True,
-    xaxis_title="Polluants",
-    yaxis_title="Fréquence normalisée",
-)
-fig.show()
-``` 
-## Haute-Garonne 
-
-```{python}
-#| echo: False
-# %%
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-import numpy as np
-def plot_polluant_evolution_annuelle(data_file, department, polluants):
-    pd.options.mode.chained_assignment = None
-    """Cette fonction prend en argument le fichier CSV, le département et la liste des polluants à afficher et affiche l'évolution de la concentration par station de chaque polluants"""
-    # Charger les données
-    df = pd.read_csv(data_file)
-    df["valeur"].fillna(0, inplace=True)
-    # Afficher la liste des polluants présents dans le DataFrame
-    liste_polluants = df["nom_poll"].unique()
-
-    # Boucle à travers les polluants pour créer les graphiques
-    for polluant in polluants:
-        # Filtrer les données pour le polluant et le département spécifiés
-        filt = df[(df["nom_dept"] == department) & (df["nom_poll"] == polluant)]
-        filt = filt.sort_values(by="date_debut")
-
-        # Convertir la colonne de dates au format mois-année
-        filt["date_debut"] = (
-            pd.to_datetime(filt["date_debut"]).dt.to_period("M").astype(str)
-        )
-
-        # Créer un graphique interactif avec Plotly Express
-        fig = px.scatter(
-            filt,
-            x="date_debut",
-            y="valeur",
-            color="nom_station",
-            size="valeur",
-            hover_name="date_debut",
-            title=f"Évolution de la pollution {polluant} dans le {department}",
-            labels={"valeur": f"Valeur {polluant} (ug.m-3)", "date_debut": "Année"},
-        )
-
-        # Ajouter des lignes reliant les points pour chaque station
-        for nom_station in filt["nom_station"].unique():
-            trace_data = filt[filt["nom_station"] == nom_station]
-            fig.add_trace(
-                go.Scatter(
-                    x=trace_data["date_debut"],
-                    y=trace_data["valeur"],
-                    mode="lines",  # Ajout de ligne pour relier les points
-                    showlegend=False,
-                )
-            )
-        fig.show()
-plot_polluant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv","HAUTE-GARONNE",['PM2.5'])
+plt.xlabel('Année')
+plt.ylabel('Somme des valeurs')
+plt.title('Valeurs des principaux polluants par année')
+plt.legend(title='Polluant', bbox_to_anchor=(1, 1))
+plt.xticks([i for i in range(len(grouped_df['date_debut'].unique()))], grouped_df['date_debut'].unique())
+plt.show()
 ```
+
+:::
 ---
-
-```{python}
-#| echo: False
-# %%
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-def plot_polluant_evolution_annuelle(data_file, department, polluants):
-    pd.options.mode.chained_assignment = None
-    """Cette fonction prend en argument le fichier CSV, le département et la liste des polluants à afficher et affiche l'évolution de la concentration par station de chaque polluants"""
-    # Charger les données
-    df = pd.read_csv(data_file)
-    df["valeur"].fillna(0, inplace=True)
-    # Afficher la liste des polluants présents dans le DataFrame
-    liste_polluants = df["nom_poll"].unique()
-
-    # Boucle à travers les polluants pour créer les graphiques
-    for polluant in polluants:
-        # Filtrer les données pour le polluant et le département spécifiés
-        filt = df[(df["nom_dept"] == department) & (df["nom_poll"] == polluant)]
-        filt = filt.sort_values(by="date_debut")
-
-        # Convertir la colonne de dates au format mois-année
-        filt["date_debut"] = (
-            pd.to_datetime(filt["date_debut"]).dt.to_period("M").astype(str)
-        )
-
-        # Créer un graphique interactif avec Plotly Express
-        fig = px.scatter(
-            filt,
-            x="date_debut",
-            y="valeur",
-            color="nom_station",
-            size="valeur",
-            hover_name="date_debut",
-            title=f"Évolution de la pollution {polluant} dans le {department}",
-            labels={"valeur": f"Valeur {polluant} (ug.m-3)", "date_debut": "Année"},
-        )
-
-        # Ajouter des lignes reliant les points pour chaque station
-        for nom_station in filt["nom_station"].unique():
-            trace_data = filt[filt["nom_station"] == nom_station]
-            fig.add_trace(
-                go.Scatter(
-                    x=trace_data["date_debut"],
-                    y=trace_data["valeur"],
-                    mode="lines",  # Ajout de ligne pour relier les points
-                    showlegend=False,
-                )
-            )
-        fig.show()
-plot_polluant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv","HAUTE-GARONNE",['PM2.5'])
-```
+Comment nous y sommes parvenue ?
 
 
 # Par ville 
@@ -213,6 +108,11 @@ plot_polluant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_
 
 ```{python}
 #| echo : False
+import plotly.express as px
+import matplotlib.pyplot as plt
+import numpy as np
+import plotly.graph_objects as go
+import os
 def polar_plot_mensuelle(ville):  
     pd.options.mode.chained_assignment = None
     # Chargez le fichier CSV dans un DataFrame pandas
