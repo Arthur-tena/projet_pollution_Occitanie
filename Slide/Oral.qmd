@@ -8,7 +8,7 @@ format:
 ---
 
 # Problématique 
-Comment exploiter des données pour mieux visualiser un problème actuel
+Comment exploiter des données pour mieux visualiser un problème actuel ?
 
 # Introduction 
 ::: {.incremental}
@@ -16,7 +16,7 @@ Comment exploiter des données pour mieux visualiser un problème actuel
 - En Occitanie
 - À l'échelle des départements
 - À l'échelle des villes 
-- Problèms rencontrés 
+- Problèmes rencontrés 
 - Conclusion
 :::
 # En Occitanie 
@@ -62,7 +62,8 @@ fig.show()
 ```
 
 ---
-Comment nous y sommes parvenue
+Comment nous y sommes parvenue ?
+
 ```{.python code-line-numbers="7,11,13" }
 #| echo: true
 # %%
@@ -106,103 +107,122 @@ fig.show()
 
 # Par département 
 On va prendre l'exemple de la Haute-Garonne 
+
 ## Haute-Garonne 
 
-```{.python}
-#| echo: true
-# %%
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-pd.options.mode.chained_assignment= None
 
-def plot_pollutant_evolution_annuelle(data_file, department, polluants):
-    """Cette fonction prend en argument le fichier CSV, le département et la liste des polluants à afficher et affiche l'évolution de la concentration par station de chaque polluants """
-    # Charger les données
-    df = pd.read_csv(data_file)
-    df['valeur'].fillna(0, inplace=True)
-    # Afficher la liste des polluants présents dans le DataFrame
-    liste_polluants = df['nom_poll'].unique()
 
-    # Boucle à travers les polluants pour créer les graphiques
-    for polluant in polluants:
-        # Filtrer les données pour le polluant et le département spécifiés
-        filt = df[(df['nom_dept'] == department) & (df['nom_poll'] == polluant)]
-        filt = filt.sort_values(by='date_debut')
 
-        # Convertir la colonne de dates au format mois-année
-        filt['date_debut'] = pd.to_datetime(filt['date_debut']).dt.to_period('M').astype(str)
+# Par ville 
 
-        # Créer un graphique interactif avec Plotly Express
-        fig = px.scatter(
-            filt, x='date_debut', y='valeur',
-            color='nom_station', size='valeur', hover_name='date_debut',
-            title=f'Évolution de la pollution {polluant} dans le {department}',
-            labels={'valeur': f'Valeur {polluant} (ug.m-3)', 'date_debut': 'Année'}
-        )
-
-        # Ajouter des lignes reliant les points pour chaque station
-        for nom_station in filt['nom_station'].unique():
-            trace_data = filt[filt['nom_station'] == nom_station]
-            fig.add_trace(go.Scatter(
-                x=trace_data['date_debut'],
-                y=trace_data['valeur'],
-                mode='lines',  # Ajout de ligne pour relier les points
-                showlegend=False
-            ))
-        fig.show()
-```
----
+## Toulouse
 
 ```{python}
-#| echo: false
-# %%
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-pd.options.mode.chained_assignment= None
+def polar_plot_mensuelle(ville):  
+    pd.options.mode.chained_assignment = None
+    # Chargez le fichier CSV dans un DataFrame pandas
+    chemin_fichier_csv = r'../data_visu/mensuelle.csv'
+    df = pd.read_csv(chemin_fichier_csv)
+    df = df.dropna()
 
-def plot_pollutant_evolution_annuelle(data_file, department, polluants):
-    """Cette fonction prend en argument le fichier CSV, le département et la liste des polluants à afficher et affiche l'évolution de la concentration par station de chaque polluants """
-    # Charger les données
-    df = pd.read_csv(data_file)
-    df['valeur'].fillna(0, inplace=True)
-    # Afficher la liste des polluants présents dans le DataFrame
-    liste_polluants = df['nom_poll'].unique()
+    # Convertir la colonne 'date_debut' en type datetime
+    df['date_debut'] = pd.to_datetime(df['date_debut'], format='%Y/%m/%d %H:%M:%S%z')
 
-    # Boucle à travers les polluants pour créer les graphiques
-    for polluant in polluants:
-        # Filtrer les données pour le polluant et le département spécifiés
-        filt = df[(df['nom_dept'] == department) & (df['nom_poll'] == polluant)]
-        filt = filt.sort_values(by='date_debut')
+    # Extraire le mois de chaque date
+    df['mois'] = df['date_debut'].dt.month
 
-        # Convertir la colonne de dates au format mois-année
-        filt['date_debut'] = pd.to_datetime(filt['date_debut']).dt.to_period('M').astype(str)
+    # Trier le DataFrame par ordre croissant de date
+    df = df.sort_values(by='mois')
 
-        # Créer un graphique interactif avec Plotly Express
-        fig = px.scatter(
-            filt, x='date_debut', y='valeur',
-            color='nom_station', size='valeur', hover_name='date_debut',
-            title=f'Évolution de la pollution {polluant} dans le {department}',
-            labels={'valeur': f'Valeur {polluant} (ug.m-3)', 'date_debut': 'Année'}
+    # Définir les polluants et la ville spécifiques
+    polluants = ['PM10', 'NOX', 'O3', 'NO2', 'PM2.5', 'NO', 'SO2', 'H2S'] 
+    # ville = 'TOULOUSE' 
+
+    # Filtrer les données pour inclure uniquement les polluants spécifiés
+    df_filtered = df[df['nom_poll'].isin(polluants)]
+
+    # Séparer les données pour la ville spécifiée
+    df_ville = df_filtered[df_filtered['nom_com'] == ville]
+
+    # Calculer la moyenne des concentrations de chaque polluant à chaque heure de la journée pour la ville spécifiée
+    df_moyennes_ville = df_ville.groupby(['nom_poll', 'mois'])['valeur'].mean().reset_index()
+    df_moyennes_ville.columns = ['nom_poll', 'mois', 'moyenne_valeur']
+
+    # Créer un graphique polaire avec Plotly Express
+    fig = px.line_polar(df_moyennes_ville, r='moyenne_valeur', theta=df_moyennes_ville['mois']*(360//12), line_close=True,
+                        color='nom_poll', line_dash='nom_poll', title=f'Évolution des polluants par mois de la région {ville}')
+    liste_des_mois = ["Décembre","Janvier","Février", "Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre"]
+    fig.update_polars(
+        radialaxis=dict(
+            visible=False,  # Set to False if you want to hide the radial axis
+        ),
+        angularaxis=dict(
+            visible=True,  # Set to False if you want to hide the angular axis
+            rotation=120,   # Rotate the angular axis (default is 0)
+            direction='clockwise',  # Set the direction of the angular axis
+            period=360,   # Set the period of the angular axis
+            tickvals=np.arange(0, 360, 30),
+            ticktext=[i for i in liste_des_mois],  # Specify tick values on the angular axis
         )
-
-        # Ajouter des lignes reliant les points pour chaque station
-        for nom_station in filt['nom_station'].unique():
-            trace_data = filt[filt['nom_station'] == nom_station]
-            fig.add_trace(go.Scatter(
-                x=trace_data['date_debut'],
-                y=trace_data['valeur'],
-                mode='lines',  # Ajout de ligne pour relier les points
-                showlegend=False
-            ))
-        fig.show()
-plot_pollutant_evolution_annuelle("/Users/arthurtena/Documents/data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv","HAUTE-GARONNE",['PM2.5'])
+    )
+    # Afficher le graphique
+    fig.show()
 ```
 
+--- 
 
-# Quelques villes 
-## Toulouse
+```{.python}
+def polar_plot_mensuelle(ville):  
+    pd.options.mode.chained_assignment = None
+    # Chargez le fichier CSV dans un DataFrame pandas
+    chemin_fichier_csv = r'../data_visu/mensuelle.csv'
+    df = pd.read_csv(chemin_fichier_csv)
+    df = df.dropna()
+
+    # Convertir la colonne 'date_debut' en type datetime
+    df['date_debut'] = pd.to_datetime(df['date_debut'], format='%Y/%m/%d %H:%M:%S%z')
+
+    # Extraire le mois de chaque date
+    df['mois'] = df['date_debut'].dt.month
+
+    # Trier le DataFrame par ordre croissant de date
+    df = df.sort_values(by='mois')
+
+    # Définir les polluants et la ville spécifiques
+    polluants = ['PM10', 'NOX', 'O3', 'NO2', 'PM2.5', 'NO', 'SO2', 'H2S'] 
+    # ville = 'TOULOUSE' 
+
+    # Filtrer les données pour inclure uniquement les polluants spécifiés
+    df_filtered = df[df['nom_poll'].isin(polluants)]
+
+    # Séparer les données pour la ville spécifiée
+    df_ville = df_filtered[df_filtered['nom_com'] == ville]
+
+    # Calculer la moyenne des concentrations de chaque polluant à chaque heure de la journée pour la ville spécifiée
+    df_moyennes_ville = df_ville.groupby(['nom_poll', 'mois'])['valeur'].mean().reset_index()
+    df_moyennes_ville.columns = ['nom_poll', 'mois', 'moyenne_valeur']
+
+    # Créer un graphique polaire avec Plotly Express
+    fig = px.line_polar(df_moyennes_ville, r='moyenne_valeur', theta=df_moyennes_ville['mois']*(360//12), line_close=True,
+                        color='nom_poll', line_dash='nom_poll', title=f'Évolution des polluants par mois de la région {ville}')
+    liste_des_mois = ["Décembre","Janvier","Février", "Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre"]
+    fig.update_polars(
+        radialaxis=dict(
+            visible=False,  # Set to False if you want to hide the radial axis
+        ),
+        angularaxis=dict(
+            visible=True,  # Set to False if you want to hide the angular axis
+            rotation=120,   # Rotate the angular axis (default is 0)
+            direction='clockwise',  # Set the direction of the angular axis
+            period=360,   # Set the period of the angular axis
+            tickvals=np.arange(0, 360, 30),
+            ticktext=[i for i in liste_des_mois],  # Specify tick values on the angular axis
+        )
+    )
+    # Afficher le graphique
+    fig.show()
+polar_plot_mensuelle("TOULOUSE")
+```
 
 # Problèmes rencontrés 
 
