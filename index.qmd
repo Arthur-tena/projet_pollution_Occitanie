@@ -70,7 +70,7 @@ grouped_df['date_debut'] = pd.to_datetime(grouped_df['date_debut'])
 grouped_df['date_debut'] = grouped_df['date_debut'].dt.year
 
 fig = go.FigureWidget()
-polluants = ['NO','NO2','NOX','O3','PM10','PM2.5']
+polluants = ['NO','O3','PM10','PM2.5']
 for polluant in polluants:
     trace_data = grouped_df[grouped_df["nom_poll"] == polluant]
     fig.add_trace(
@@ -86,7 +86,7 @@ fig.update_layout(
     title="Polluants en fonction de l'année",
     showlegend=True,
     xaxis_title="Année",
-    yaxis_title="Fréquence normalisée en ug.m-3",
+    yaxis_title="taux du polluant (en ug.m-3)",
 )
 
 

@@ -30,8 +30,13 @@ def plot_pie(departement):
         "metrique",
         "date_fin",
         "statut_valid",
+<<<<<<< HEAD
     ] 
     df = df.drop(columns=columns_to_drop) # Suppression des colonnes à supprimer dans le DataFrame
+=======
+    ]
+    df = df.drop(columns=columns_to_drop) 
+>>>>>>> ffbaaace580a5260a0f8414c6c50a543edf47c9d
 
     df_departement = df[df["nom_dept"] == departement] #Création d'un nouveau Data Frame en extrayant les lignes de df où la colonne "nom_dept" est égale à la variable departement
 
@@ -216,7 +221,11 @@ def create_polar_plot(ville):
             tickvals=np.arange(0, 360, 15),
             ticktext=[
                 str(hour % 24) for hour in range(24)
+<<<<<<< HEAD
             ],  
+=======
+            ], 
+>>>>>>> ffbaaace580a5260a0f8414c6c50a543edf47c9d
         ),
     )
     fig_pol.show()
@@ -379,11 +388,15 @@ def polar_plot_mensuelle(ville):
 
     # Créer un graphique polaire avec Plotly Express
     fig = px.line_polar(df_moyennes_ville, r='moyenne_valeur', theta=df_moyennes_ville['mois']*(360//12), line_close=True,
-                        color='nom_poll', line_dash='nom_poll', title=f'Évolution des polluants par mois de la région {ville}')
+                        color='nom_poll', line_dash='nom_poll', title=f'Évolution des polluants par mois de {ville}')
     liste_des_mois = ["Décembre","Janvier","Février", "Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre"]
     fig.update_polars(
         radialaxis=dict(
+<<<<<<< HEAD
             visible=False,  
+=======
+            visible=False, 
+>>>>>>> ffbaaace580a5260a0f8414c6c50a543edf47c9d
         ),
         angularaxis=dict(
             visible=True,  
