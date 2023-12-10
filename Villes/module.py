@@ -221,11 +221,7 @@ def create_polar_plot(ville):
             tickvals=np.arange(0, 360, 15),
             ticktext=[
                 str(hour % 24) for hour in range(24)
-<<<<<<< HEAD
             ],  
-=======
-            ], 
->>>>>>> ffbaaace580a5260a0f8414c6c50a543edf47c9d
         ),
     )
     fig_pol.show()
@@ -392,11 +388,7 @@ def polar_plot_mensuelle(ville):
     liste_des_mois = ["Décembre","Janvier","Février", "Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre"]
     fig.update_polars(
         radialaxis=dict(
-<<<<<<< HEAD
             visible=False,  
-=======
-            visible=False, 
->>>>>>> ffbaaace580a5260a0f8414c6c50a543edf47c9d
         ),
         angularaxis=dict(
             visible=True,  
