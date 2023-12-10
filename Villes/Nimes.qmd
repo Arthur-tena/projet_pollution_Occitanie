@@ -13,7 +13,7 @@ from module import *
 afficher_evolution_pollution("NIMES", "../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv" ,['NO2', 'PM2.5', 'PM10'])
 ```
 
-## Evolution de la pollution mensuelle 
+## Evolution de la pollution mensuelle à Nîmes
 ```{python}
 #|code-fold: true
 polar_plot_mensuelle("NIMES")
