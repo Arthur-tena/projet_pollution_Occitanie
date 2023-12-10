@@ -29,14 +29,16 @@ def plot_pie(departement):
         "unite",
         "metrique",
         "date_fin",
-        "statut_valid",
-    ]
+        "statut_valid"
+    ] 
+    df = df.drop(columns=columns_to_drop) # Suppression des colonnes à supprimer dans le DataFrame
     df = df.drop(columns=columns_to_drop) 
 
-    df_departement = df[df["nom_dept"] == departement]
 
-    df_departement = df_departement.dropna()
-    df_departement = df_departement.groupby("nom_poll")["valeur"].sum().reset_index()
+    df_departement = df[df["nom_dept"] == departement] #Création d'un nouveau Data Frame en extrayant les lignes de df où la colonne "nom_dept" est égale à la variable departement
+
+    df_departement = df_departement.dropna() #Suppression les lignes contenant des valeurs manquantes 
+    df_departement = df_departement.groupby("nom_poll")["valeur"].sum().reset_index() 
 
     name = df_departement["nom_poll"]
     value = df_departement["valeur"]
@@ -50,12 +52,13 @@ def plot_pie(departement):
 def polluant_evolution_dept_jour(csv, polluants, dept):
     pd.options.mode.chained_assignment = None
     """Cette fonction prend en argument un fichier CSV, la liste des polluants à afficher, ainsi que le département que l'on souhaite afficher et trace un graphique polair qui représente l'évolution de la concentration de chaque polluants choisis au cours de la journée"""
+    # Chargement du fichier CSV
     df = pd.read_csv(csv)
-
+    #Conversion en format datetime
     df["date_debut"] = pd.to_datetime(df["date_debut"], format="%Y/%m/%d %H:%M:%S%z")
+    #Tri des dates dans l'ordre croissant
     df = df.sort_values(by="date_debut")
-    couleurs = ["blue", "red", "green", "purple", "orange", "pink", "brown"]
-
+    
     df_filtered = df[df["nom_poll"].isin(polluants)]
 
     df_city = df_filtered[df_filtered["nom_dept"] == dept]
@@ -140,7 +143,7 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
         filt = df[(df["nom_dept"] == department) & (df["nom_poll"] == polluant)]
         filt = filt.sort_values(by="date_debut")
 
-        # Convertir la colonne de dates au format mois-année
+        # Convertir la colonne de dates au format mois
         filt["date_debut"] = (
             pd.to_datetime(filt["date_debut"]).dt.to_period("M").astype(str)
         )
@@ -164,7 +167,7 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
                 go.Scatter(
                     x=trace_data["date_debut"],
                     y=trace_data["valeur"],
-                    mode="lines",  # Ajout de ligne pour relier les points
+                    mode="lines",  
                     showlegend=False,
                 )
             )
@@ -175,12 +178,18 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
 
 
 def create_polar_plot(ville):
+    """Cette fonction prend en argumenet une ville et renvoie un polar graph qui représente l'évolution de la pollution au cours des heures de la journée"""
     pd.options.mode.chained_assignment = None
+
+    # Chargement du CSV
+    df = pd.read_csv("../Mesure_30j.csv")
+    # Convertion en format datetime
     # chargez csv
     df = pd.read_csv(r'../data_visu/mensuelle.csv')
     # convert data
+
     df["date_debut"] = pd.to_datetime(df["date_debut"], format="%Y/%m/%d %H:%M:%S%z")
-    # polluants
+    # Liste des polluants à afficher
     polluants = ["NO2", "PM2.5", "PM10", "NOX", "NO"]
     # Trier le DataFrame par ordre croissant de date
     df = df.sort_values(by="date_debut")
@@ -212,13 +221,18 @@ def create_polar_plot(ville):
             tickvals=np.arange(0, 360, 15),
             ticktext=[
                 str(hour % 24) for hour in range(24)
+<<<<<<< HEAD
+            ],  
+=======
             ], 
+>>>>>>> ffbaaace580a5260a0f8414c6c50a543edf47c9d
         ),
     )
     fig_pol.show()
 
 
 def afficher_evolution_pollution(nom_ville, chemin_fichier_csv, polluants):
+    """Cette fonction prend en argument le nom de la ville, le chemin du fichier CSV et les listes des polluants que l'on souhaite afficher et renvoie un graphique pour chaque polluant"""
     pd.options.mode.chained_assignment = None
 
     # Chargez le fichier CSV dans un DataFrame pandas
@@ -266,6 +280,7 @@ def afficher_evolution_pollution(nom_ville, chemin_fichier_csv, polluants):
 
 
 def pollutants_evolution_ville(csv, polluants, ville):
+    """Cette fonction prend en argument le nom de la ville, le chemin du fichier CSV et les listes des polluants que l'on souhaite afficher et renvoie un graphique polair qui représente l'évolution de la pollution au cours de la semaine """
     pd.options.mode.chained_assignment = None
     df = pd.read_csv(csv)
 
@@ -341,6 +356,7 @@ def pollutants_evolution_ville(csv, polluants, ville):
     fig.show()
     
 def polar_plot_mensuelle(ville):  
+    """Cette fonction prend en argument le nom de la ville que l'on souhaite afficher et renvoie un graphique polair représentant l'évolution de la pollution au cours de mois"""
     pd.options.mode.chained_assignment = None
     # Chargez le fichier CSV dans un DataFrame pandas
     chemin_fichier_csv = r'../data_visu/mensuelle.csv'
@@ -376,7 +392,11 @@ def polar_plot_mensuelle(ville):
     liste_des_mois = ["Décembre","Janvier","Février", "Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre"]
     fig.update_polars(
         radialaxis=dict(
+<<<<<<< HEAD
+            visible=False,  
+=======
             visible=False, 
+>>>>>>> ffbaaace580a5260a0f8414c6c50a543edf47c9d
         ),
         angularaxis=dict(
             visible=True,  
