@@ -5,6 +5,7 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import numpy as np
 import plotly.graph_objects as go
+import os
 
 pd.options.mode.chained_assignment = None
 
@@ -46,9 +47,7 @@ def plot_pie(departement):
     plt.show()
 
 
-# import pandas as pd
-# import plotly.express as px
-# import matplotlib.pyplot as plt
+
 def polluant_evolution_dept_jour(csv, polluants, dept):
     """Cette fonction prend en argument un fichier CSV, la liste des polluants à afficher, ainsi que le département que l'on souhaite afficher et trace un graphique polair qui représente l'évolution de la concentration de chaque polluants choisis au cours de la journée"""
     df = pd.read_csv(csv)
@@ -126,11 +125,6 @@ def polluant_evolution_dept_jour(csv, polluants, dept):
     fig.show()
 
 
-# import pandas as pd
-# import plotly.express as px
-# import plotly.graph_objects as go
-
-
 def plot_polluant_evolution_annuelle(data_file, department, polluants):
     """Cette fonction prend en argument le fichier CSV, le département et la liste des polluants à afficher et affiche l'évolution de la concentration par station de chaque polluants"""
     # Charger les données
@@ -179,7 +173,6 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
 # Villes
 
 
-# import numpy as np
 def create_polar_plot(ville):
     # chargez csv
     df = pd.read_csv("../Mesure_30j.csv")
@@ -221,10 +214,6 @@ def create_polar_plot(ville):
         ),
     )
     fig_pol.show()
-
-
-# import pandas as pd
-# import plotly.express as px
 
 
 def afficher_evolution_pollution(nom_ville, chemin_fichier_csv, polluants):
