@@ -245,6 +245,34 @@
     "text": "Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import polluant_evolution_dept_jour\n\npolluant_evolution_dept_jour(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NO','O3'],\"ARIEGE\")"
   },
   {
+    "objectID": "Carte/Carte_final.html",
+    "href": "Carte/Carte_final.html",
+    "title": "Carte Pollution sur l’Occitanie depuis",
+    "section": "",
+    "text": "Make this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Accueil",
+    "section": "",
+    "text": "La pollution, sous ses multiples formes, émerge comme l’un des enjeux les plus pressants de notre époque, affectant la qualité de l’air que nous respirons, de l’eau que nous buvons, et du sol sur lequel nous marchons. Nous allons, nous intéresser ici à la pollution dans la région Occitanie, et plus précisément à la pollution de l’air. Pour cela, nous allons nous intéresser à la concentration de certains polluants au cours des cinq dernières années. Afin de vous exposer au mieux la situation en Occitanie, nous allons observer les données que nous avons récupérées sur le site Atmo-Occitanie à différentes échelles.\nNous allons tout d’abord, nous intéresser à la pollution dans la région.\n\n\nPour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\nINTRODUCTION PROBLEMATIQUE\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O31 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
+  },
+  {
+    "objectID": "index.html#quantité-totale-des-polluants-mesurés",
+    "href": "index.html#quantité-totale-des-polluants-mesurés",
+    "title": "Accueil",
+    "section": "",
+    "text": "Pour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\nINTRODUCTION PROBLEMATIQUE\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O31 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Accueil",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nà propos↩︎"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "A propos",
@@ -271,34 +299,6 @@
     "title": "A propos",
     "section": "L’Ozone",
     "text": "L’Ozone\n\nO3 : est un polluant qui résultent principalement de la transformation chimique des autres polluants. L’ozone pose surtout problème dès lors que ses concentrations dans l’air sont élevées et qu’il n’a pas de vent pour les disperser. Il peut alors provoquer des réactions inflammatoires des bronches mais aussi cardiaques, en particuliers chez les personnes sensibles"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Accueil",
-    "section": "",
-    "text": "La pollution, sous ses multiples formes, émerge comme l’un des enjeux les plus pressants de notre époque, affectant la qualité de l’air que nous respirons, de l’eau que nous buvons, et du sol sur lequel nous marchons. Nous allons, nous intéresser ici à la pollution dans la région Occitanie, et plus précisément à la pollution de l’air. Pour cela, nous allons nous intéresser à la concentration de certains polluants au cours des cinq dernières années. Afin de vous exposer au mieux la situation en Occitanie, nous allons observer les données que nous avons récupérées sur le site Atmo-Occitanie à différentes échelles.\nNous allons tout d’abord, nous intéresser à la pollution dans la région.\n\n\nPour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\nINTRODUCTION PROBLEMATIQUE\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O31 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
-  },
-  {
-    "objectID": "index.html#quantité-totale-des-polluants-mesurés",
-    "href": "index.html#quantité-totale-des-polluants-mesurés",
-    "title": "Accueil",
-    "section": "",
-    "text": "Pour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\nINTRODUCTION PROBLEMATIQUE\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O31 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
-  },
-  {
-    "objectID": "index.html#footnotes",
-    "href": "index.html#footnotes",
-    "title": "Accueil",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nà propos↩︎"
-  },
-  {
-    "objectID": "Carte/Carte_final.html",
-    "href": "Carte/Carte_final.html",
-    "title": "Carte Pollution sur l’Occitanie depuis",
-    "section": "",
-    "text": "Make this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "Villes/Aveyron.html",
