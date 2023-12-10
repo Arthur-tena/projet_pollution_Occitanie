@@ -30,13 +30,13 @@ def plot_pie(departement):
         "metrique",
         "date_fin",
         "statut_valid",
-    ]
-    df = df.drop(columns=columns_to_drop)
+    ] 
+    df = df.drop(columns=columns_to_drop) # Suppression des colonnes à supprimer dans le DataFrame
 
-    df_departement = df[df["nom_dept"] == departement]
+    df_departement = df[df["nom_dept"] == departement] #Création d'un nouveau Data Frame en extrayant les lignes de df où la colonne "nom_dept" est égale à la variable departement
 
-    df_departement = df_departement.dropna()
-    df_departement = df_departement.groupby("nom_poll")["valeur"].sum().reset_index()
+    df_departement = df_departement.dropna() #Suppression les lignes contenant des valeurs manquantes 
+    df_departement = df_departement.groupby("nom_poll")["valeur"].sum().reset_index() 
 
     name = df_departement["nom_poll"]
     value = df_departement["valeur"]
@@ -52,12 +52,13 @@ def plot_pie(departement):
 def polluant_evolution_dept_jour(csv, polluants, dept):
     pd.options.mode.chained_assignment = None
     """Cette fonction prend en argument un fichier CSV, la liste des polluants à afficher, ainsi que le département que l'on souhaite afficher et trace un graphique polair qui représente l'évolution de la concentration de chaque polluants choisis au cours de la journée"""
+    # Chargement du fichier CSV
     df = pd.read_csv(csv)
-
+    #Conversion en format datetime
     df["date_debut"] = pd.to_datetime(df["date_debut"], format="%Y/%m/%d %H:%M:%S%z")
+    #Tri des dates dans l'ordre croissant
     df = df.sort_values(by="date_debut")
-    couleurs = ["blue", "red", "green", "purple", "orange", "pink", "brown"]
-
+    
     df_filtered = df[df["nom_poll"].isin(polluants)]
 
     df_city = df_filtered[df_filtered["nom_dept"] == dept]
@@ -142,7 +143,7 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
         filt = df[(df["nom_dept"] == department) & (df["nom_poll"] == polluant)]
         filt = filt.sort_values(by="date_debut")
 
-        # Convertir la colonne de dates au format mois-année
+        # Convertir la colonne de dates au format mois
         filt["date_debut"] = (
             pd.to_datetime(filt["date_debut"]).dt.to_period("M").astype(str)
         )
@@ -166,7 +167,7 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
                 go.Scatter(
                     x=trace_data["date_debut"],
                     y=trace_data["valeur"],
-                    mode="lines",  # Ajout de ligne pour relier les points
+                    mode="lines",  
                     showlegend=False,
                 )
             )
@@ -177,12 +178,13 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
 
 
 def create_polar_plot(ville):
+    """Cette fonction prend en argumenet une ville et renvoie un polar graph qui représente l'évolution de la pollution au cours des heures de la journée"""
     pd.options.mode.chained_assignment = None
-    # chargez csv
+    # Chargement du CSV
     df = pd.read_csv("../Mesure_30j.csv")
-    # convert data
+    # Convertion en format datetime
     df["date_debut"] = pd.to_datetime(df["date_debut"], format="%Y/%m/%d %H:%M:%S%z")
-    # polluants
+    # Liste des polluants à afficher
     polluants = ["NO2", "PM2.5", "PM10", "NOX", "NO"]
     # Trier le DataFrame par ordre croissant de date
     df = df.sort_values(by="date_debut")
@@ -205,22 +207,23 @@ def create_polar_plot(ville):
 
     fig_pol.update_polars(
         radialaxis=dict(
-            visible=True,  # Set to False if you want to hide the radial axis
+            visible=True,  
         ),
         angularaxis=dict(
-            visible=True,  # Set to False if you want to hide the angular axis
-            direction="clockwise",  # Set the direction of the angular axis
-            period=360,  # Set the period of the angular axis
+            visible=True,  
+            direction="clockwise",  
+            period=360,  
             tickvals=np.arange(0, 360, 15),
             ticktext=[
                 str(hour % 24) for hour in range(24)
-            ],  # Specify tick values on the angular axis
+            ],  
         ),
     )
     fig_pol.show()
 
 
 def afficher_evolution_pollution(nom_ville, chemin_fichier_csv, polluants):
+    """Cette fonction prend en argument le nom de la ville, le chemin du fichier CSV et les listes des polluants que l'on souhaite afficher et renvoie un graphique pour chaque polluant"""
     pd.options.mode.chained_assignment = None
 
     # Chargez le fichier CSV dans un DataFrame pandas
@@ -268,6 +271,7 @@ def afficher_evolution_pollution(nom_ville, chemin_fichier_csv, polluants):
 
 
 def pollutants_evolution_ville(csv, polluants, ville):
+    """Cette fonction prend en argument le nom de la ville, le chemin du fichier CSV et les listes des polluants que l'on souhaite afficher et renvoie un graphique polair qui représente l'évolution de la pollution au cours de la semaine """
     pd.options.mode.chained_assignment = None
     df = pd.read_csv(csv)
 
@@ -343,6 +347,7 @@ def pollutants_evolution_ville(csv, polluants, ville):
     fig.show()
     
 def polar_plot_mensuelle(ville):  
+    """Cette fonction prend en argument le nom de la ville que l'on souhaite afficher et renvoie un graphique polair représentant l'évolution de la pollution au cours de mois"""
     pd.options.mode.chained_assignment = None
     # Chargez le fichier CSV dans un DataFrame pandas
     chemin_fichier_csv = r'../data_visu/mensuelle.csv'
@@ -360,7 +365,7 @@ def polar_plot_mensuelle(ville):
 
     # Définir les polluants et la ville spécifiques
     polluants = ['PM10', 'NOX', 'O3', 'NO2', 'PM2.5', 'NO', 'SO2', 'H2S'] 
-    # ville = 'TOULOUSE' 
+     
 
     # Filtrer les données pour inclure uniquement les polluants spécifiés
     df_filtered = df[df['nom_poll'].isin(polluants)]
@@ -378,15 +383,15 @@ def polar_plot_mensuelle(ville):
     liste_des_mois = ["Décembre","Janvier","Février", "Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre"]
     fig.update_polars(
         radialaxis=dict(
-            visible=False,  # Set to False if you want to hide the radial axis
+            visible=False,  
         ),
         angularaxis=dict(
-            visible=True,  # Set to False if you want to hide the angular axis
-            rotation=120,   # Rotate the angular axis (default is 0)
-            direction='clockwise',  # Set the direction of the angular axis
-            period=360,   # Set the period of the angular axis
+            visible=True,  
+            rotation=120,   
+            direction='clockwise',  
+            period=360,   
             tickvals=np.arange(0, 360, 30),
-            ticktext=[i for i in liste_des_mois],  # Specify tick values on the angular axis
+            ticktext=[i for i in liste_des_mois],  
         )
     )
     # Afficher le graphique
