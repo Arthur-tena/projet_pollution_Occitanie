@@ -263,7 +263,7 @@
     "href": "index.html#quantité-totale-des-polluants-mesurés",
     "title": "Accueil",
     "section": "Quantité totale des polluants mesurés",
-    "text": "Quantité totale des polluants mesurés\nPour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\n\n\n/tmp/ipykernel_2353/4020931299.py:11: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O3 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
+    "text": "Quantité totale des polluants mesurés\nPour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\n\n\n/tmp/ipykernel_2193/4020931299.py:11: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O3 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
   },
   {
     "objectID": "Villes/Aveyron.html",
@@ -445,35 +445,35 @@
     "href": "Villes/Nimes.html",
     "title": "Nîmes",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"NIMES\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10'])"
+    "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\nafficher_evolution_pollution(\"NIMES\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10'])"
   },
   {
     "objectID": "Villes/Nimes.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
     "href": "Villes/Nimes.html#graphique-des-concentrations-annuelles-de-polluant-dans-la-ville",
     "title": "Nîmes",
     "section": "",
-    "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\n\nafficher_evolution_pollution(\"NIMES\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10'])"
+    "text": "Code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import *\nafficher_evolution_pollution(\"NIMES\", \"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\" ,['NO2', 'PM2.5', 'PM10'])"
   },
   {
     "objectID": "Villes/Nimes.html#evolution-de-la-pollution-mensuelle",
     "href": "Villes/Nimes.html#evolution-de-la-pollution-mensuelle",
     "title": "Nîmes",
     "section": "Evolution de la pollution mensuelle",
-    "text": "Evolution de la pollution mensuelle"
+    "text": "Evolution de la pollution mensuelle\n\n\nCode\npolar_plot_mensuelle(\"NIMES\")"
   },
   {
     "objectID": "Villes/Nimes.html#evolution-de-la-pollution-au-cours-de-la-semaine",
     "href": "Villes/Nimes.html#evolution-de-la-pollution-au-cours-de-la-semaine",
     "title": "Nîmes",
     "section": "Evolution de la pollution au cours de la semaine",
-    "text": "Evolution de la pollution au cours de la semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"NIMES\")"
+    "text": "Evolution de la pollution au cours de la semaine\n\n\nCode\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"NIMES\")"
   },
   {
     "objectID": "Villes/Nimes.html#evolution-de-la-pollution-journalière",
     "href": "Villes/Nimes.html#evolution-de-la-pollution-journalière",
     "title": "Nîmes",
     "section": "Evolution de la pollution journalière",
-    "text": "Evolution de la pollution journalière\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"NIMES\")"
+    "text": "Evolution de la pollution journalière\n\n\nCode\ncreate_polar_plot(\"NIMES\")"
   },
   {
     "objectID": "Villes/Rodez.html",
