@@ -350,7 +350,7 @@ def pollutants_evolution_ville(csv, polluants, ville):
     
 def polar_plot_mensuelle(ville):  
     # Chargez le fichier CSV dans un DataFrame pandas
-    chemin_fichier_csv = r'/home/zack/projet_pollution_occitanie/data_visu/mensuelle.csv'
+    chemin_fichier_csv = r'../data_visu/mensuelle.csv'
     df = pd.read_csv(chemin_fichier_csv)
     df = df.dropna()
 
