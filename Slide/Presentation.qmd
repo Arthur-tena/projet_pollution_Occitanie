@@ -7,7 +7,7 @@ format:
 
 ---
 # Problématique 
-Comment exploiter des données pour mieux visualiser un problème actuel ?
+Comment exploiter des données pour mieux visualiser et comprendre un problème actuel ?
 
 # Introduction 
 ::: {.incremental}
@@ -15,6 +15,7 @@ Comment exploiter des données pour mieux visualiser un problème actuel ?
 - En Occitanie
 - À l'échelle des départements
 - À l'échelle des villes 
+- Déploiement du site
 - Problèmes rencontrés 
 - Conclusion
 :::
@@ -58,7 +59,11 @@ fig.update_layout(
 
 
 fig.show()
+
 ```
+
+---
+
 Comment nous y sommes parvenue ?
 ```{.python code-line-numbers="7,11,13" }
 #| echo: False
@@ -96,7 +101,14 @@ fig.update_layout(
 )
 fig.show()
 ``` 
+---
+# A l'échelle des départements
+
+---
+
 ## Haute-Garonne 
+
+### Approche annuelle
 
 ```{python}
 #| echo: False
@@ -150,10 +162,13 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
             )
         fig.show()
 plot_polluant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv","HAUTE-GARONNE",['PM2.5'])
+
 ```
+
 ---
 
-```{python}
+Pour parvenir à ce résultat, nous avons créé le code suivant :
+```{.python code-line-numbers="6,7,11,16,18,22,23,27,39,40"}
 #| echo: False
 # %%
 import pandas as pd
@@ -205,11 +220,18 @@ def plot_polluant_evolution_annuelle(data_file, department, polluants):
         fig.show()
 plot_polluant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv","HAUTE-GARONNE",['PM2.5'])
 ```
+---
 
+### Approche Hebdomadaire 
 
-# Par ville 
+---
+
+# A l'échelle des villes
 
 ## Toulouse
+
+### Approche mensuelle
+
 
 ```{python}
 #| echo : False
@@ -230,8 +252,7 @@ def polar_plot_mensuelle(ville):
     df = df.sort_values(by='mois')
 
     # Définir les polluants et la ville spécifiques
-    polluants = ['PM10', 'NOX', 'O3', 'NO2', 'PM2.5', 'NO', 'SO2', 'H2S'] 
-    # ville = 'TOULOUSE' 
+    polluants = ['PM10', 'NOX', 'O3', 'NO2', 'PM2.5', 'NO', 'SO2', 'H2S']  
 
     # Filtrer les données pour inclure uniquement les polluants spécifiés
     df_filtered = df[df['nom_poll'].isin(polluants)]
@@ -249,19 +270,75 @@ def polar_plot_mensuelle(ville):
     liste_des_mois = ["Décembre","Janvier","Février", "Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre"]
     fig.update_polars(
         radialaxis=dict(
-            visible=False,  # Set to False if you want to hide the radial axis
+            visible=False,  
         ),
         angularaxis=dict(
-            visible=True,  # Set to False if you want to hide the angular axis
-            rotation=120,   # Rotate the angular axis (default is 0)
-            direction='clockwise',  # Set the direction of the angular axis
-            period=360,   # Set the period of the angular axis
+            visible=True,  
+            rotation=120,   
+            direction='clockwise',  
+            period=360,   
             tickvals=np.arange(0, 360, 30),
-            ticktext=[i for i in liste_des_mois],  # Specify tick values on the angular axis
+            ticktext=[i for i in liste_des_mois],  
         )
     )
     # Afficher le graphique
     fig.show()
 polar_plot_mensuelle("TOULOUSE")
 ```
+
+---
+
+```{.python code-line-numbers="2,13,19,18,22,28,29,32,34"}
+#| echo: False
+def polar_plot_mensuelle(ville):  
+    pd.options.mode.chained_assignment = None
+    # Chargez le fichier CSV dans un DataFrame pandas
+    chemin_fichier_csv = r'../data_visu/mensuelle.csv'
+    df = pd.read_csv(chemin_fichier_csv)
+    df = df.dropna()
+
+    # Convertir la colonne 'date_debut' en type datetime
+    df['date_debut'] = pd.to_datetime(df['date_debut'], format='%Y/%m/%d %H:%M:%S%z')
+
+    # Extraire le mois de chaque date
+    df['mois'] = df['date_debut'].dt.month
+
+    # Trier le DataFrame par ordre croissant de date
+    df = df.sort_values(by='mois')
+
+    # Définir les polluants et la ville spécifiques
+    polluants = ['PM10', 'NOX', 'O3', 'NO2', 'PM2.5', 'NO', 'SO2', 'H2S']  
+
+    # Filtrer les données pour inclure uniquement les polluants spécifiés
+    df_filtered = df[df['nom_poll'].isin(polluants)]
+
+    # Séparer les données pour la ville spécifiée
+    df_ville = df_filtered[df_filtered['nom_com'] == ville]
+
+    # Calculer la moyenne des concentrations de chaque polluant à chaque heure de la journée pour la ville spécifiée
+    df_moyennes_ville = df_ville.groupby(['nom_poll', 'mois'])['valeur'].mean().reset_index()
+    df_moyennes_ville.columns = ['nom_poll', 'mois', 'moyenne_valeur']
+
+    # Créer un graphique polaire avec Plotly Express
+    fig = px.line_polar(df_moyennes_ville, r='moyenne_valeur', theta=df_moyennes_ville['mois']*(360//12), line_close=True,
+                        color='nom_poll', line_dash='nom_poll', title=f'Évolution des polluants par mois de la région {ville}')
+    liste_des_mois = ["Décembre","Janvier","Février", "Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre"]
+    fig.update_polars(
+        radialaxis=dict(
+            visible=False,  
+        ),
+        angularaxis=dict(
+            visible=True,  
+            rotation=120,   
+            direction='clockwise',  
+            period=360,   
+            tickvals=np.arange(0, 360, 30),
+            ticktext=[i for i in liste_des_mois],  
+        )
+    )
+    # Afficher le graphique
+    fig.show()
+polar_plot_mensuelle("TOULOUSE")
+```
+---
 
