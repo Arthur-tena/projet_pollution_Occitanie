@@ -38,9 +38,9 @@ website:
     left:
       - sidebar:carte
       - sidebar:Dpt
+      - sidebar:about
   sidebar:
     - id: carte
-      title: "Carte"
       contents:
         - Carte/Carte_final.qmd
     - id: Dpt
@@ -67,6 +67,10 @@ website:
             - Villes/Perpignan.qmd
             - Villes/Rodez.qmd
             - Villes/Toulouse.qmd
+     - id: about
+      contents:
+        - about.qmd
+           
 format:
   html:
     theme: cosmo

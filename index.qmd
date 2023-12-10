@@ -1,6 +1,14 @@
 ---
 title: "Accueil"
 ---
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 86c063793ec7ca01c0692709785d2473c9765084
+
+Page d'accueil.
+=======
 La pollution, sous ses multiples formes, émerge comme l'un des enjeux les plus pressants de notre époque, affectant la qualité de l'air que nous respirons, de l'eau que nous buvons, et du sol sur lequel nous marchons.
 Nous allons, nous intéresser ici à la pollution dans la région Occitanie, et plus précisément à la pollution de l'air.
 Pour cela, nous allons nous intéresser à la concentration de certains polluants au cours des cinq dernières années. 
@@ -10,7 +18,10 @@ Nous allons tout d'abord, nous intéresser à la pollution dans la région.
 
 ## Quantité totale des polluants mesurés 
 Pour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants. 
+>>>>>>> b84b622c906abcb3fc0c41f8a0df958af3b9e09f
 
+INTRODUCTION
+PROBLEMATIQUE
 
 ```{python}
 #| echo: false
@@ -89,5 +100,9 @@ fig.update_layout(
 
 
 fig.show()
+<<<<<<< HEAD
+```
+=======
 ```
 
+>>>>>>> b84b622c906abcb3fc0c41f8a0df958af3b9e09f
