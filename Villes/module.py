@@ -30,9 +30,8 @@ def plot_pie(departement):
         "metrique",
         "date_fin",
         "statut_valid"
-    ] 
+     ] 
     df = df.drop(columns=columns_to_drop) # Suppression des colonnes à supprimer dans le DataFrame
-    df = df.drop(columns=columns_to_drop) 
 
 
     df_departement = df[df["nom_dept"] == departement] #Création d'un nouveau Data Frame en extrayant les lignes de df où la colonne "nom_dept" est égale à la variable departement
