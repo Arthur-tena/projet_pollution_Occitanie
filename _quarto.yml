@@ -2,8 +2,8 @@ project:
   type: website
   render:
     - index.qmd
-    - Carte/Carte_final.qmd
     - about.qmd
+    - Carte/Carte_final.qmd
     - Villes/Aveyron.qmd
     - Villes/Ariege.qmd
     - Villes/Gard.qmd
@@ -38,6 +38,7 @@ website:
     left:
       - sidebar:carte
       - sidebar:Dpt
+      - sidebar:prop
   sidebar:
     - id: carte
       contents:
@@ -66,10 +67,11 @@ website:
             - Villes/Perpignan.qmd
             - Villes/Rodez.qmd
             - Villes/Toulouse.qmd
-<<<<<<< HEAD
+    - id: prop
+      title: "À propos"
+      contents:
+        - about.qmd
            
-=======
->>>>>>> b84b622c906abcb3fc0c41f8a0df958af3b9e09f
 format:
   html:
     theme: cosmo

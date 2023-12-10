@@ -359,7 +359,7 @@ def polar_plot_mensuelle(ville):
     df = df.sort_values(by='mois')
 
     # Définir les polluants et la ville spécifiques
-    polluants = ['PM10', 'NOX', 'O3', 'NO2', 'PM2.5', 'NO', 'SO2', 'H2S']  # Remplacez par les noms réels de vos polluants
+    polluants = ['PM10', 'NOX', 'O3', 'NO2', 'PM2.5', 'NO', 'SO2', 'H2S'] 
     # ville = 'TOULOUSE' 
 
     # Filtrer les données pour inclure uniquement les polluants spécifiés
