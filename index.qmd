@@ -3,19 +3,33 @@ title: "Accueil"
 ---
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 86c063793ec7ca01c0692709785d2473c9765084
 
 Page d'accueil.
+=======
+La pollution, sous ses multiples formes, émerge comme l'un des enjeux les plus pressants de notre époque, affectant la qualité de l'air que nous respirons, de l'eau que nous buvons, et du sol sur lequel nous marchons.
+Nous allons, nous intéresser ici à la pollution dans la région Occitanie, et plus précisément à la pollution de l'air.
+Pour cela, nous allons nous intéresser à la concentration de certains polluants au cours des cinq dernières années. 
+Afin de vous exposer au mieux la situation en Occitanie, nous allons observer les données que nous avons récupérées sur le site Atmo-Occitanie à différentes échelles.
+
+Nous allons tout d'abord, nous intéresser à la pollution dans la région.
+
+## Quantité totale des polluants mesurés 
+Pour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants. 
+>>>>>>> b84b622c906abcb3fc0c41f8a0df958af3b9e09f
 
 INTRODUCTION
 PROBLEMATIQUE
 
 ```{python}
 #| echo: false
+#| warning: false
 # %%
 import pandas as pd
 import matplotlib.pyplot as plt
+pd.options.mode.chained_assignment = None
 data = pd.read_csv("data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 df = pd.DataFrame(data)
 grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
@@ -40,7 +54,7 @@ plt.xticks([i for i in range(len(grouped_df['date_debut'].unique()))], grouped_d
 plt.show()
 ```
 
-On constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l'O3 et que l'année la plus polluée parmi les cinq dernières années est l'année 2022.
+On constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l'O3 ^ [à propos] et que l'année la plus polluée parmi les cinq dernières années est l'année 2022.
 On constate aussi qu'il y'a une baisse assez significative entre 2022 et 2023, même si toutefois l'année 2023 n'est pas encore totalement terminé.
 
 
@@ -53,6 +67,7 @@ Cette fois-ci on s'intéresse
 # %%
 import pandas as pd
 import plotly.graph_objects as go
+pd.options.mode.chained_assignment = None
 
 data = pd.read_csv("data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 df = pd.DataFrame(data)
@@ -85,4 +100,9 @@ fig.update_layout(
 
 
 fig.show()
+<<<<<<< HEAD
 ```
+=======
+```
+
+>>>>>>> b84b622c906abcb3fc0c41f8a0df958af3b9e09f
