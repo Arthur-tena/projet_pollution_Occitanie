@@ -3,6 +3,7 @@ project:
   render:
     - index.qmd
     - Carte/Carte_final.qmd
+    - about.qmd
     - Villes/Aveyron.qmd
     - Villes/Ariege.qmd
     - Villes/Gard.qmd
@@ -66,7 +67,6 @@ website:
             - Villes/Perpignan.qmd
             - Villes/Rodez.qmd
             - Villes/Toulouse.qmd
-            
 format:
   html:
     theme: cosmo

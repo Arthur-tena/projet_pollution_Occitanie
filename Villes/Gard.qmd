@@ -2,8 +2,9 @@
 title: "Gard"
 format: html
 ---
-
+## Part de chaque polluant dans le département du Gard
 ```{python}
+#|code-fold: true
 import matplotlib.pyplot as plt
 import pandas as pd
 from module import *
@@ -11,8 +12,9 @@ from module import *
 plot_pie("GARD")
 ```
 
-
+## Concentration de chaque polluant observé ses dernières années dans le département
 ```{python}
+#|code-fold: true
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -21,8 +23,9 @@ from module import *
 plot_polluant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv","GARD",['NO2', 'PM2.5', 'PM10','O3'])
 ```
 
-
+## Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours
 ```{python}
+#|code-fold: true
 import matplotlib.pyplot as plt
 import pandas as pd
 from module import *

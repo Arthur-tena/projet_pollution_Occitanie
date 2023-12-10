@@ -3,7 +3,10 @@ title: "Tarn et Garonne"
 format: html
 ---
 
+## Part de chaque polluant dans le département du Tarn et Garonne
+
 ```{python}
+#|code-fold: true
 import matplotlib.pyplot as plt
 import pandas as pd
 from module import plot_pie
@@ -11,8 +14,10 @@ from module import plot_pie
 plot_pie("TARN-ET-GARONNE")
 ```
 
+## Concentration de chaque polluant observé ses dernières années dans le département
 
 ```{python}
+#|code-fold: true
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -23,7 +28,10 @@ plot_polluant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_
 ```
 
 
+## Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours
+
 ```{python}
+#|code-fold: true
 import matplotlib.pyplot as plt
 import pandas as pd
 from module import polluant_evolution_dept_jour
