@@ -1,5 +1,27 @@
 ---
-title: "About"
+title: "A propos"
 ---
 
-About this site
+Nous avons choisi de représenter  plusieurs catégories de polluants.
+
+## Les particules finies :
+
+* PM10: qui ont un diamètre < 10 µm, elles sont émises au niveau national dans des proportions équivalentes par le secteur résidentiel, l’industrie et l’agriculture. Les PM10 peut provoquer une irritation des voies respiratoires supérieures et des bronches surtout chez les personnes sensibles (enfants, personnes-âgées)  
+
+* PM2.5 : qui ont un diamètre < 2.5 µm, elles sont émises principalement par le secteur résidentiel et le chauffage au bois. Ces particules très finis sont capables de pénétrer profondément dans les poumons et dans la circulation sanguine, provoquant ainsi des troubles cardiovasculaires,  des accidents vasculaire cérébral et respiratoires
+
+## Les Oxydes d’Azote (NOX) :
+
+Le terme «oxydes d’azote» désigne le monoxyde d’azote (NO) et le dioxyde d’azote (NO2).
+Toute combustion d’énergie produit du NO et NO2, mais au contact de l’air, le monoxyde d’azote est rapidement oxydé en dioxyde d’azote.
+
+* NO : est formé lors de la combustion à haute température : moteurs thermiques des véhicules ou chaudières des installations de combustion
+
+* NO2 : est un gaz irritant pour les yeux et les voies respiratoires. Il augmente aussi la fréquence et la gravité des crises d’asthme
+
+## L'Ozone
+
+* O3 : est un polluant qui résultent principalement de la transformation chimique des autres polluants. L’ozone pose surtout problème dès lors que ses concentrations dans l’air sont élevées et qu’il n’a pas de vent pour les disperser.
+Il peut alors provoquer des réactions inflammatoires des bronches mais aussi cardiaques, en particuliers chez les personnes sensibles
+
+

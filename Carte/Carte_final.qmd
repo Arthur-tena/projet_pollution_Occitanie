@@ -1,53 +1,32 @@
 ---
-title: "Carte Pollution sur l'occitanie"
+title: "Carte Pollution sur l'Occitanie"
 ---
 ```{python}
 #|echo : false
 # Importez les packages à utiliser
 import pandas as pd
-import geopandas as gpd
 import folium
+from folium import FeatureGroup
 from folium.plugins import HeatMap
-# Importez les  nécessaire pour afficher la carte
-df_IQA = pd.read_csv(
-<<<<<<< HEAD
-    "/projet_pollution_occitanie/data/IQA.csv",
-=======
-    "../data/IQA.csv",
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
-    usecols=[
-        "X",
-        "Y",
-        "code_qual",
-        "code_no2",
-        "code_so2",
-        "code_o3",
-        "code_pm10",
-        "code_pm25",
-    ],
-)
+import branca.colormap as cm
+import geopandas as gpd
+from carte import *
+
 dept = gpd.read_file("../data/dept_occi.json")
-# Filtrer les données par :
-# Longitude de chaque zone
-long = df_IQA["X"][0:100].tolist()
-# Latittude de chaque zone
-lat = df_IQA["Y"][0:100].tolist()
-# Et par polluants:
-# NO2
-NO2 = df_IQA["code_no2"][0:100].tolist()
-# SO2
-SO2 = df_IQA["code_so2"][0:100].tolist()
-# O3
-O3 = df_IQA["code_o3"][0:100].tolist()
-# PM10
-PM10 = df_IQA["code_pm10"][0:100].tolist()
-# PM25
-PM25 = df_IQA["code_pm25"][0:100].tolist()
-# Code qualittif du l'indice de qualité de l'air
-Code_Qual = df_IQA["code_qual"][0:100][0:100].tolist()
-# Création de la carte
-hm_occi = folium.Map([48.0, 5.0], zoom_start=6)
-# Calque du départements
+grad = {
+    0:   "#DE5B30",
+    0.1: "#CC5333",
+    0.2: "#B94A35",
+    0.3: "#A64238",
+    0.4: "#93393B",
+    0.5: "#80313E",
+    0.6: "#6E2841",
+    0.7: "#5B2044",
+    0.8: "#481747",
+    0.9: "#350F4A",
+    1:   "#23074D",
+}
+hm_occi = folium.Map([43.716671, 2.15], zoom_start=6.2)
 dept_map = folium.GeoJson(
     dept,
     style_function=lambda feature: {
@@ -59,33 +38,57 @@ dept_map = folium.GeoJson(
     },
     name="Departements de l'occitanie",
     zoom_on_click=True,
+
 ).add_to(hm_occi)
-# Calque IQA
-hm_iqa = HeatMap(
-    list(zip(lat, long, Code_Qual)),
-    name="Indice de Qualité de l'Air",
-    blur=30,
-    radius=40,
-).add_to(hm_occi)
-# Calque NO2
-hm_no2 = HeatMap(list(zip(lat, long, NO2)), name="NO2", blur=35, radius=40).add_to(
-    hm_occi
-)
-# Calque SO2
-hm_so2 = HeatMap(list(zip(lat, long, SO2)), name="SO2", blur=35, radius=40).add_to(
+
+hm_no2 = HeatMap(Load_datasets().YX_polluant('NO2'), name="NO2", blur=30, radius=40,show=False, gradient= grad).add_to(
     hm_occi
 )
 # Calque O3
-hm_o3 = HeatMap(list(zip(lat, long, O3)), name="O3", blur=35, radius=40).add_to(hm_occi)
+
+hm_o3 = HeatMap(Load_datasets().YX_polluant('O3'), name="O3", blur=30, radius=40,show=False,gradient= grad).add_to(hm_occi)
 # Calque PM10
-hm_pm10 = HeatMap(list(zip(lat, long, PM10)), name="PM10", blur=35, radius=40).add_to(
+hm_pm10 = HeatMap(Load_datasets().YX_polluant('PM10'), name="PM10", blur=30, radius=40,show=False, gradient= grad).add_to(
     hm_occi
 )
 # Calque PM25
-hm_pm25 = HeatMap(list(zip(lat, long, PM25)), name="PM25", blur=35, radius=40).add_to(
+hm_pm25 = HeatMap(Load_datasets().YX_polluant('PM2.5'), name="PM25", blur=30, radius=40,show=True, gradient=grad).add_to(
     hm_occi
 )
-
-folium.LayerControl("bottomleft", collapsed=False).add_to(hm_occi)
+# Calque NOX
+hm_nox = HeatMap(Load_datasets().YX_polluant('NOX'), name="NOX", blur=30, radius=40,show=False, gradient=grad).add_to(
+    hm_occi
+)
+# Calque SO2
+hm_SO2 = HeatMap(Load_datasets().YX_polluant('SO2'), name="SO2", blur=30, radius=40,show=False, gradient=grad).add_to(
+    hm_occi
+)
+df = Load_datasets().charge_data()
+villes = ['TOULOUSE','MONTPELLIER','RODEZ','NIMES','PERPIGNAN','ALBI','TARBES','LOURDES']
+for i in villes:
+    folium.Marker(
+    location=list(df[df['nom_com']==i][['Y','X']].mean()),
+    tooltip= i,
+    popup=i,
+    icon=folium.Icon(color="orange"),
+).add_to(hm_occi)
+folium.TileLayer("CartoDB Positron", name="Clair").add_to(hm_occi)
+folium.TileLayer('cartodbdark_matter',name = "Sombre",show=False).add_to(hm_occi)
+folium.LayerControl(position="bottomleft",collapsed=False, overlay= True).add_to(hm_occi)
+color_mapa = cm.LinearColormap(
+    colors=["#DE5B30",
+"#CC5333",
+"#B94A35",
+"#A64238",
+"#93393B",
+"#80313E",
+"#6E2841",
+"#5B2044",
+"#481747",
+"#350F4A",
+"#23074D"],
+    caption="intensité de concentration du polluant",
+)
+color_mapa.add_to(hm_occi)
 hm_occi
 ```

@@ -1,33 +1,31 @@
 project:
   type: website
   render:
-<<<<<<< HEAD
-=======
     - index.qmd
-<<<<<<< HEAD
-    - Carte/Carte_finale.qmd
-    - Villes/Aveyron.qmd
-=======
+    - about.qmd
     - Carte/Carte_final.qmd
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
+    - Villes/Aveyron.qmd
+    - Villes/Ariege.qmd
     - Villes/Gard.qmd
     - Villes/Gers.qmd
-    - Villes/Haute-Pyrénées.qmd
-    - Villes/HauteGaronne.qmd
+    - Villes/Haute_garonne.qmd
+    - Villes/Haute_pyrenee.qmd
     - Villes/Herault.qmd
-    - Villes/Pyrenees_Orientales.qmd
-    - Villes/Tarn-et-Garonne.qmd
+    - Villes/Pyrenees_orientales.qmd
+    - Villes/Tarn_et_garonne.qmd
     - Villes/Tarn.qmd
     - Villes/Montpellier.qmd
     - Villes/Toulouse.qmd
     - Villes/Nimes.qmd
     - Villes/Perpignan.qmd
+    - Villes/Rodez.qmd
+    - Villes/Albi.qmd
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
   title: "Pollution en Occitanie"
   site-url: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
-  repo-url: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
+  repo-url: https://github.com/zakariakhodrium/projet_pollution_Occitanie/
   repo-actions: [source]
   navbar:
     title: "Pollution en Occitanie"
@@ -35,52 +33,49 @@ website:
     search: true
     tools:
       - icon: github
-        href: https://zakariakhodrium.github.io/projet_pollution_Occitanie/
+        href: https://github.com/zakariakhodrium/projet_pollution_Occitanie/
         text: GitHub
     left:
       - sidebar:Carte
       - sidebar:Dpt
+      - sidebar:prop
   sidebar:
-<<<<<<< HEAD
-=======
     - id: Carte
       title: "Carte"
       contents:
-<<<<<<< HEAD
-        - Carte/Carte_finale.qmd
-=======
         - Carte/Carte_final.qmd
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
     - id: Dpt
       title: "Visualisation des données"
       collapse-level: 2
       contents:
         - section: "Départements"
           contents:
+            - Villes/Ariege.qmd
             - Villes/Aveyron.qmd
             - Villes/Gard.qmd
             - Villes/Gers.qmd
-            - Villes/HauteGaronne.qmd
-            - Villes/Haute-Pyrénées.qmd
+            - Villes/Haute_garonne.qmd
+            - Villes/Haute_pyrenee.qmd
             - Villes/Herault.qmd
-            - Villes/Pyrenees_Orientales.qmd
-            - Villes/Tarn-et-Garonne.qmd
+            - Villes/Pyrenees_orientales.qmd
+            - Villes/Tarn_et_garonne.qmd
             - Villes/Tarn.qmd
         - section: "Villes"
           contents:
+            - Villes/Albi.qmd
             - Villes/Montpellier.qmd
             - Villes/Nimes.qmd
             - Villes/Perpignan.qmd
+            - Villes/Rodez.qmd
             - Villes/Toulouse.qmd
+    - id: prop
+      title: "À propos"
+      contents:
+        - about.qmd
+           
 format:
   html:
-<<<<<<< HEAD
     theme: cosmo
     css: styles.css
-    toc: true 
-
-=======
-    theme: yeti
-    css: styles.cssgit 
     toc: true
->>>>>>> d8cfb565b72e5782b443d2edd25ce22d36949034
+

@@ -2,20 +2,65 @@
 title: "Accueil"
 ---
 
-Page d'accueil.
-<<<<<<< HEAD
-=======
-PROBLEMATIQUE
->>>>>>> f6a02d15348b45fe10c73c8de62d5c29e484fa74
+
+
+La pollution, sous ses multiples formes, émerge comme l'un des enjeux les plus pressants de notre époque, affectant la qualité de l'air que nous respirons, de l'eau que nous buvons, et du sol sur lequel nous marchons.
+Nous allons, nous intéresser ici à la pollution dans la région Occitanie, et plus précisément à la pollution de l'air.
+Pour cela, nous allons nous intéresser à la concentration de certains polluants au cours des cinq dernières années. 
+Afin de vous exposer au mieux la situation en Occitanie, nous allons observer les données que nous avons récupérées sur le site Atmo-Occitanie à différentes échelles.
+
+Nous allons tout d'abord, nous intéresser à la pollution dans la région.
+
+## Quantité totale des polluants mesurés 
+Pour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants. 
+
+
 
 ```{python}
 #| echo: false
+#| warning: false
+# %%
+import pandas as pd
+import matplotlib.pyplot as plt
+pd.options.mode.chained_assignment = None
+data = pd.read_csv("data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+df = pd.DataFrame(data)
+grouped_df = df.groupby(['date_debut', 'nom_poll'])['valeur'].sum().reset_index()
+grouped_df = grouped_df.sort_values(by=['date_debut', 'nom_poll'])
+grouped_df['date_debut'] = pd.to_datetime(grouped_df['date_debut'])
+grouped_df['date_debut'] = grouped_df['date_debut'].dt.year
+plt.figure(figsize=(7.5, 6))
+colors = plt.cm.get_cmap('tab10', len(grouped_df['nom_poll'].unique()))
+year_indexes = {year: i for i, year in enumerate(grouped_df['date_debut'].unique())}
+for polluant, color in zip(grouped_df['nom_poll'].unique(), colors.colors):
+    plt.bar(
+        [year_indexes[annee] for annee in grouped_df['date_debut'].unique()],
+        grouped_df[grouped_df['nom_poll'] == polluant]['valeur'],
+        label=polluant,
+        color=color
+    )
+plt.xlabel('Année')
+plt.ylabel('Somme des valeurs')
+plt.title('Valeurs des principaux polluants par année')
+plt.legend(title='Polluant', bbox_to_anchor=(1, 1))
+plt.xticks([i for i in range(len(grouped_df['date_debut'].unique()))], grouped_df['date_debut'].unique())
+plt.show()
+```
+
+On constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l'O3^[[à propos](about.qmd)] et que l'année la plus polluée parmi les cinq dernières années est l'année 2022.
+On constate aussi qu'il y'a une baisse assez significative entre 2022 et 2023, même si toutefois l'année 2023 n'est pas encore totalement terminé.
+
+
+
+```{python,}
+#| echo: false
+#| code-summary: "Une évolution de la concentration des polluants en Occitanie"
 # %%
 import pandas as pd
 import plotly.graph_objects as go
-import numpy as np
+pd.options.mode.chained_assignment = None
 
-data = pd.read_csv("data/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
+data = pd.read_csv("data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv")
 df = pd.DataFrame(data)
 columns_to_drop = ['code_station', 'typologie', 'influence', 'id_poll_ue', 'unite', 'metrique', 'date_fin', 'statut_valid']
 df = df.drop(columns=columns_to_drop)
@@ -25,7 +70,7 @@ grouped_df['date_debut'] = pd.to_datetime(grouped_df['date_debut'])
 grouped_df['date_debut'] = grouped_df['date_debut'].dt.year
 
 fig = go.FigureWidget()
-polluants = sorted(grouped_df["nom_poll"].unique())
+polluants = ['NO','O3','PM10','PM2.5']
 for polluant in polluants:
     trace_data = grouped_df[grouped_df["nom_poll"] == polluant]
     fig.add_trace(
@@ -40,11 +85,10 @@ fig.update_layout(
     template="simple_white",
     title="Polluants en fonction de l'année",
     showlegend=True,
-    xaxis_title="Polluants",
-    yaxis_title="Fréquence normalisée",
+    xaxis_title="Année",
+    yaxis_title="taux du polluant (en ug.m-3)",
 )
 
 
 fig.show()
 ```
->>>>>>> 06fb5b745af48ed639f12c1fd1d57b6bed17eafc

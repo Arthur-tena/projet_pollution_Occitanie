@@ -1,0 +1,38 @@
+---
+title: "Hautes-Pyrénées"
+format: html
+---
+## Part de chaque polluant dans le département du Haute-Pyrénées
+```{python}
+#|code-fold: true
+import matplotlib.pyplot as plt
+import pandas as pd
+from module import plot_pie
+
+plot_pie("HAUTES-PYRENEES")
+```
+
+## Concentration de chaque polluant observé ses dernières années dans le département
+
+```{python}
+#|code-fold: true
+#| warning: false
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from module import plot_polluant_evolution_annuelle
+
+
+plot_polluant_evolution_annuelle("../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv","HAUTES-PYRENEES",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'])
+```
+
+## Concentration moyenne des différents jours de la semaine au cours des 30 derniers jours
+
+```{python}
+#|code-fold: true
+import matplotlib.pyplot as plt
+import pandas as pd
+from module import polluant_evolution_dept_jour
+
+polluant_evolution_dept_jour("../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO','O3'],"HAUTES-PYRENEES")
+```
