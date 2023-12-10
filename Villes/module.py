@@ -31,7 +31,7 @@ def plot_pie(departement):
         "date_fin",
         "statut_valid",
     ]
-    df = df.drop(columns=columns_to_drop)
+    df = df.drop(columns=columns_to_drop) 
 
     df_departement = df[df["nom_dept"] == departement]
 
@@ -205,16 +205,16 @@ def create_polar_plot(ville):
 
     fig_pol.update_polars(
         radialaxis=dict(
-            visible=True,  # Set to False if you want to hide the radial axis
+            visible=True,  
         ),
         angularaxis=dict(
-            visible=True,  # Set to False if you want to hide the angular axis
-            direction="clockwise",  # Set the direction of the angular axis
-            period=360,  # Set the period of the angular axis
+            visible=True,  
+            direction="clockwise",  
+            period=360,  
             tickvals=np.arange(0, 360, 15),
             ticktext=[
                 str(hour % 24) for hour in range(24)
-            ],  # Specify tick values on the angular axis
+            ], 
         ),
     )
     fig_pol.show()
@@ -360,7 +360,7 @@ def polar_plot_mensuelle(ville):
 
     # Définir les polluants et la ville spécifiques
     polluants = ['PM10', 'NOX', 'O3', 'NO2', 'PM2.5', 'NO', 'SO2', 'H2S'] 
-    # ville = 'TOULOUSE' 
+     
 
     # Filtrer les données pour inclure uniquement les polluants spécifiés
     df_filtered = df[df['nom_poll'].isin(polluants)]
@@ -378,15 +378,15 @@ def polar_plot_mensuelle(ville):
     liste_des_mois = ["Décembre","Janvier","Février", "Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre"]
     fig.update_polars(
         radialaxis=dict(
-            visible=False,  # Set to False if you want to hide the radial axis
+            visible=False, 
         ),
         angularaxis=dict(
-            visible=True,  # Set to False if you want to hide the angular axis
-            rotation=120,   # Rotate the angular axis (default is 0)
-            direction='clockwise',  # Set the direction of the angular axis
-            period=360,   # Set the period of the angular axis
+            visible=True,  
+            rotation=120,   
+            direction='clockwise',  
+            period=360,   
             tickvals=np.arange(0, 360, 30),
-            ticktext=[i for i in liste_des_mois],  # Specify tick values on the angular axis
+            ticktext=[i for i in liste_des_mois],  
         )
     )
     # Afficher le graphique
