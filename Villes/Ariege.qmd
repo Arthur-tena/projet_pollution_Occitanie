@@ -22,6 +22,7 @@ On constate que globalement la tendance est la même que la région, les polluan
 Les graphiques ci-dessous représentent la concentration observée de certains polluants à la station de St-Giron Urbain la seule station de l'Ariège qui est repésentés dans nos données.
 ```{python}
 #|code-fold: true
+#| warning: false
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
