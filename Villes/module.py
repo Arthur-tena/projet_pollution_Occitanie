@@ -29,7 +29,7 @@ def plot_pie(departement):
         "unite",
         "metrique",
         "date_fin",
-        "statut_valid",
+        "statut_valid"
     ] 
     df = df.drop(columns=columns_to_drop) # Suppression des colonnes à supprimer dans le DataFrame
     df = df.drop(columns=columns_to_drop) 
