@@ -3,7 +3,7 @@ title: "Ariège"
 format: html
 ---
 
-Nous allons maintenant nous intéressé au département de l'Ariège.
+
 
 ## Part de chaque polluant dans le département de l'Ariège
 
@@ -16,10 +16,9 @@ from module import plot_pie
 plot_pie("ARIEGE")
 ```
 
-On constate que globalement la tendance est la même que la région, les polluants majoritairement présents sont l'O3, le PM10 et le PM2.5.
 
 ## Concentration de chaque polluant observé ses dernières années dans le département
-Les graphiques ci-dessous représentent la concentration observée de certains polluants à la station de St-Giron Urbain la seule station de l'Ariège qui est repésentés dans nos données.
+
 ```{python}
 #|code-fold: true
 #| warning: false
