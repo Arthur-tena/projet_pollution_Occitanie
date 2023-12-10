@@ -221,21 +221,21 @@
     "href": "Villes/Ariege.html",
     "title": "Ariège",
     "section": "",
-    "text": "Nous allons maintenant nous intéressé au département de l’Ariège."
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"ARIEGE\")"
   },
   {
     "objectID": "Villes/Ariege.html#part-de-chaque-polluant-dans-le-département-de-lariège",
     "href": "Villes/Ariege.html#part-de-chaque-polluant-dans-le-département-de-lariège",
     "title": "Ariège",
-    "section": "Part de chaque polluant dans le département de l’Ariège",
-    "text": "Part de chaque polluant dans le département de l’Ariège\n\n\nCode\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"ARIEGE\")\n\n\n\n\n\nOn constate que globalement la tendance est la même que la région, les polluants majoritairement présents sont l’O3, le PM10 et le PM2.5."
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom module import plot_pie\n\nplot_pie(\"ARIEGE\")"
   },
   {
     "objectID": "Villes/Ariege.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
     "href": "Villes/Ariege.html#concentration-de-chaque-polluant-observé-ses-dernières-années-dans-le-département",
     "title": "Ariège",
     "section": "Concentration de chaque polluant observé ses dernières années dans le département",
-    "text": "Concentration de chaque polluant observé ses dernières années dans le département\nLes graphiques ci-dessous représentent la concentration observée de certains polluants à la station de St-Giron Urbain la seule station de l’Ariège qui est repésentés dans nos données.\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"ARIEGE\",['NO2', 'PM2.5', 'PM10', 'NO','O3'])"
+    "text": "Concentration de chaque polluant observé ses dernières années dans le département\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom module import plot_polluant_evolution_annuelle\n\nplot_polluant_evolution_annuelle(\"../data_visu/Mesure_annuelle_Region_Occitanie_Polluants_Principaux.csv\",\"ARIEGE\",['NO2', 'PM2.5', 'PM10', 'NO','O3'])"
   },
   {
     "objectID": "Villes/Ariege.html#concentration-moyenne-des-différents-jours-de-la-semaine-au-cours-des-30-derniers-jours",
