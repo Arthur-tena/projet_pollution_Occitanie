@@ -16,14 +16,15 @@ afficher_evolution_pollution("PERPIGNAN", "../data_visu/Mesure_annuelle_Region_O
 ```
 
 ## Evolution de la pollution mensuelle 
+```{python}
+#|code-fold: true
 
+polar_plot_mensuelle("PERPIGNAN")
+```
 ## Evolution de la pollution au cours de la semaine
 
 ```{python}
 #|code-fold: true
-import pandas as pd
-import plotly.express as px
-from module import *
 
 pollutants_evolution_ville("../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],"PERPIGNAN")
 ```
@@ -32,10 +33,6 @@ pollutants_evolution_ville("../data_visu/Mesure_horaire_(30j)_Region_Occitanie_P
 
 ```{python}
 #|code-fold: true
-import pandas as pd
-import plotly.express as px
-import numpy as np
-from module import *
 
 create_polar_plot("PERPIGNAN")
 ```
