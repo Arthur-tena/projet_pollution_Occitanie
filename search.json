@@ -18,21 +18,21 @@
     "href": "Villes/Albi.html#evolution-de-la-pollution-mensuelle",
     "title": "Albi",
     "section": "Evolution de la pollution mensuelle",
-    "text": "Evolution de la pollution mensuelle"
+    "text": "Evolution de la pollution mensuelle\n\n#import pandas as pd\n#import plotly.express as px\n#import numpy as np\n#from module import * \npolar_plot_mensuelle('ALBI')"
   },
   {
     "objectID": "Villes/Albi.html#evolution-de-la-pollution-au-cours-de-la-semaine",
     "href": "Villes/Albi.html#evolution-de-la-pollution-au-cours-de-la-semaine",
     "title": "Albi",
     "section": "Evolution de la pollution au cours de la semaine",
-    "text": "Evolution de la pollution au cours de la semaine\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nfrom module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"ALBI\")"
+    "text": "Evolution de la pollution au cours de la semaine\n\n\nCode\n#import pandas as pd\n#import plotly.express as px\n#from module import *\n\npollutants_evolution_ville(\"../data_visu/Mesure_horaire_(30j)_Region_Occitanie_Polluants_Reglementaires.csv\",['NO2', 'PM2.5', 'PM10', 'NOX', 'NO'],\"ALBI\")"
   },
   {
     "objectID": "Villes/Albi.html#evolution-de-la-pollution-journalière",
     "href": "Villes/Albi.html#evolution-de-la-pollution-journalière",
     "title": "Albi",
     "section": "Evolution de la pollution journalière",
-    "text": "Evolution de la pollution journalière\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport numpy as np\nfrom module import *\n\ncreate_polar_plot(\"ALBI\")"
+    "text": "Evolution de la pollution journalière\n\n\nCode\n#import pandas as pd\n#import plotly.express as px\n#import numpy as np\n#from module import *\n\ncreate_polar_plot(\"ALBI\")"
   },
   {
     "objectID": "Villes/Perpignan.html",
@@ -263,7 +263,7 @@
     "href": "index.html#quantité-totale-des-polluants-mesurés",
     "title": "Accueil",
     "section": "Quantité totale des polluants mesurés",
-    "text": "Quantité totale des polluants mesurés\nPour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\n\n\n/tmp/ipykernel_2225/4020931299.py:11: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O3 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
+    "text": "Quantité totale des polluants mesurés\nPour commencer, voici un graphique qui représente la quantité totale des polluants mesuraient au cours de ces cinq dernières années, avec la part de chacun des polluants.\n\n\n/tmp/ipykernel_2233/4020931299.py:11: MatplotlibDeprecationWarning:\n\nThe get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.\n\n\n\n\n\n\nOn constate rapidement que les polluants majoritaires sont le PM2.5, le PM10 et l’O3 et que l’année la plus polluée parmi les cinq dernières années est l’année 2022. On constate aussi qu’il y’a une baisse assez significative entre 2022 et 2023, même si toutefois l’année 2023 n’est pas encore totalement terminé.\nCette fois-ci on s’intéresse"
   },
   {
     "objectID": "Villes/Aveyron.html",
