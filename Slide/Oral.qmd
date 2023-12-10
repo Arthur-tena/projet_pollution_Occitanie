@@ -171,7 +171,7 @@ def polar_plot_mensuelle(ville):
 
 --- 
 
-```{.python}
+```{python}
 def polar_plot_mensuelle(ville):  
     pd.options.mode.chained_assignment = None
     # Chargez le fichier CSV dans un DataFrame pandas
