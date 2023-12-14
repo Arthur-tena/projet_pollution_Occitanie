@@ -833,7 +833,7 @@ afficher_evolution_pollution("TOULOUSE", "../data_visu/Mesure_annuelle_Region_Oc
 - Landing page
 - Packages utilisés 
   
-### Réalitées
+### Réalitée
 - Cafouillage
 - Pas de landing page 
 - Packages réélemment utilisés (plutôt réaliste)
