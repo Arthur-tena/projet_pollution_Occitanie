@@ -871,6 +871,106 @@ gantt
 
 # Météo
 
+```{.python} 
+#| echo : false 
+import requests 
+import json 
+import plotly.graph_objects as go 
+from datetime import datetime 
+
+url = "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/donnees-synop-essentielles-omm/records?limit=100&refine=nom%3A%22MONTPELLIER%22" 
+
+response = requests.get(url) 
+
+# Gérer les erreurs 
+if response.status_code == 200: 
+ weather_data = response.json() 
+ 
+ months_data = {i: {"wind_speed": [], "temperature": []} for i in range(1, 13)} 
+  
+ 
+ for result in weather_data.get("results", []): 
+     date = datetime.fromisoformat(result.get("date", "").split("+")[0])
+     month = date.month 
+ 
+     temperature = result.get("t", 0) - 273.15 # Convertir la température de Kelvin à Celsius 
+ 
+     months_data[month]["temperature"].append(temperature) 
+ 
+     # moyennes pour chaque mois 
+     average_temperature = [sum(data["temperature"]) / len(data["temperature"]) if data["temperature"] else 0 for data in months_data.values()] 
+ 
+     x_values = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] 
+ 
+ fig = go.Figure() 
+ # traces 
+ fig.add_trace(go.Scatter(x=x_values, y=average_temperature, mode='lines+markers', name='Température', yaxis='y2', line=dict(color='blue')))
+ 
+ # deux axes 
+ fig.update_layout( 
+ title="Moyenne de la vitesse du vent et de la température par mois", 
+ xaxis=dict(title="Mois de l'année"), 
+ yaxis=dict(title="vitesse du vent (m/s)", color='green'), 
+ yaxis2=dict(title="Température (°C)", color='blue', overlaying='y', side='right'), 
+ showlegend=True 
+ ) 
+ 
+ fig.show() 
+
+``` 
+
+---
+
+```{python} 
+#| echo: false 
+import requests 
+import json 
+import pandas as pd 
+import plotly.express as px 
+from datetime import datetime 
+
+url = "https://services9.arcgis.com/7Sr9Ek9c1QTKmbwr/arcgis/rest/services/mesures_occitanie_mensuelle_poll_princ/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson" 
+
+response = requests.get(url) 
+
+if response.status_code == 200: 
+ data = response.json() 
+ 
+ polluants = ['O3'] 
+ df = pd.DataFrame() 
+ 
+ # Parcourir toutes les entités 
+ for feature in data['features']: 
+     nom_polluant = feature['properties']['nom_poll'] 
+     nom_com = feature['properties']['nom_com'] 
+ 
+     if nom_polluant in polluants and nom_com == 'MONTPELLIER': 
+        date_debut_timestamp = feature['properties']['date_debut'] / 1000 # Convertir en secondes 
+        date_debut = datetime.utcfromtimestamp(date_debut_timestamp) 
+ 
+        if date_debut.year == 2023 and date_debut.month in range(1, 12): 
+         date_debut_str = date_debut.strftime('%Y-%m') 
+         valeur_polluant = feature['properties']['valeur'] 
+ 
+         # Ajouter les données au DataFrame 
+         df = pd.concat([df, pd.DataFrame({nom_polluant: [valeur_polluant]}, index=[date_debut_str])]) 
+ 
+ # Convertir les colonnes de dates en format de date pandas 
+ df.index = pd.to_datetime(df.index) 
+ 
+ # Trier les données par date 
+ df = df.sort_index() 
+ 
+ # Grouper par mois et calculer la moyenne 
+ df_moyenne_mensuelle = df.resample('M').mean() 
+ 
+ # Utiliser Plotly Express pour créer un graphe interactif 
+ fig = px.line(df_moyenne_mensuelle, x=df_moyenne_mensuelle.index, y=polluants, labels={'value': 'Moyenne de la quantité de polluant', 'index': 'Mois de l\'année 2023'},title='Évolution de la moyenne mensuelle de polluants à Montpellier en 2023') 
+ 
+ # Afficher le graphe interactif 
+ fig.show() 
+```
+
 # Conclusion 
 
 ---
