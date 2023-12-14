@@ -269,7 +269,7 @@ class Load_datasets:
 
 On a utilisé la classe dans cette partie là :
 
-```{.python code-line-numbers="4,9,11,15,19,23"}
+```{.python code-line-numbers="4,8,9,12,16,20,24"}
 hm_no2 = HeatMap(Load_datasets().YX_polluant('NO2'), name="NO2", blur=30, radius=40,show=False, gradient= grad).add_to(
     hm_occi
 )
@@ -698,6 +698,8 @@ def polar_plot_mensuelle(ville):
 
 ## À Toulouse 
 
+polar_plot_mensuelle
+
 ```{python}
 #| echo : False
 import plotly.express as px
@@ -758,6 +760,7 @@ polar_plot_mensuelle("TOULOUSE")
 
 ---
 
+afficher_evolution_pollution
 
 ```{python}
 import pandas as pd
@@ -817,7 +820,8 @@ afficher_evolution_pollution("TOULOUSE", "../data_visu/Mesure_annuelle_Region_Oc
 
 # Utilisation de GIT 
 
-(/Users/arthurtena/Documents/Pollution/projet_pollution_Occitanie/gitkraken.svg){width=50% height=50%}
+- Répartition ds tâches 
+- Branches 
 
 # Whishlist
 
@@ -825,12 +829,12 @@ afficher_evolution_pollution("TOULOUSE", "../data_visu/Mesure_annuelle_Region_Oc
 
 ### Attentes
 - Diagramme de Gantt
-- Launding page
+- Lunding page
 - Packages utilisés 
   
 ### Réalitées
 - Cafouillage
-- Pas de launding page 
+- Pas de lunding page 
 - Packages réélemment utilisés (plutôt réaliste)
 :::
 ---
@@ -865,11 +869,62 @@ gantt
 
 :::{.incremental}
 - Requests 
-- Changement de propriétaire du repository
 - geopandas
+- Changement de propriétaire du repository
+- Utilisation de GIT
 :::
 
 # Météo
+
+```{python} 
+#| echo : false 
+import requests 
+import json 
+import plotly.graph_objects as go 
+from datetime import datetime 
+
+url = "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/donnees-synop-essentielles-omm/records?limit=100&refine=nom%3A%22MONTPELLIER%22" 
+
+response = requests.get(url) 
+
+# Gérer les erreurs 
+if response.status_code == 200: 
+ weather_data = response.json() 
+ 
+ months_data = {i: {"wind_speed": [], "temperature": []} for i in range(1, 13)} 
+  
+ 
+ for result in weather_data.get("results", []): 
+     date = datetime.fromisoformat(result.get("date", "").split("+")[0])
+     month = date.month 
+ 
+     temperature = result.get("t", 0) - 273.15 # Convertir la température de Kelvin à Celsius 
+ 
+     months_data[month]["temperature"].append(temperature) 
+ 
+     # moyennes pour chaque mois 
+     average_temperature = [sum(data["temperature"]) / len(data["temperature"]) if data["temperature"] else 0 for data in months_data.values()] 
+ 
+     x_values = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] 
+ 
+ fig = go.Figure() 
+ # traces 
+ fig.add_trace(go.Scatter(x=x_values, y=average_temperature, mode='lines+markers', name='Température', yaxis='y2', line=dict(color='blue')))
+ 
+ # deux axes 
+ fig.update_layout( 
+ title="Moyenne de la vitesse du vent et de la température par mois", 
+ xaxis=dict(title="Mois de l'année"), 
+ yaxis=dict(title="vitesse du vent (m/s)", color='green'), 
+ yaxis2=dict(title="Température (°C)", color='blue', overlaying='y', side='right'), 
+ showlegend=True 
+ ) 
+ 
+ fig.show() 
+
+``` 
+
+---
 
 ```{.python} 
 #| echo : false 
@@ -973,5 +1028,4 @@ if response.status_code == 200:
 
 # Conclusion 
 
----
-Merci pour votre écoute on se voit bientôt 
+Merci pour votre écoute.
