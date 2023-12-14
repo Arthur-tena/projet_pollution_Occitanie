@@ -10,7 +10,7 @@ format:
 Comment exploiter des données pour mieux visualiser et comprendre un problème actuel ?
 
 # Introduction 
-::: {.incremental}
+:::{.incremental}
 - Architecture du site 
 - Notre carte 
 - Visualisation 
@@ -231,6 +231,7 @@ hm_occi
 ---
 
 - Création d'une classe pour filtrer les données dans un format compatible avec la classe HeatMap de Folium pour créer des calques pour chaque polluants.
+
 ```{.python code-line-numbers="16,26,28,29"}
 import os
 import pandas as pd
@@ -267,10 +268,8 @@ class Load_datasets:
 ---
 
 On a utilisé la classe dans cette partie là :
+
 ```{.python code-line-numbers="4,9,11,15,19,23"}
-.
-.
-.
 hm_no2 = HeatMap(Load_datasets().YX_polluant('NO2'), name="NO2", blur=30, radius=40,show=False, gradient= grad).add_to(
     hm_occi
 )
@@ -293,11 +292,7 @@ hm_nox = HeatMap(Load_datasets().YX_polluant('NOX'), name="NOX", blur=30, radius
 hm_SO2 = HeatMap(Load_datasets().YX_polluant('SO2'), name="SO2", blur=30, radius=40,show=False, gradient=grad).add_to(
     hm_occi
 )
-.
-.
-.
 ```
----
 
 # Visualisation 
 
@@ -869,11 +864,11 @@ gantt
 # Problèmes rencontrés
 
 :::{.incremental}
-- Requests
-- Changement de propriétaire du repository 
-- geopandas 
+- Requests 
+- Changement de propriétaire du repository
+- geopandas
 :::
----
+
 # Météo
 
 # Conclusion 
