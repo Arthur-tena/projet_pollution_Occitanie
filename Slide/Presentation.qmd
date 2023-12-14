@@ -738,7 +738,7 @@ def polar_plot_mensuelle(ville):
 
     # Créer un graphique polaire avec Plotly Express
     fig = px.line_polar(df_moyennes_ville, r='moyenne_valeur', theta=df_moyennes_ville['mois']*(360//12), line_close=True,
-                        color='nom_poll', line_dash='nom_poll', title=f'Évolution des polluants par mois de la région {ville}')
+                        color='nom_poll', line_dash='nom_poll', title=f'Évolution des polluants par mois de {ville}')
     liste_des_mois = ["Décembre","Janvier","Février", "Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre"]
     fig.update_polars(
         radialaxis=dict(
@@ -820,8 +820,9 @@ afficher_evolution_pollution("TOULOUSE", "../data_visu/Mesure_annuelle_Region_Oc
 
 # Utilisation de GIT 
 
-- Répartition ds tâches 
+- Répartition des tâches 
 - Branches 
+- Gitkraken/Gitgraph
 
 # Whishlist
 
@@ -829,12 +830,12 @@ afficher_evolution_pollution("TOULOUSE", "../data_visu/Mesure_annuelle_Region_Oc
 
 ### Attentes
 - Diagramme de Gantt
-- Lunding page
+- Landing page
 - Packages utilisés 
   
 ### Réalitées
 - Cafouillage
-- Pas de lunding page 
+- Pas de landing page 
 - Packages réélemment utilisés (plutôt réaliste)
 :::
 ---
@@ -868,10 +869,11 @@ gantt
 # Problèmes rencontrés
 
 :::{.incremental}
-- Requests 
+- Requests pooch 
 - geopandas
 - Changement de propriétaire du repository
 - Utilisation de GIT
+- Météo 
 :::
 
 # Météo
